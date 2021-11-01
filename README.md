@@ -1,13 +1,13 @@
 # CS202_Crossy_Road_Group10
 
-##Description
+## Description
 
-##Feature
+## Feature
 
-##Usage
+## Usage
 
 
-##Member
+## Member
 - Hồ Trọng Bảo
 - Hà Thiên Lộc
 - Phạm Đình Khôi
