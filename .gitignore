@@ -4,5 +4,5 @@ Debug
 /Debug/vc142.pdb
 /Debug/vc142.pdb
 /Debug/vc142.idb
-.lastbuildstate
-.exe.recipe
+*.lastbuildstate
+*.exe.recipe
