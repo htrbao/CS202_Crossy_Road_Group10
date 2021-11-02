@@ -8,10 +8,16 @@
 
 using namespace std;
 
+#define SCREEN_WIDTH 473
+#define SCREEN_HEIGHT 957
+
 int main() {
-    sf::RenderWindow window(sf::VideoMode(300, 300), "SFML works!");
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
+    sf::RenderWindow window(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "Crossy Road");
+    sf::Texture imageSource;
+    imageSource.loadFromFile("assets/police_SE.png");
+    sf::Sprite imageSprite;
+    imageSprite.setTexture(imageSource);
+    imageSprite.scale(0.5, 0.5);
 
     while (window.isOpen())
     {
@@ -21,9 +27,9 @@ int main() {
             if (event.type == sf::Event::Closed)
                 window.close();
         }
-
+        imageSprite.move(0.05, 0.05);
         window.clear();
-        window.draw(shape);
+        window.draw(imageSprite);
         window.display();
     }
 	cout << "Hello";
