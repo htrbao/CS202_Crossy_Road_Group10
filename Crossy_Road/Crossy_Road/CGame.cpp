@@ -1,12 +1,12 @@
-#include "CGame.h"
+#include "CGAME.h"
 
 //Private function
-void CGame::initializeVariable()
+void CGAME::initializeVariable()
 {
 	this->window = nullptr;
 }
 
-void CGame::initWindow()
+void CGAME::initWindow()
 {
 	this->videoMode.height = SCREEN_HEIGHT;
 	this->videoMode.width = SCREEN_WIDTH;
@@ -14,25 +14,25 @@ void CGame::initWindow()
 }
 
 //Constructor | Destructor
-CGame::CGame()
+CGAME::CGAME()
 {
 	this->initializeVariable();
 	this->initWindow();
 }
 
-CGame::~CGame()
+CGAME::~CGAME()
 {
 	delete this->window;
 }
 
 //Accessors
-const bool CGame::running() const
+const bool CGAME::running() const
 {
 	return this->window->isOpen();
 }
 
 //Other function
-void CGame::pollEvent()
+void CGAME::pollEvent()
 {
 	while (this->window->pollEvent(this->ev))
 	{
@@ -51,11 +51,11 @@ void CGame::pollEvent()
 }
 
 //Other function
-void CGame::update()
+void CGAME::update()
 {
 	pollEvent();
 }
-void CGame::render()
+void CGAME::render()
 {
 	this->window->clear();
 

@@ -20,6 +20,10 @@ namespace Constants {
 	const double Alpha = 25.0 * PI / 180.0;
 	const double Beta = 65 * PI / 180.0;
 	const double basicX = 0.5;
+
+	//lane
+	const int MAX_ROAD = 10;
+	const int SIZE_ROAD = 80;
 }
 
 #endif // !CONSTANTS_H_

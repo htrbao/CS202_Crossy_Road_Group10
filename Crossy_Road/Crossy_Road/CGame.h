@@ -10,7 +10,7 @@
 #define SCREEN_WIDTH 473
 #define SCREEN_HEIGHT 957
 
-class CGame
+class CGAME
 {
 private:
 	//Variables
@@ -27,8 +27,8 @@ private:
 
 public:
 	//Constructor | Destructor
-	CGame();
-	~CGame();
+	CGAME();
+	~CGAME();
 
 	//Accessors
 	const bool running() const;

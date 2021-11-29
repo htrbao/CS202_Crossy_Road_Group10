@@ -146,11 +146,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CASSET.cpp" />
+    <ClCompile Include="CGAME.cpp" />
+    <ClCompile Include="CLANE.cpp" />
+    <ClCompile Include="CROAD.cpp" />
     <ClCompile Include="CROBJECT.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CASSET.h" />
+    <ClInclude Include="CGAME.h" />
+    <ClInclude Include="CLANE.h" />
+    <ClInclude Include="CROAD.h" />
     <ClInclude Include="Constants.h" />
     <ClInclude Include="CROBJECT.h" />
   </ItemGroup>
