@@ -1,5 +1,6 @@
 #include <iostream>
 
+#include "Constants.h"
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 #include <SFML/Audio.hpp>
@@ -8,24 +9,28 @@
 
 using namespace std;
 
-#define SCREEN_WIDTH 473
-#define SCREEN_HEIGHT 957
-
 int dir = 1;
 
 int main() {
-    sf::RenderWindow window(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "Crossy Road");
+    sf::RenderWindow window(sf::VideoMode(Constants::SCREEN_WIDTH, Constants::SCREEN_HEIGHT), "Crossy Road");
+    
+    sf::Texture roadTest;
+    roadTest.loadFromFile("assets/graphics/road.png");
+    sf::Sprite roadImageSprite;
+    roadImageSprite.setTexture(roadTest);
+
+
     sf::Texture carTest;
-    carTest.loadFromFile("assets/firetruck_SE.png");
+    carTest.loadFromFile("assets/graphics/firetruck_SE.png");
     sf::Sprite carImageSprite;
     carImageSprite.setTexture(carTest);
     carImageSprite.scale(0.5, 0.5);
  
     sf::Texture catTest;
-    catTest.loadFromFile("assets/CAT_1_NE.png");
+    catTest.loadFromFile("assets/player/CAT_1_NE.png");
     sf::Sprite catImageSprite;
     catImageSprite.setTexture(catTest);
-    catImageSprite.scale(0.25, 0.25);
+    catImageSprite.scale(0.125, 0.125);
 
     while (window.isOpen())
     {
@@ -36,10 +41,12 @@ int main() {
                 window.close();
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
-            carImageSprite.move(-0.05, 0.15);
+            carImageSprite.move(-0.0125, 0.0375);
+            roadImageSprite.move(-0.0125, 0.0375);
         }
-        carImageSprite.move(dir * 0.05, dir * 0.05);
+        carImageSprite.move(dir * 0.05, dir * 0.02331538291);
         window.clear();
+        window.draw(roadImageSprite);
         window.draw(carImageSprite);
         window.draw(catImageSprite);
         window.display();

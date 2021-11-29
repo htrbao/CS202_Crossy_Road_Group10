@@ -145,9 +145,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CASSET.cpp" />
+    <ClCompile Include="CROBJECT.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CASSET.h" />
+    <ClInclude Include="Constants.h" />
     <ClInclude Include="CROBJECT.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
