@@ -48,4 +48,6 @@ CASSET::CASSET() {
 	//road
 	initTexture("ROAD2");
 	initTexture("GRASS2");
+
+
 }

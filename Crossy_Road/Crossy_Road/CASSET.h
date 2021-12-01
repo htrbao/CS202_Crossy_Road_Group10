@@ -10,6 +10,7 @@
 #include <SFML/Network.hpp>
 #include <string>
 #include <unordered_map>
+#include "Constants.h"
 
 using namespace std;
 
