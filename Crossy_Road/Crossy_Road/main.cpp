@@ -10,19 +10,17 @@
 
 using namespace std;
 
-int dir = 1;
-
 int main() {
     sf::RenderWindow window(sf::VideoMode(Constants::SCREEN_WIDTH, Constants::SCREEN_HEIGHT), "Crossy Road");
     
-    sf::Texture roadTest;
+    /*sf::Texture roadTest;
     roadTest.loadFromFile("assets/graphics/road.png");
     sf::Sprite roadImageSprite;
     roadImageSprite.setTexture(roadTest);
 
 
     /*sf::Texture carTest;
-    carTest.loadFromFile("assets/graphics/firetruck_SE.png");*/
+    carTest.loadFromFile("assets/graphics/firetruck_SE.png");
     sf::Texture* texture = &CASSET::GetInstance().textureMap["firetruck_SE"];
     sf::Sprite carImageSprite;
     carImageSprite.setTexture(*texture);
@@ -52,8 +50,10 @@ int main() {
         window.draw(carImageSprite);
         window.draw(catImageSprite);
         window.display();
-    }
-    /*CRCAR police("firetruck_SE", 0, 0, 1, 1);
+    }*/
+    CRCAR fire("firetruck_NW", 460, 5, -1);
+    CRCAR fire2("firetruck_SE", 150, 5, 1);
+
     while (window.isOpen())
     {
         sf::Event event;
@@ -62,14 +62,19 @@ int main() {
             if (event.type == sf::Event::Closed)
                 window.close();
         }
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
-            police.shiftObject('U');
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
+            fire.shiftObject('U');
         }
-        police.move(0, 0);
-        police.draw(window);
+        else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+            fire.shiftObject('D');
+        }
+        fire.move(0, 0);
+        fire2.move(0, 0);
         window.clear();
+        fire2.draw(window);
+        fire.draw(window);
         window.display();
     }
-	cout << "Hello";*/
+	cout << "Hello";
 	return 0;
 }

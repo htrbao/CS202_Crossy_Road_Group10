@@ -1,6 +1,6 @@
 #include "CRCAR.h"
 
-CRCAR::CRCAR(string textureFileName, double x, double y, double speed, int direction = 1) : CROBJECT(x, y, 1, direction) {
+CRCAR::CRCAR(string textureFileName, double y, double speed, int direction = 1) : CROBJECT(direction > 0 ? Constants::positionXofVehical_SE : Constants::positionXofVehical_NW, y, 0.5, direction) {
 	this->speed = speed;
 
 	texture = &CASSET::GetInstance().textureMap[textureFileName];
@@ -10,8 +10,4 @@ CRCAR::CRCAR(string textureFileName, double x, double y, double speed, int direc
 
 void CRCAR::move(double x, double y) {
 	CROBJECT::move(x, y);
-}
-
-void CRCAR::draw(sf::RenderWindow& window) {
-	CROBJECT::draw(window);
 }
