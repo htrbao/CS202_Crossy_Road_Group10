@@ -24,6 +24,10 @@ private:
 	void initSound(string soundFileName);
 	void initTexture(string textureFileName, bool isPlayer = false);
 public:
+	static CASSET& GetInstance() {
+		static CASSET instance;
+		return instance;
+	}
 	unordered_map<string, sf::SoundBuffer> soundMap;
 	unordered_map<string, sf::Texture> textureMap;
 };

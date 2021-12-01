@@ -11,17 +11,22 @@ protected:
 	double mX;
 	double mY;
 
+	double objScale;
+
 	int direction; // 1 - SE or -1 - NW
 
-	sf::Texture texture;
+	int speed;
+
+	sf::Texture* texture;
 	sf::Sprite sprite;
 
-
+	void setUpTexture();
 public:
-	CROBJECT();
-	CROBJECT(double mX, double mY);
-	void shiftObject();
+	CROBJECT(double mX, double mY, double scale, int direction);
+	void shiftObject(char UorD);
 	bool checkOutWindow(sf::RenderWindow& window);
+	virtual void move(float x, float y);
+	virtual void draw(sf::RenderWindow& window);
 };
 
 #endif // !_CROBJECT_H_

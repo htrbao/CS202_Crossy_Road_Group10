@@ -7,15 +7,15 @@ void CASSET::initSound(string soundFileName) {
 	}
 	cout << soundFileName << "loaded successfully\n";
 }
-
+//assets / graphics / firetruck_SE.png
 void CASSET::initTexture(string textureFileName, bool isPlayer) {
 	string filepath = isPlayer ? "assets/player/" + textureFileName + ".png" : "assets/graphics/" + textureFileName + ".png";
 	if (!textureMap[textureFileName].loadFromFile(filepath)) {
 		cout << "Cannot load " << filepath << endl;
 		return;
 	}
-	textureMap[textureFileName].setSmooth(true);
-	cout << textureFileName << " loaded successfully" << endl;
+	//textureMap[textureFileName].setSmooth(true);
+	cout << filepath << " loaded successfully" << endl;
 }
 
 CASSET::CASSET() {

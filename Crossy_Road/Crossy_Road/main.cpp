@@ -6,6 +6,7 @@
 #include <SFML/Audio.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/Network.hpp>
+#include "CRCAR.h"
 
 using namespace std;
 
@@ -14,7 +15,7 @@ int dir = 1;
 int main() {
     sf::RenderWindow window(sf::VideoMode(Constants::SCREEN_WIDTH, Constants::SCREEN_HEIGHT), "Crossy Road");
     
-    sf::Texture roadTest;
+    /*sf::Texture roadTest;
     roadTest.loadFromFile("assets/graphics/road.png");
     sf::Sprite roadImageSprite;
     roadImageSprite.setTexture(roadTest);
@@ -49,6 +50,23 @@ int main() {
         window.draw(roadImageSprite);
         window.draw(carImageSprite);
         window.draw(catImageSprite);
+        window.display();
+    }*/
+    CRCAR police("firetruck_SE", 0, 0, 1, 1);
+    while (window.isOpen())
+    {
+        sf::Event event;
+        while (window.pollEvent(event))
+        {
+            if (event.type == sf::Event::Closed)
+                window.close();
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
+            police.shiftObject('U');
+        }
+        police.move(0, 0);
+        police.draw(window);
+        window.clear();
         window.display();
     }
 	cout << "Hello";

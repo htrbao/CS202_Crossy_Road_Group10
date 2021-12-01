@@ -33,6 +33,9 @@
     <ClCompile Include="CLANE.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CRCAR.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CROBJECT.h">
@@ -51,6 +54,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CLANE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CRCAR.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

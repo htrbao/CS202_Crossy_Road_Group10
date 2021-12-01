@@ -148,6 +148,7 @@
     <ClCompile Include="CASSET.cpp" />
     <ClCompile Include="CGAME.cpp" />
     <ClCompile Include="CLANE.cpp" />
+    <ClCompile Include="CRCAR.cpp" />
     <ClCompile Include="CROAD.cpp" />
     <ClCompile Include="CROBJECT.cpp" />
     <ClCompile Include="main.cpp" />
@@ -156,6 +157,7 @@
     <ClInclude Include="CASSET.h" />
     <ClInclude Include="CGAME.h" />
     <ClInclude Include="CLANE.h" />
+    <ClInclude Include="CRCAR.h" />
     <ClInclude Include="CROAD.h" />
     <ClInclude Include="Constants.h" />
     <ClInclude Include="CROBJECT.h" />
