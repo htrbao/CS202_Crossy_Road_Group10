@@ -23,7 +23,10 @@ namespace Constants {
 
 	//lane
 	const int MAX_ROAD = 10;
-	const int SIZE_ROAD = 80;
+	const int SIZE_ROAD_X = 58;
+	const int SIZE_ROAD_Y = 68;
+	const int HIDDEN_ROAD_Y = 312;
+	const int HIDDEN_ROAD_X = 78;
 }
 
 #endif // !CONSTANTS_H_

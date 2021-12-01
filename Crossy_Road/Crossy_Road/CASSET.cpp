@@ -45,4 +45,7 @@ CASSET::CASSET() {
 	initTexture("race_SE");
 	initTexture("raceFuture_NW");
 	initTexture("raceFuture_SE");
+	//road
+	initTexture("ROAD2");
+	initTexture("GRASS2");
 }

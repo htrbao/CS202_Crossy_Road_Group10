@@ -1,23 +1,21 @@
-//#pragma once
-//
-//#include "CROAD.h"
-//#include "CASSET.h"
-//#include "Constants.h"
-//
-//class CLANE :
-//    public CROAD
-//{
-//private:
-//    int index;
-//    //CASSET asset;
-//public:
-//    CLANE(): CROAD()
-//    {
-//        //asset.getInstance();
-//        index = getNumRoads();
-//        mX = index * Constants::SIZE_ROAD;
-//        mY = index * Constants::SIZE_ROAD;
-//        //texture = asset.textureMap[//];
-//    }
-//};
-//
+#pragma once
+
+#include "CROAD.h"
+#include "CASSET.h"
+#include "Constants.h"
+
+class CLANE :
+    public CROAD
+{
+private:
+    const string asset_name = "ROAD2";
+    const double scale = 0.6;
+public:
+    //constructor | destructor
+    CLANE();
+    CLANE(int index);
+    ~CLANE();
+
+    
+};
+
