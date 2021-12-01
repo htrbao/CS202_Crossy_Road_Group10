@@ -15,16 +15,17 @@ int dir = 1;
 int main() {
     sf::RenderWindow window(sf::VideoMode(Constants::SCREEN_WIDTH, Constants::SCREEN_HEIGHT), "Crossy Road");
     
-    /*sf::Texture roadTest;
+    sf::Texture roadTest;
     roadTest.loadFromFile("assets/graphics/road.png");
     sf::Sprite roadImageSprite;
     roadImageSprite.setTexture(roadTest);
 
 
-    sf::Texture carTest;
-    carTest.loadFromFile("assets/graphics/firetruck_SE.png");
+    /*sf::Texture carTest;
+    carTest.loadFromFile("assets/graphics/firetruck_SE.png");*/
+    sf::Texture* texture = &CASSET::GetInstance().textureMap["firetruck_SE"];
     sf::Sprite carImageSprite;
-    carImageSprite.setTexture(carTest);
+    carImageSprite.setTexture(*texture);
     carImageSprite.scale(0.5, 0.5);
  
     sf::Texture catTest;
@@ -51,8 +52,8 @@ int main() {
         window.draw(carImageSprite);
         window.draw(catImageSprite);
         window.display();
-    }*/
-    CRCAR police("firetruck_SE", 0, 0, 1, 1);
+    }
+    /*CRCAR police("firetruck_SE", 0, 0, 1, 1);
     while (window.isOpen())
     {
         sf::Event event;
@@ -69,6 +70,6 @@ int main() {
         window.clear();
         window.display();
     }
-	cout << "Hello";
+	cout << "Hello";*/
 	return 0;
 }
