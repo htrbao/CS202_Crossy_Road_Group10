@@ -51,8 +51,11 @@ int main() {
         window.draw(catImageSprite);
         window.display();
     }*/
-    CRCAR fire("firetruck_NW", 460, 5, -1);
-    CRCAR fire2("firetruck_SE", 150, 5, 1);
+    sf::Sprite roadImageSprite;
+    roadImageSprite.setTexture(CASSET::GetInstance().textureMap["ROAD2"]);
+    CRCAR fire("firetruck_NW", 458, 50, -1);
+    CRCAR fire2("raceFuture_SE", 123, 100, 1);
+
 
     while (window.isOpen())
     {
@@ -71,10 +74,11 @@ int main() {
         fire.move(0, 0);
         fire2.move(0, 0);
         window.clear();
+        window.draw(roadImageSprite);
         fire2.draw(window);
         fire.draw(window);
         window.display();
     }
-	cout << "Hello";
+	cout << "Bye!";
 	return 0;
 }
