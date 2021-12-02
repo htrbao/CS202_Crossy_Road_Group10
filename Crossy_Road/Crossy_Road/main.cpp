@@ -58,6 +58,8 @@ int main() {
     CLANE lane2(CROAD::getNumRoads()); 
     CLANE lane3(CROAD::getNumRoads());
     CLANE lane4(CROAD::getNumRoads());
+    CLANE lane5(CROAD::getNumRoads());
+    CLANE lane6(CROAD::getNumRoads());
     CRCAR fire("firetruck_NW", 458, 50, -1);
     CRCAR fire2("raceFuture_SE", 123, 100, 1);
 
@@ -78,6 +80,8 @@ int main() {
             lane2.transposition('U');
             lane3.transposition('U');
             lane4.transposition('U');
+            lane5.transposition('U');
+            lane6.transposition('U');
         }
         else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
             fire.shiftObject('D');
@@ -86,7 +90,9 @@ int main() {
             lane1.transposition('D');
             lane2.transposition('D');
             lane3.transposition('D');
-            lane4.transposition('D');
+            lane4.transposition('D'); 
+            lane5.transposition('D');
+            lane6.transposition('D');
         }
         fire.move(0, 0);
         fire2.move(0, 0);
@@ -96,7 +102,8 @@ int main() {
         lane2.draw(window);
         lane3.draw(window);
         lane4.draw(window);
-
+        lane5.draw(window);
+        lane6.draw(window);
         fire2.draw(window);
         fire.draw(window);
         
