@@ -27,8 +27,8 @@ namespace Constants {
 	const double positionXofVehical_NW = SCREEN_WIDTH + 30.0;
 	//Lane
 	const int MAX_ROAD = 10;
-	const int SIZE_ROAD_X = 20;
-	const int SIZE_ROAD_Y = 80;
+	const int SIZE_ROAD_X = 40;
+	const int SIZE_ROAD_Y = 160;
 	const int HIDDEN_ROAD_X = 10;
 	const int HIDDEN_ROAD_Y = SIZE_ROAD_Y * 4 ;
 }

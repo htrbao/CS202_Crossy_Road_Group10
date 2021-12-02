@@ -3,6 +3,8 @@
 
 CLANE::CLANE()
 {
+    m_originX =  Constants::SIZE_ROAD_X + Constants::HIDDEN_ROAD_X;
+    m_originY =  Constants::SIZE_ROAD_Y - Constants::HIDDEN_ROAD_Y;
     texture = &CASSET::GetInstance().textureMap[asset_name];
     objScale = scale;
     sprite.setTexture(*texture);
