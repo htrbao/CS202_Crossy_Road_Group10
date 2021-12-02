@@ -24,10 +24,9 @@ namespace Constants {
 	const double positionXofVehical_NW = 503;
 	//lane
 	const int MAX_ROAD = 10;
-	const int SIZE_ROAD_X = 58;
-	const int SIZE_ROAD_Y = 68;
-	const int HIDDEN_ROAD_Y = 312;
-	const int HIDDEN_ROAD_X = 78;
+	const int SIZE_ROAD_X = 20;
+	const int SIZE_ROAD_Y = 80;
+	const int HIDDEN_ROAD_Y = SIZE_ROAD_Y * 4 ;
 }
 
 #endif // !CONSTANTS_H_

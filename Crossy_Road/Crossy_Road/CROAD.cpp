@@ -19,9 +19,9 @@ bool CROAD::checkOutWindow(sf::RenderWindow& window)
 void CROAD::transposition(char UorD)
 {
     if (UorD == 'U' || UorD == 'u')
-        sprite.move(-0.0125*4, 0.0375*4);
+        sprite.move(-0.0125, 0.0375);
     else if (UorD == 'D' || UorD == 'd')
-        sprite.move(-0.0125, -0.0375);
+        sprite.move(0.0125, -0.0375);
     m_originX = sprite.getPosition().x;
     m_originY = sprite.getPosition().y;
 }

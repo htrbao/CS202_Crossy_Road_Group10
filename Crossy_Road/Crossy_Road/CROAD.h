@@ -18,7 +18,7 @@ protected:
     sf::Sprite sprite;
 private:
     static int numOfRoad;
-    const double size_road = 805.6;
+    const double size_road = 312;
 public:
     //constructor | destructor
     CROAD();
