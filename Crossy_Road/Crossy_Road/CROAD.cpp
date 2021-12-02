@@ -29,7 +29,6 @@ void CROAD::transposition(char UorD)
 
 void CROAD::draw(sf::RenderWindow& window)
 {
-    cout << "CROAD::drawing\n";
     if (!checkOutWindow(window)) window.draw(sprite);
 }
 

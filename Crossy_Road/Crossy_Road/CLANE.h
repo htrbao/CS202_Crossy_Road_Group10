@@ -10,7 +10,7 @@ class CLANE :
 {
 private:
     const string asset_name = "ROAD2";
-    const double scale = 0.5;
+    const double scale = 1;
 public:
     //constructor | destructor
     CLANE();

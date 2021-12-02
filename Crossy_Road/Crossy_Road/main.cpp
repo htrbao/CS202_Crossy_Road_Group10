@@ -72,6 +72,7 @@ int main() {
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
             fire.shiftObject('U');
+            fire2.shiftObject('U');
             lane.transposition('U');
             lane1.transposition('U');
             lane2.transposition('U');
@@ -80,6 +81,7 @@ int main() {
         }
         else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
             fire.shiftObject('D');
+            fire2.shiftObject('D');
             lane.transposition('D');
             lane1.transposition('D');
             lane2.transposition('D');

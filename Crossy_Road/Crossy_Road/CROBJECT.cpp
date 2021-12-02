@@ -11,13 +11,13 @@ CROBJECT::CROBJECT(double mX, double mY, double objScale, int direction = 1) : m
 
 void CROBJECT::shiftObject(char UorD) {
     if (UorD == 'U' || UorD == 'u')
-        sprite.move(-0.05, 0.15);
+        sprite.move(direction * 0.0025 * speed * 2 - 0.25, direction * tan(Constants::Alpha) * 0.0025 * speed * 2 - 0.25 * tan(-Constants::Beta));
     else if (UorD == 'D' || UorD == 'd')
-        sprite.move(-0.05, -0.15);
+        sprite.move(direction * 0.0025 * speed * 2 + 0.25, direction * tan(Constants::Alpha) * 0.0025 * speed * 2 + 0.25 * tan(-Constants::Beta));
 }
 
 bool CROBJECT::checkOutWindow(sf::RenderWindow& window) {
-    return (direction == 1 && (sprite.getPosition().x >= window.getSize().x + 50|| sprite.getPosition().y >= window.getSize().y + 50)) || (direction == -1 && (sprite.getPosition().x <= -50 || sprite.getPosition().y <= -50));
+    return (direction == 1 && (sprite.getPosition().x >= window.getSize().x + 100|| sprite.getPosition().y >= window.getSize().y + 100)) || (direction == -1 && (sprite.getPosition().x <= -100 || sprite.getPosition().y <= -100));
 }
 
 void CROBJECT::move(float x, float y) {

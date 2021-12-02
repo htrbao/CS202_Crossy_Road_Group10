@@ -1,2 +1,42 @@
-﻿  main.cpp
+﻿  CASSET.cpp
+  CLANE.cpp
+D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CLANE.cpp(9,28): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CLANE.cpp(9,18): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CLANE.cpp(10,35): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CLANE.cpp(10,24): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CLANE.cpp(20,28): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CLANE.cpp(20,18): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CLANE.cpp(21,36): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CLANE.cpp(21,24): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  CRCAR.cpp
+D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCAR.cpp(4,16): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCAR.cpp(12,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCAR.cpp(12,17): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  CROAD.cpp
+D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROAD.cpp(23,36): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROAD.cpp(25,36): warning C4305: 'argument': truncation from 'double' to 'float'
+  CROBJECT.cpp
+D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(5,69): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(5,43): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(6,28): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(6,18): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(7,28): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(7,24): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(14,115): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(14,52): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(16,115): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(16,52): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(24,88): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(24,36): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  main.cpp
+  Generating Code...
+  LINK : D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Debug\Crossy_Road.exe not found or not built by the last incremental link; performing full link
   Crossy_Road.vcxproj -> D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Debug\Crossy_Road.exe
