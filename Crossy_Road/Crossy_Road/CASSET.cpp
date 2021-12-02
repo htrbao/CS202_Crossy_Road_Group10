@@ -1,7 +1,7 @@
 #include "CASSET.h"
 
 void CASSET::initSound(string soundFileName) {
-	if (!soundMap[soundFileName].loadFromFile("assets/sound/" + soundFileName + ".wav")) {
+	if (!soundMap[soundFileName].loadFromFile("assets/sound/" + soundFileName + ".mp3")) {
 		cout << "Cannot load assets/sound/" << soundFileName << ".wav\n";
 		return;
 	}
@@ -48,6 +48,24 @@ CASSET::CASSET() {
 	//road
 	initTexture("ROAD2");
 	initTexture("GRASS2");
+	//block
+	initTexture("BLOCK_1");
+	initTexture("BLOCK_2");
+	initTexture("BLOCK_3");
+	initTexture("BLOCK_4");
+	initTexture("BLOCK_5");
 
-
+	initTexture("BLOCK_SNOW_1");
+	initTexture("BLOCK_SNOW_2");
+	initTexture("BLOCK_SNOW_3");
+	initTexture("BLOCK_SNOW_4");
+	initTexture("BLOCK_SNOW_5");
+	//tree
+	initTexture("TREE");
+	initTexture("TREEPINE");
+	initTexture("TREESNOW");
+	//sound
+	initSound("CAR_LARGE");
+	initSound("CAR_SMALL");
+	initSound("POLICE");
 }
