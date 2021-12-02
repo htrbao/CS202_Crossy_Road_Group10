@@ -21,12 +21,12 @@ bool CROBJECT::checkOutWindow(sf::RenderWindow& window) {
 }
 
 void CROBJECT::move(float x, float y) {
-    sprite.move(direction * 0.05 * speed, direction * 0.02331538291 * speed);
+    sprite.move(direction * 0.0025 * speed, direction * tan(Constants::Alpha) * 0.0025 * speed);
 }
 
 void CROBJECT::draw(sf::RenderWindow& window) {
     if (checkOutWindow(window) == 0) {
-        cout << "Object::drawing\n";
+        //cout << "Object::drawing\n";
         window.draw(sprite);
     }
 }

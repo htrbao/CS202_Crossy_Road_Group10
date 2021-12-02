@@ -52,13 +52,16 @@ int main() {
         window.draw(catImageSprite);
         window.display();
     }*/
-    CRCAR fire("firetruck_NW", 460, 5, -1);
-    CRCAR fire2("firetruck_SE", 150, 5, 1);
+
     CLANE lane(CROAD::getNumRoads());
     CLANE lane1(CROAD::getNumRoads()); 
     CLANE lane2(CROAD::getNumRoads()); 
     CLANE lane3(CROAD::getNumRoads());
     CLANE lane4(CROAD::getNumRoads());
+    CRCAR fire("firetruck_NW", 458, 50, -1);
+    CRCAR fire2("raceFuture_SE", 123, 100, 1);
+
+
     while (window.isOpen())
     {
         sf::Event event;
@@ -91,11 +94,12 @@ int main() {
         lane2.draw(window);
         lane3.draw(window);
         lane4.draw(window);
+
         fire2.draw(window);
         fire.draw(window);
         
         window.display();
     }
-	cout << "Hello";
+	cout << "Bye!";
 	return 0;
 }
