@@ -26,6 +26,7 @@ namespace Constants {
 	const int MAX_ROAD = 10;
 	const int SIZE_ROAD_X = 20;
 	const int SIZE_ROAD_Y = 80;
+	const int HIDDEN_ROAD_X = 10;
 	const int HIDDEN_ROAD_Y = SIZE_ROAD_Y * 4 ;
 }
 
