@@ -147,20 +147,24 @@
   <ItemGroup>
     <ClCompile Include="CASSET.cpp" />
     <ClCompile Include="CGAME.cpp" />
+    <ClCompile Include="CGRASS.cpp" />
     <ClCompile Include="CLANE.cpp" />
     <ClCompile Include="CRCAR.cpp" />
     <ClCompile Include="CROAD.cpp" />
+    <ClCompile Include="CROADFACTORY.cpp" />
     <ClCompile Include="CROBJECT.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CASSET.h" />
     <ClInclude Include="CGAME.h" />
+    <ClInclude Include="CGRASS.h" />
     <ClInclude Include="CLANE.h" />
     <ClInclude Include="CRCAR.h" />
     <ClInclude Include="CROAD.h" />
     <ClInclude Include="Constants.h" />
     <ClInclude Include="CROBJECT.h" />
+    <ClInclude Include="CROADFACTORY.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

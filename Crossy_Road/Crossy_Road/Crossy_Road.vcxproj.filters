@@ -36,6 +36,12 @@
     <ClCompile Include="CRCAR.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CGRASS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CROADFACTORY.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CROBJECT.h">
@@ -57,6 +63,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CRCAR.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGRASS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CROADFACTORY.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

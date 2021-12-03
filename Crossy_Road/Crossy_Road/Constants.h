@@ -8,6 +8,7 @@ namespace Constants {
 	const double PI = 3.14159265359;
 	const int SCREEN_WIDTH = 1024;
 	const int SCREEN_HEIGHT = 730;
+
 	//--------
 	//\Alpha) |
 	// \      |
@@ -26,11 +27,11 @@ namespace Constants {
 	const double positionXofVehical_SE = -30;
 	const double positionXofVehical_NW = SCREEN_WIDTH + 30;
 	//Lane
-	const int MAX_ROAD = 10;
-	const int SIZE_ROAD_X = 40;
-	const int SIZE_ROAD_Y = 160;
-	const int HIDDEN_ROAD_X = 10;
-	const int HIDDEN_ROAD_Y = SIZE_ROAD_Y * 4 ;
+	const float MAX_ROAD = 10;
+	const float SIZE_ROAD_X = 40;
+	const float SIZE_ROAD_Y = 160;
+	const float HIDDEN_ROAD_X = 8;
+	const float HIDDEN_ROAD_Y = SIZE_ROAD_Y * 1.5;
 }
 
 #endif // !CONSTANTS_H_

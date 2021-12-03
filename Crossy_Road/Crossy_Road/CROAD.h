@@ -3,33 +3,33 @@
 #include "Constants.h"
 #include "CASSET.h"
 
-enum Road {
-    LANE,GRASS,LAST
-};
+
 
 class CROAD 
 {
 protected:
-    double m_originX;
-    double m_originY;
+    float m_originX;
+    float m_originY;
 
-    double objScale;
+    float objScale;
 
     sf::Texture* texture;
     sf::Sprite sprite;
 private:
-    static int numOfRoad;
-    const double size_road = 312;
+    static double numOfRoad;
 public:
     //constructor | destructor
-    CROAD();
+    CROAD(bool half_scale = false);
     ~CROAD();
     //other function
     void draw(sf::RenderWindow& window);
-    void transposition(char UorD);
+    void shiftObject(char UorD);
     bool checkOutWindow(sf::RenderWindow& window);
+    sf::Vector2f getPosition();
+    //virtual
+    virtual bool is_road() = 0;
     
     //get total lane
-    static int getNumRoads();
+    static double getNumRoads();
 };
 

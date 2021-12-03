@@ -7,11 +7,12 @@
 #include <SFML/Window.hpp>
 #include <SFML/Network.hpp>
 #include "CRCAR.h"
-#include "CLANE.h"
+#include "CROADFACTORY.h"
 
 using namespace std;
-int CROAD::numOfRoad = 0;
+double CROAD::numOfRoad = 0;
 int main() {
+    srand(NULL);
     sf::RenderWindow window(sf::VideoMode(Constants::SCREEN_WIDTH, Constants::SCREEN_HEIGHT), "Crossy Road");
     
     /*sf::Texture roadTest;
@@ -53,16 +54,10 @@ int main() {
         window.display();
     }*/
 
-    CLANE lane(CROAD::getNumRoads());
-    CLANE lane1(CROAD::getNumRoads()); 
-    CLANE lane2(CROAD::getNumRoads()); 
-    CLANE lane3(CROAD::getNumRoads());
-    CLANE lane4(CROAD::getNumRoads());
-    CLANE lane5(CROAD::getNumRoads());
-    CLANE lane6(CROAD::getNumRoads());
+    CROADFACTORY roadFac;
     CRCAR fire("firetruck_NW", 458, 50, -1);
     CRCAR fire2("raceFuture_SE", 123, 100, 1);
-
+    roadFac.initRoadGame();
 
     while (window.isOpen())
     {
@@ -75,35 +70,18 @@ int main() {
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
             fire.shiftObject('U');
             fire2.shiftObject('U');
-            lane.transposition('U');
-            lane1.transposition('U');
-            lane2.transposition('U');
-            lane3.transposition('U');
-            lane4.transposition('U');
-            lane5.transposition('U');
-            lane6.transposition('U');
+            roadFac.shiftObject('U');
         }
         else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
             fire.shiftObject('D');
             fire2.shiftObject('D');
-            lane.transposition('D');
-            lane1.transposition('D');
-            lane2.transposition('D');
-            lane3.transposition('D');
-            lane4.transposition('D'); 
-            lane5.transposition('D');
-            lane6.transposition('D');
+            roadFac.shiftObject('D');
         }
         fire.move(0, 0);
         fire2.move(0, 0);
+        roadFac.update(window);
         window.clear();
-        lane.draw(window);
-        lane1.draw(window);
-        lane2.draw(window);
-        lane3.draw(window);
-        lane4.draw(window);
-        lane5.draw(window);
-        lane6.draw(window);
+        roadFac.draw(window);
         fire2.draw(window);
         fire.draw(window);
         
