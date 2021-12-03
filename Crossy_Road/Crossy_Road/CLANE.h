@@ -14,6 +14,7 @@ private:
     const float scale = 1;
     const float half_scale = 0.5;
     bool is_oneway;
+
 public:
     //constructor | destructor
     CLANE(sf::Vector2f pos, bool one_way = false);

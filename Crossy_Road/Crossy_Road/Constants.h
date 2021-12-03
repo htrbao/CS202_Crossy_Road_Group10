@@ -24,8 +24,8 @@ namespace Constants {
 	const double basicVelocityX = 0.5;
 	// with Y i have formula to calculate it in CROBJECT.
 	//Vehical
-	const double positionXofVehical_SE = -30;
-	const double positionXofVehical_NW = SCREEN_WIDTH + 30;
+	const double positionXofVehical_SE = -30.0;
+	const double positionXofVehical_NW = SCREEN_WIDTH + 30.0;
 	//Lane
 	const float MAX_ROAD = 10;
 	const float SIZE_ROAD_X = 40;

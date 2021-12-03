@@ -8,6 +8,9 @@
 #include <SFML/Network.hpp>
 #include "CRCAR.h"
 #include "CROADFACTORY.h"
+#include "CRBLOCK.h"
+#include "CRTREE.h"
+#include "CRCOIN.h"
 
 using namespace std;
 double CROAD::numOfRoad = 0;
@@ -55,6 +58,7 @@ int main() {
     }*/
 
     CROADFACTORY roadFac;
+    CRCOIN bsn("COIN_2", 1000, -160);
     CRCAR fire("firetruck_NW", 458, 50, -1);
     CRCAR fire2("raceFuture_SE", 123, 100, 1);
     roadFac.initRoadGame();
@@ -71,17 +75,20 @@ int main() {
             fire.shiftObject('U');
             fire2.shiftObject('U');
             roadFac.shiftObject('U');
+            bsn.shiftObject('U');
         }
         else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
             fire.shiftObject('D');
             fire2.shiftObject('D');
             roadFac.shiftObject('D');
+            bsn.shiftObject('D');
         }
         fire.move(0, 0);
         fire2.move(0, 0);
         roadFac.update(window);
         window.clear();
         roadFac.draw(window);
+        bsn.draw(window);
         fire2.draw(window);
         fire.draw(window);
         
