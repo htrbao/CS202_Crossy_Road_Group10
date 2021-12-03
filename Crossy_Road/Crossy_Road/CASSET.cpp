@@ -14,7 +14,7 @@ void CASSET::initTexture(string textureFileName, bool isPlayer) {
 		cout << "Cannot load " << filepath << endl;
 		return;
 	}
-	//textureMap[textureFileName].setSmooth(true);
+	textureMap[textureFileName].setSmooth(true);
 	cout << filepath << " loaded successfully" << endl;
 }
 
@@ -60,6 +60,9 @@ CASSET::CASSET() {
 	initTexture("BLOCK_SNOW_3");
 	initTexture("BLOCK_SNOW_4");
 	initTexture("BLOCK_SNOW_5");
+	//coin
+	initTexture("COIN_1");
+	initTexture("COIN_2");
 	//tree
 	initTexture("TREE");
 	initTexture("TREEPINE");

@@ -1,2 +1,3 @@
-﻿  CASSET.cpp
+﻿  CRCOIN.cpp
+D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCOIN.cpp(22,46): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   Crossy_Road.vcxproj -> D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Debug\Crossy_Road.exe

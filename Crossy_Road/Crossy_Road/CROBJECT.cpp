@@ -7,13 +7,15 @@ void CROBJECT::setUpTexture() {
     sprite.setPosition(mX, mY);
 }
 
-CROBJECT::CROBJECT(double mX, double mY, double objScale, int direction = 1) : mX(mX), mY(mY), objScale(objScale), direction(direction) {}
+CROBJECT::CROBJECT(double mX, double mY, double scale) : mX(mX), mY(mY), objScale(scale), direction(0), speed(0) {}
+
+CROBJECT::CROBJECT(double mX, double mY, double objScale, int direction = 1) : mX(mX), mY(mY), objScale(objScale), direction(direction), speed(0) {}
 
 void CROBJECT::shiftObject(char UorD) {
     if (UorD == 'U' || UorD == 'u')
-        sprite.move(direction * 0.0025 * speed * 2 - 0.25, direction * tan(Constants::Alpha) * 0.0025 * speed * 2 - 0.25 * tan(-Constants::Beta));
+        sprite.move(direction * 0.0025 * speed - 0.25, direction * tan(Constants::Alpha) * 0.0025 * speed - 0.25 * tan(-Constants::Beta));
     else if (UorD == 'D' || UorD == 'd')
-        sprite.move(direction * 0.0025 * speed * 2 + 0.25, direction * tan(Constants::Alpha) * 0.0025 * speed * 2 + 0.25 * tan(-Constants::Beta));
+        sprite.move(direction * 0.0025 * speed + 0.25, direction * tan(Constants::Alpha) * 0.0025 * speed + 0.25 * tan(-Constants::Beta));
 }
 
 bool CROBJECT::checkOutWindow(sf::RenderWindow& window) {
