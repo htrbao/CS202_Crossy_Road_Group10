@@ -40,6 +40,8 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CROADFACTORY.cpp">
+		<Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="CRBLOCK.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -76,6 +78,8 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CROADFACTORY.h">
+		<Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="CRBLOCK.h">
       <Filter>Header Files</Filter>
     </ClInclude>

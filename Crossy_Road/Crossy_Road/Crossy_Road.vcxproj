@@ -165,6 +165,7 @@
     <ClInclude Include="CLANE.h" />
     <ClInclude Include="CRBLOCK.h" />
     <ClInclude Include="CRCAR.h" />
+    <ClInclude Include="CRCHARACTER.h" />
     <ClInclude Include="CRCOIN.h" />
     <ClInclude Include="CROAD.h" />
     <ClInclude Include="Constants.h" />
