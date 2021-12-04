@@ -30,8 +30,11 @@ namespace Constants {
 	const float MAX_ROAD = 10;
 	const float SIZE_ROAD_X = 40;
 	const float SIZE_ROAD_Y = 160;
-	const float HIDDEN_ROAD_X = 8;
+	const float HIDDEN_ROAD_X = SIZE_ROAD_X/4;
 	const float HIDDEN_ROAD_Y = SIZE_ROAD_Y * 1.5;
+	const float bias = 12;
+	//Speed
+	const float speed = sqrt(pow((SIZE_ROAD_Y+bias)/2, 2)/(1+pow(tan(Beta),2)));
 }
 
 #endif // !CONSTANTS_H_

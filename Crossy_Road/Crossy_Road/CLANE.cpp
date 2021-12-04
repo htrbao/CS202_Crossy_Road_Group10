@@ -26,7 +26,7 @@ CLANE::CLANE(sf::Vector2f pos, bool one_way):CROAD(one_way)
 CLANE::CLANE(float index, bool one_way) : CROAD(one_way)
 {
     m_originX = -index * Constants::SIZE_ROAD_X + Constants::HIDDEN_ROAD_X;
-    m_originY = index * Constants::SIZE_ROAD_Y - Constants::HIDDEN_ROAD_Y;
+    m_originY = index * (Constants::SIZE_ROAD_Y + Constants::bias) - Constants::HIDDEN_ROAD_Y + Constants::bias;
     objScale = scale;
     is_oneway = one_way;
  
@@ -41,7 +41,7 @@ CLANE::CLANE(float index, bool one_way) : CROAD(one_way)
     }
     
     sprite.setTexture(*texture); 
-    sprite.setPosition(m_originX , m_originY + 15);
+    sprite.setPosition(m_originX , m_originY);
 }
 
 CLANE::~CLANE()
