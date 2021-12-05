@@ -19,7 +19,7 @@ void CROBJECT::shiftObject(char UorD) {
 }
 
 bool CROBJECT::checkOutWindow(sf::RenderWindow& window) {
-    return (direction == 1 && (sprite.getPosition().x >= window.getSize().x + 100|| sprite.getPosition().y >= window.getSize().y + 100)) || (direction == -1 && (sprite.getPosition().x <= -100 || sprite.getPosition().y <= -100));
+    return (direction == 1 && (sprite.getPosition().x >= window.getSize().x + 100 || sprite.getPosition().y >= window.getSize().y + 100)) || (direction == -1 && (sprite.getPosition().x <= -100 || sprite.getPosition().y <= -100));
 }
 
 void CROBJECT::move(float x, float y) {
@@ -27,8 +27,8 @@ void CROBJECT::move(float x, float y) {
 }
 
 void CROBJECT::draw(sf::RenderWindow& window) {
-    if (checkOutWindow(window) == 0) {
+    //if (checkOutWindow(window) == 0) {
         //cout << "Object::drawing\n";
-        window.draw(sprite);
-    }
+    //}
+    window.draw(sprite);
 }

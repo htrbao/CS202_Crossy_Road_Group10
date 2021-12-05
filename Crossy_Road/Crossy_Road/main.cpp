@@ -59,8 +59,8 @@ int main() {
 
     CROADFACTORY roadFac;
     CRCOIN bsn("COIN_2", 1000, -160);
-    CRCAR fire("firetruck_NW", 458, 50, -1);
-    CRCAR fire2("raceFuture_SE", 123, 100, 1);
+    //CRCAR fire("firetruck_NW", 458, 50, -1);
+    //CRCAR fire2("raceFuture_SE", 123, 100, 1);
     roadFac.initRoadGame();
 
     while (window.isOpen())
@@ -72,25 +72,25 @@ int main() {
                 window.close();
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
-            fire.shiftObject('U');
-            fire2.shiftObject('U');
+            //fire.shiftObject('U');
+            //fire2.shiftObject('U');
             roadFac.shiftObject('U');
             bsn.shiftObject('U');
         }
         else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
-            fire.shiftObject('D');
-            fire2.shiftObject('D');
+            //fire.shiftObject('D');
+            //fire2.shiftObject('D');
             roadFac.shiftObject('D');
             bsn.shiftObject('D');
         }
-        fire.move(0, 0);
-        fire2.move(0, 0);
+        //fire.move(0, 0);
+        //fire2.move(0, 0);
         roadFac.update(window);
         window.clear();
         roadFac.draw(window);
         bsn.draw(window);
-        fire2.draw(window);
-        fire.draw(window);
+        //fire2.draw(window);
+        //fire.draw(window);
         
         window.display();
     }

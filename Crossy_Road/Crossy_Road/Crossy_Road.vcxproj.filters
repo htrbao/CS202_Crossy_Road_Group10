@@ -40,7 +40,7 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CROADFACTORY.cpp">
-		<Filter>Source Files</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CRBLOCK.cpp">
       <Filter>Source Files</Filter>
@@ -49,6 +49,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CRCOIN.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CRCARFACTORY.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -78,7 +81,7 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CROADFACTORY.h">
-		<Filter>Header Files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CRBLOCK.h">
       <Filter>Header Files</Filter>
@@ -87,6 +90,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CRCOIN.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CRCHARACTER.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CRCARFACTORY.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

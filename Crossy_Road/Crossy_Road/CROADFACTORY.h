@@ -1,14 +1,19 @@
-#pragma once
+#ifndef CROADFACTORY_
+
+#define CROADFACTORY_
+
+
 #include "CGRASS.h"
 #include "CLANE.h"
 #include <deque>
 #include <random>
 
-enum Road {
+enum RoadType {
 	LANE, GRASS, LAST
 };
 
 class CROADFACTORY {
+private:
 	deque<CROAD*> roadQueue;
 public:
 
@@ -20,3 +25,5 @@ public:
 	CROAD* createRoad(sf::Vector2f pos, bool is_road = false);
 	CROAD* createRoad(float index = 1, bool is_road = false);
 };
+
+#endif // !CROADFACTORY_

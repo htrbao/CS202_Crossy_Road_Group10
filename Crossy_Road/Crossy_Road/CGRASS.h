@@ -1,4 +1,7 @@
-#pragma once
+#ifndef CRGASS_
+
+#define CRGASS_
+
 #include "CROAD.h"
 class CGRASS :
     public CROAD
@@ -15,5 +18,11 @@ public:
 
     //other function
     bool is_road();
+    void drawSubObj(sf::RenderWindow& window);
+    void shiftSubObj(char UorD);
+    void update(sf::RenderWindow& window);
 };
+
+#endif // !CRGASS_
+
 

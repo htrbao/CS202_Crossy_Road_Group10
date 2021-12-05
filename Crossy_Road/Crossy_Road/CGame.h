@@ -1,4 +1,6 @@
-#pragma once
+#ifndef CGAME_
+
+#define CGAME_
 
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
@@ -38,4 +40,8 @@ public:
 	void update();
 	void render();
 };
+
+
+
+#endif // !1
 

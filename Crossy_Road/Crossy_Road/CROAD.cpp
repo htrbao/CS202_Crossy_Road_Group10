@@ -35,6 +35,7 @@ void CROAD::shiftObject(char UorD)
         sprite.move(0.25, -0.25 * tan(Constants::Beta));
     m_originX = sprite.getPosition().x;
     m_originY = sprite.getPosition().y;
+    shiftSubObj(UorD);
     //sprite.setPosition(m_originX, m_originY);
 }
 

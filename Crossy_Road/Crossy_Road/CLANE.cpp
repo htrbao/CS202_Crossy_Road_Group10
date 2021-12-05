@@ -21,6 +21,7 @@ CLANE::CLANE(sf::Vector2f pos, bool one_way):CROAD(one_way)
 
     sprite.setTexture(*texture);
     sprite.setPosition(m_originX, m_originY);
+    //carFac.initCarGame(m_originX, m_originY);
 }
 
 CLANE::CLANE(float index, bool one_way) : CROAD(one_way)
@@ -42,6 +43,7 @@ CLANE::CLANE(float index, bool one_way) : CROAD(one_way)
     
     sprite.setTexture(*texture); 
     sprite.setPosition(m_originX , m_originY);
+    //carFac.initCarGame(m_originX, m_originY);
 }
 
 CLANE::~CLANE()
@@ -53,6 +55,34 @@ bool CLANE::is_road()
 {
     return true;
 }
+
+void CLANE::drawSubObj(sf::RenderWindow& window)
+{
+    carFac.draw(window);
+    if (!is_oneway)
+    {
+        carFac1.draw(window);
+    }
+}
+
+void CLANE::shiftSubObj(char UorD)
+{
+    carFac.shiftObject(UorD);
+    if (!is_oneway)
+    {
+        carFac1.shiftObject(UorD);
+    }
+}
+
+void CLANE::update(sf::RenderWindow& window)
+{
+    carFac.update(m_originX, m_originY, window);
+    if (!is_oneway)
+    {
+        carFac1.update(m_originX, m_originY + (Constants::SIZE_ROAD_Y + Constants::bias) / 2, window);
+    }
+}
+
 
 
 

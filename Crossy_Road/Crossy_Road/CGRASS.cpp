@@ -38,3 +38,15 @@ bool CGRASS::is_road()
 {
     return false;
 }
+
+void CGRASS::drawSubObj(sf::RenderWindow& window)
+{
+}
+
+void CGRASS::shiftSubObj(char UorD)
+{
+}
+
+void CGRASS::update(sf::RenderWindow& window)
+{
+}

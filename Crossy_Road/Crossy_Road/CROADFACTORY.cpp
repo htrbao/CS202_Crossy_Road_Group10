@@ -12,17 +12,18 @@ void CROADFACTORY::initRoadGame()
 
 void CROADFACTORY::shiftObject(char UorD)
 {
-	for (auto i : roadQueue)
+	for (auto it : roadQueue)
 	{
-		i->shiftObject(UorD);
+		it->shiftObject(UorD);
 	}
 }
 
 void CROADFACTORY::draw(sf::RenderWindow& window)
 {
-	for (auto i : roadQueue)
+	for (auto it : roadQueue)
 	{
-		i->draw(window);
+		it->draw(window);
+		it->drawSubObj(window);
 	}
 }
 
@@ -35,13 +36,16 @@ void CROADFACTORY::update(sf::RenderWindow& window)
 		CROAD* tmp = roadQueue.back();
 		roadQueue.pop_back();
 		delete tmp;
-		//cout << 1;
+	}
+	for (auto it : roadQueue)
+	{
+		it->update(window);
 	}
 }
 
 CROAD* CROADFACTORY::createRoad(sf::Vector2f pos, bool is_road)
 {
-	Road type = Road(rand() % LAST);
+	RoadType type = RoadType(rand() % LAST);
 	if (type == LANE)
 	{
 		bool oneway = rand() % 2;
@@ -60,7 +64,7 @@ CROAD* CROADFACTORY::createRoad(sf::Vector2f pos, bool is_road)
 CROAD* CROADFACTORY::createRoad(float index, bool is_road)
 {
 	
-	Road type = Road(rand() % LAST);
+	RoadType type = RoadType(rand() % LAST);
 	double diff = 0;
 	if (type == LANE)
 	{
