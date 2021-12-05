@@ -31,13 +31,13 @@ namespace Constants {
 	const float SIZE_ROAD_X = 40;
 	const float SIZE_ROAD_Y = 160;
 	const float HIDDEN_ROAD_X = SIZE_ROAD_X/4;
-	const float HIDDEN_ROAD_Y = SIZE_ROAD_Y * 1.5;
+	const float HIDDEN_ROAD_Y = SIZE_ROAD_Y*1.5;
 	const float bias = 12;
 	//Speed
 	const float speed = sqrt(pow((SIZE_ROAD_Y+bias)/2, 2)/(1+pow(tan(Beta),2)));
 	//Car
 	const std::string CARNAME[] = { "ambulance_","car_1_","car_2_","delivery_","deliveryFlat_","firetruck_","garbageTruck_","police_","race_","raceFuture_" };
-	const float CARSPEED[] = { 80, 50, 50, 65, 55, 60, 68, 85, 140, 160 };
+	const float CARSPEED[] = { 85, 70, 70, 75, 80, 68, 68, 85, 120, 130 };
 	const std::string CARDIR[] = { "NW" , "SE" };
 
 }

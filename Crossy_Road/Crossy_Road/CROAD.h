@@ -24,6 +24,7 @@ public:
     ~CROAD();
     //other function
     bool checkOutWindow(sf::RenderWindow& window);
+    bool checkOutWindow2(sf::RenderWindow& window);
     void draw(sf::RenderWindow& window);
     void shiftObject(char UorD);
     virtual void drawSubObj(sf::RenderWindow& window) = 0;

@@ -15,8 +15,14 @@ CROAD::~CROAD()
 
 bool CROAD::checkOutWindow(sf::RenderWindow& window)
 {
-    return (sprite.getPosition().y + objScale * Constants::SIZE_ROAD_Y) >= (Constants::SCREEN_HEIGHT + Constants::HIDDEN_ROAD_Y);
+    return (sprite.getPosition().y + objScale * Constants::SIZE_ROAD_Y) >= (Constants::SCREEN_HEIGHT + Constants::HIDDEN_ROAD_Y/2);
 }
+
+bool CROAD::checkOutWindow2(sf::RenderWindow& window)
+{
+    return (sprite.getPosition().x  <= -Constants::SCREEN_WIDTH/2);
+}
+
 
 sf::Vector2f CROAD::getPosition()
 {

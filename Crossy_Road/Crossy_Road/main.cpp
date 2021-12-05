@@ -15,9 +15,8 @@
 using namespace std;
 double CROAD::numOfRoad = 0;
 int main() {
-    srand(NULL);
+    srand((unsigned)time(0));
     sf::RenderWindow window(sf::VideoMode(Constants::SCREEN_WIDTH, Constants::SCREEN_HEIGHT), "Crossy Road");
-    
     /*sf::Texture roadTest;
     roadTest.loadFromFile("assets/graphics/road.png");
     sf::Sprite roadImageSprite;
@@ -75,6 +74,7 @@ int main() {
             //fire.shiftObject('U');
             //fire2.shiftObject('U');
             roadFac.shiftObject('U');
+
             bsn.shiftObject('U');
         }
         else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
