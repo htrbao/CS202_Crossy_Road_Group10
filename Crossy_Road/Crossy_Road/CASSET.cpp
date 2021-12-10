@@ -20,10 +20,7 @@ void CASSET::initTexture(string textureFileName, bool isPlayer) {
 
 CASSET::CASSET() {
 	//load player
-	initTexture("CAT_1_NE", 1);
-	initTexture("CAT_1_NW", 1);
-	initTexture("CAT_1_SE", 1);
-	initTexture("CAT_1_SW", 1);
+	initTexture("CAT", 1);
 	//load obstacle
 	initTexture("ambulance_NW");
 	initTexture("ambulance_SE");

@@ -152,6 +152,7 @@
     <ClCompile Include="CRBLOCK.cpp" />
     <ClCompile Include="CRCAR.cpp" />
     <ClCompile Include="CRCARFACTORY.cpp" />
+    <ClCompile Include="CRCHARACTER.cpp" />
     <ClCompile Include="CRCOIN.cpp" />
     <ClCompile Include="CROAD.cpp" />
     <ClCompile Include="CROADFACTORY.cpp" />
