@@ -8,11 +8,9 @@ CRCARFACTORY::CRCARFACTORY()
 
 void CRCARFACTORY::initCarGame(float mX, float mY, int frac)
 {
-	float i = 0;
-	while (carQueue.size() < 4)
+	while (carQueue.size() < 25)
 	{
-		carQueue.push_front(createCar(mX, mY, i, frac));
-		i -= 0.5;
+		carQueue.push_front(createCar(mX, mY, frac));
 	}
 
 }
@@ -39,38 +37,32 @@ void CRCARFACTORY::update(float mX, float mY, sf::RenderWindow& window, int frac
 	{
 		i->move(0, 0);
 	}
-	if (carQueue.empty() < 4)
+	if (carQueue.empty())
 		initCarGame(mX, mY, frac);
-	if (carQueue.front()->checkOutWindow(window))
+
+	while (!carQueue.empty() && carQueue.back()->checkOutWindow(window))
 	{
 		
-		CRCAR* tmp = carQueue.front();
-		carQueue.push_back(createCar(mX, mY, 0, frac));
-		if (carQueue.back()->checkOutWindow(window))
-		{
-			CRCAR* tmp1 = carQueue.back();
-			carQueue.pop_back();
-			delete tmp1;
-		}
-		carQueue.pop_front();
+		CRCAR* tmp = carQueue.back();
+		carQueue.pop_back();
 		delete tmp; 
 	}
 }
 
-CRCAR* CRCARFACTORY::createCar(float mX, float mY, float i, int frac)
+CRCAR* CRCARFACTORY::createCar(float mX, float mY, int frac)
 {
 	float sign = 1;
 	if (dir == LEFT)
 	{
 		sign = -1;
-		while (mX < Constants::SCREEN_WIDTH)
+		while (mX < Constants::SCREEN_WIDTH + 256)
 		{
-			mX += 60;
-			mY += 60 * tan(Constants::Alpha);
+			mX += 10;
+			mY += 10 * tan(Constants::Alpha);
 		}
 		if (!carQueue.empty())
 		{
-			while (mX < carQueue.back()->getPosition().x + 512/2)
+			while (mX  < carQueue.front()->getPosition().x + 612)
 			{
 				mX += 10;
 				mY += 10 * tan(Constants::Alpha);
@@ -79,21 +71,21 @@ CRCAR* CRCARFACTORY::createCar(float mX, float mY, float i, int frac)
 	}
 	else if (dir == RIGHT)
 	{
-		while (mX > 0)
+		while (mX  > -256)
 		{
-			mX -= 60;
-			mY -= 60 * tan(Constants::Alpha);
+			mX -= 10;
+			mY -= 10 * tan(Constants::Alpha);
 		}
 		if (!carQueue.empty())
 		{
-			while (mX > carQueue.back()->getPosition().x - 512/2)
+			while (mX  > carQueue.front()->getPosition().x - 612)
 			{
 				mX -= 10;
 				mY -= 10 * tan(Constants::Alpha);
 			}
 		}
 	}
-	return new CRCAR(Constants::CARNAME[type] + Constants::CARDIR[dir], mX - 512 * i * sign, mY - 512 * i * tan(Constants::Alpha) * sign, Constants::CARSPEED[type] * 2.5 * frac, dir * 2 - 1);
+	return new CRCAR(Constants::CARNAME[type] + Constants::CARDIR[dir], mX, mY , Constants::CARSPEED[type] * 2.5 * frac, dir * 2 - 1);
 }
 
 CRCARFACTORY::~CRCARFACTORY()

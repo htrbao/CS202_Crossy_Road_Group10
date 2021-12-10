@@ -28,7 +28,7 @@ public:
 	void shiftObject(char UorD);
 	void draw(sf::RenderWindow& window);
 	void update(float mX, float mY, sf::RenderWindow& window, int frac = 1);
-	CRCAR* createCar(float mX, float mY, float i = 1, int frac = 1);
+	CRCAR* createCar(float mX, float mY, int frac = 1);
 	~CRCARFACTORY();
 };
 
