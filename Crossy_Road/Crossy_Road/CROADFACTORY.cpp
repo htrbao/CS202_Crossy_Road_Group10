@@ -29,10 +29,17 @@ void CROADFACTORY::draw(sf::RenderWindow& window)
 
 void CROADFACTORY::update(sf::RenderWindow& window)
 {
+	if (roadQueue.front()->checkOutWindow2(window))
+	{
+		roadQueue.push_front(createRoad(roadQueue.front()->getPosition() + sf::Vector2f(100,100*tan(Constants::Alpha)), roadQueue.front()->is_road()));
+		roadQueue.front()->draw(window);
+	}
 	if (roadQueue.back()->checkOutWindow(window))
 	{
+		//roadQueue.push_front(createRoad(-roadQueue.front()->getScale()*2, roadQueue.front()->is_road()));
 		roadQueue.push_front(createRoad(roadQueue.front()->getPosition(), roadQueue.front()->is_road()));
 		roadQueue.front()->draw(window);
+		
 		CROAD* tmp = roadQueue.back();
 		roadQueue.pop_back();
 		delete tmp;
@@ -66,6 +73,10 @@ CROAD* CROADFACTORY::createRoad(float index, bool is_road)
 	
 	RoadType type = RoadType(rand() % LAST);
 	double diff = 0;
+	if (index > 4)
+	{
+		type = GRASS;
+	}
 	if (type == LANE)
 	{
 		bool oneway = rand() % 2;
