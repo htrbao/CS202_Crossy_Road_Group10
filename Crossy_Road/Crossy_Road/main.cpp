@@ -24,7 +24,7 @@ int main() {
     CRCOIN bsn("COIN_2", 1000, -160);
     //CRCAR fire("firetruck_NW", 458, 50, -1);
     //CRCAR fire2("raceFuture_SE", 123, 100, 1);
-    roadFac.initRoadGame();
+    roadFac.initRoadGame(&player);
 
     while (window.isOpen())
     {
@@ -61,7 +61,7 @@ int main() {
         window.clear();
         roadFac.draw(window);
         bsn.draw(window);
-        player.render();
+        //player.render();
         //fire2.draw(window);
         //fire.draw(window);
         

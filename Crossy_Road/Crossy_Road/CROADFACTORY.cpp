@@ -1,7 +1,8 @@
 #include "CROADFACTORY.h"
 
-void CROADFACTORY::initRoadGame()
+void CROADFACTORY::initRoadGame(CRCHARACTER* player)
 {
+	this->player = player;
 	bool is_road = false;
 	while (CROAD::getNumRoads() <= Constants::MAX_ROAD)
 	{
@@ -23,6 +24,10 @@ void CROADFACTORY::draw(sf::RenderWindow& window)
 	for (auto it : roadQueue)
 	{
 		it->draw(window);
+		if (!player->isBehindRoad(*it))
+		{
+			player->render();
+		}
 		it->drawSubObj(window);
 	}
 }
@@ -95,4 +100,14 @@ CROAD* CROADFACTORY::createRoad(float index, bool is_road)
 		diff = 0.5;
 		return new CGRASS(index - diff , is_road);
 	}
+}
+
+CROADFACTORY::~CROADFACTORY()
+{
+	for (auto it : roadQueue)
+	{
+		it->~CROAD();
+		delete it;
+	}
+		
 }

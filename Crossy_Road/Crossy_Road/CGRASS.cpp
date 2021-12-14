@@ -10,7 +10,7 @@ CGRASS::CGRASS(sf::Vector2f pos, bool above)
     else
         texture = &CASSET::GetInstance().textureMap[asset_name_grass];
 
-
+    dis = m_originY - m_originX * tan(Constants::Alpha);
     sprite.setTexture(*texture);
     sprite.setPosition(m_originX, m_originY);
 }
@@ -24,7 +24,7 @@ CGRASS::CGRASS(float index, bool above): CROAD(true)
         texture = &CASSET::GetInstance().textureMap[asset_name_grass_above];
     else
         texture = &CASSET::GetInstance().textureMap[asset_name_grass];
-
+    dis = m_originY - m_originX * tan(Constants::Alpha);
 
     sprite.setTexture(*texture);
     sprite.setPosition(m_originX, m_originY);
