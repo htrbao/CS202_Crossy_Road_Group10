@@ -13,9 +13,9 @@ CROBJECT::CROBJECT(double mX, double mY, double objScale, int direction = 1) : m
 
 void CROBJECT::shiftObject(char UorD) {
     if (UorD == 'U' || UorD == 'u')
-        sprite.move(direction * 0.0025 * speed - 0.25, direction * tan(Constants::Alpha) * 0.0025 * speed - 0.25 * tan(-Constants::Beta));
+        sprite.move(direction * 0.000625 * speed - 0.25, direction * tan(Constants::Alpha) * 0.000625 * speed - 0.25 * tan(-Constants::Beta));
     else if (UorD == 'D' || UorD == 'd')
-        sprite.move(direction * 0.0025 * speed + 0.25, direction * tan(Constants::Alpha) * 0.0025 * speed + 0.25 * tan(-Constants::Beta));
+        sprite.move(direction * 0.000625 * speed + 0.25, direction * tan(Constants::Alpha) * 0.000625 * speed + 0.25 * tan(-Constants::Beta));
 }
 
 bool CROBJECT::checkOutWindow(sf::RenderWindow& window) {
