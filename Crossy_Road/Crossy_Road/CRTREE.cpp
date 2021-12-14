@@ -6,6 +6,10 @@ CRTREE::CRTREE(string textureFileName, double x, double y, double scale) : CROBJ
 	setUpTexture();
 }
 
+int CRTREE::type() {
+	return Constants::BLOCK;
+}
+
 void CRTREE::move(double x, double y) {
 
 }

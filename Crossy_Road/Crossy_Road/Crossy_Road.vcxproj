@@ -170,6 +170,7 @@
     <ClInclude Include="CRCARFACTORY.h" />
     <ClInclude Include="CRCHARACTER.h" />
     <ClInclude Include="CRCOIN.h" />
+    <ClInclude Include="CRGUI.h" />
     <ClInclude Include="CROAD.h" />
     <ClInclude Include="Constants.h" />
     <ClInclude Include="CROBJECT.h" />

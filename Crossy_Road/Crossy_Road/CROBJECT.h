@@ -26,6 +26,7 @@ public:
 	CROBJECT(double mX, double mY, double scale, int direction);
 	void shiftObject(char UorD);
 	bool checkOutWindow(sf::RenderWindow& window);
+	virtual int type() = 0;
 	virtual void move(float x, float y);
 	virtual void draw(sf::RenderWindow& window);
 };

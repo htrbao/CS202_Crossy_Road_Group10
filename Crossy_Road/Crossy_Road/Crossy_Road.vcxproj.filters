@@ -101,5 +101,8 @@
     <ClInclude Include="CRCARFACTORY.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CRGUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

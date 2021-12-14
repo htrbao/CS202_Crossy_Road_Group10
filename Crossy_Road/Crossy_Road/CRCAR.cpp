@@ -17,6 +17,11 @@ CRCAR::CRCAR(string textureFileName, float x, float y, double speed, int directi
 	setUpTexture();
 }
 
+int CRCAR::type()
+{
+	return Constants::CAR;
+}
+
 void CRCAR::move(double x, double y) {
 	CROBJECT::move(x, y);
 }

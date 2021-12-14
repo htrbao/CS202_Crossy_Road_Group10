@@ -23,3 +23,7 @@ void CRCOIN::draw(sf::RenderWindow& window) {
 		window.draw(sprite);
 	}
 }
+
+int CRCOIN::type() {
+	return Constants::COIN;
+}

@@ -39,7 +39,10 @@ namespace Constants {
 	const std::string CARNAME[] = { "ambulance_","car_1_","car_2_","delivery_","deliveryFlat_","firetruck_","garbageTruck_","police_","race_","raceFuture_" };
 	const float CARSPEED[] = { 85, 70, 70, 75, 80, 68, 68, 85, 120, 130 };
 	const std::string CARDIR[] = { "NW" , "SE" };
-
+	//type
+	const int BLOCK = 0;
+	const int CAR = 1;
+	const int COIN = 2;
 }
 
 #endif // !CONSTANTS_H_

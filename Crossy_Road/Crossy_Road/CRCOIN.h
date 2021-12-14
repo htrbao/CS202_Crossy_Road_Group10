@@ -14,6 +14,7 @@ public:
 	CRCOIN(string textureFileName, double x, double y);
 	void move();
 	void jump();
+	int type();
 	void draw(sf::RenderWindow& window);
 };
 
