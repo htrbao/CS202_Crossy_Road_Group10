@@ -48,7 +48,11 @@ CLANE::CLANE(float index, bool one_way) : CROAD(one_way)
 
 CLANE::~CLANE()
 {
-    
+    carFac.~CRCARFACTORY();
+    if (!is_oneway)
+    {
+        carFac1.~CRCARFACTORY();
+    }
 }
 
 bool CLANE::is_road()

@@ -96,3 +96,13 @@ CROAD* CROADFACTORY::createRoad(float index, bool is_road)
 		return new CGRASS(index - diff , is_road);
 	}
 }
+
+CROADFACTORY::~CROADFACTORY()
+{
+	for (auto it : roadQueue)
+	{
+		it->~CROAD();
+		delete it;
+	}
+		
+}

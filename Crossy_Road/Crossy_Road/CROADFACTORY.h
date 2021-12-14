@@ -5,6 +5,7 @@
 
 #include "CGRASS.h"
 #include "CLANE.h"
+#include "CRCHARACTER.h"
 #include <deque>
 #include <random>
 
@@ -15,6 +16,7 @@ enum RoadType {
 class CROADFACTORY {
 private:
 	deque<CROAD*> roadQueue;
+	CRCHARACTER* player;
 public:
 
 	void initRoadGame();
@@ -24,6 +26,7 @@ public:
 	void update(sf::RenderWindow& window);
 	CROAD* createRoad(sf::Vector2f pos, bool is_road = false);
 	CROAD* createRoad(float index = 1, bool is_road = false);
+	~CROADFACTORY();
 };
 
 #endif // !CROADFACTORY_
