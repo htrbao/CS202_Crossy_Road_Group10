@@ -14,6 +14,8 @@ protected:
 
     float objScale;
 
+    float dis;
+
     sf::Texture* texture;
     sf::Sprite sprite;
 private:
@@ -31,6 +33,7 @@ public:
     virtual void shiftSubObj(char UorD) = 0;
     virtual void update(sf::RenderWindow& window) = 0;
     sf::Vector2f getPosition();
+    float getDis();
     //virtual
     virtual bool is_road() = 0;
 

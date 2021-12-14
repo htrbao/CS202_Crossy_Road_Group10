@@ -40,6 +40,8 @@ public:
 
     void update();
     void render();
+
+    bool isBehindRoad(CROAD& road);
 };
 
 #endif // !_CRCHARACTER_H_

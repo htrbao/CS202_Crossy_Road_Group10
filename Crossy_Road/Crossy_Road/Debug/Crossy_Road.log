@@ -1,1 +1,11 @@
-﻿  Crossy_Road.vcxproj -> C:\Users\acer\OneDrive\Documents\GitHub\CS202_Crossy_Road_Group10\Crossy_Road\Debug\Crossy_Road.exe
+﻿  CRCHARACTER.cpp
+C:\Users\acer\OneDrive\Documents\GitHub\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\acer\OneDrive\Documents\GitHub\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,20): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
+C:\Users\acer\OneDrive\Documents\GitHub\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCHARACTER.cpp(6,32): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\acer\OneDrive\Documents\GitHub\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCHARACTER.cpp(11,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\acer\OneDrive\Documents\GitHub\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCHARACTER.cpp(11,25): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\acer\OneDrive\Documents\GitHub\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCHARACTER.cpp(16,108): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\acer\OneDrive\Documents\GitHub\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCHARACTER.cpp(16,115): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\acer\OneDrive\Documents\GitHub\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCHARACTER.cpp(58,67): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\acer\OneDrive\Documents\GitHub\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCHARACTER.cpp(63,69): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Crossy_Road.vcxproj -> C:\Users\acer\OneDrive\Documents\GitHub\CS202_Crossy_Road_Group10\Crossy_Road\Debug\Crossy_Road.exe

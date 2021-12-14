@@ -76,3 +76,8 @@ void CRCHARACTER::render() {
 	window->draw(sprite);
 	//}
 }
+
+bool CRCHARACTER::isBehindRoad(CROAD& road)
+{
+	return mY - mX*tan(Constants::Alpha) + (WIDTH*SCALE)/2 < road.getDis();
+}

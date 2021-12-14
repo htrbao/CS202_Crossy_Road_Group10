@@ -19,7 +19,7 @@ private:
 	CRCHARACTER* player;
 public:
 
-	void initRoadGame();
+	void initRoadGame(CRCHARACTER* player);
 
 	void shiftObject(char UorD);
 	void draw(sf::RenderWindow& window);

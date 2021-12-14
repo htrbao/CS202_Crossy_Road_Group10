@@ -29,6 +29,11 @@ sf::Vector2f CROAD::getPosition()
     return sf::Vector2f(m_originX,m_originY);
 }
 
+float CROAD::getDis()
+{
+    return dis;
+}
+
 
 
 void CROAD::shiftObject(char UorD)
@@ -41,6 +46,7 @@ void CROAD::shiftObject(char UorD)
         sprite.move(0.25, -0.25 * tan(Constants::Beta));
     m_originX = sprite.getPosition().x;
     m_originY = sprite.getPosition().y;
+    dis = m_originY - m_originX * tan(Constants::Alpha);
     shiftSubObj(UorD);
     //sprite.setPosition(m_originX, m_originY);
 }
