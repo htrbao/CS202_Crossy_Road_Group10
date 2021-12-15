@@ -19,6 +19,7 @@ CLANE::CLANE(sf::Vector2f pos, bool one_way):CROAD(one_way)
     m_originX = pos.x + Constants::SIZE_ROAD_X + Constants::SIZE_ROAD_X/3;
     m_originY = pos.y - objScale * Constants::SIZE_ROAD_Y + Constants::SIZE_ROAD_X * tan(Constants::Alpha)/3;
     dis = m_originY - m_originX * tan(Constants::Alpha);
+    disOrigin = dis + Constants::HIDDEN_ROAD_Y / 1.2;
     sprite.setTexture(*texture);
     sprite.setPosition(m_originX, m_originY);
     //carFac.initCarGame(m_originX, m_originY);
@@ -41,6 +42,7 @@ CLANE::CLANE(float index, bool one_way) : CROAD(one_way)
         texture = &CASSET::GetInstance().textureMap[asset_name_road_twoway];
     }
     dis = m_originY - m_originX * tan(Constants::Alpha);
+    disOrigin = dis + Constants::HIDDEN_ROAD_Y / 1.2;
     sprite.setTexture(*texture); 
     sprite.setPosition(m_originX , m_originY);
     //carFac.initCarGame(m_originX, m_originY);

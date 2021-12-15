@@ -14,6 +14,7 @@ protected:
 
     float objScale;
 
+    float disOrigin;
     float dis;
 
     sf::Texture* texture;
