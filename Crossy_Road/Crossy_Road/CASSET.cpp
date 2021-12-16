@@ -73,4 +73,6 @@ CASSET::CASSET() {
 	initSound("POLICE");
 	initSound("GAME_SOUND");
 	initSound("JUMP");
+	initSound("BIRDS");
+	initSound("COIN");
 }

@@ -81,3 +81,8 @@ bool CRCHARACTER::isBehindRoad(CROAD& road)
 {
 	return mY - mX*tan(Constants::Alpha) + (WIDTH*SCALE)/2 < road.getDis();
 }
+
+bool CRCHARACTER::isNearRoand(CROAD& road)
+{
+	return abs((mY - mX * tan(Constants::Alpha) + (WIDTH * SCALE) / 2) - road.getDis()) <= 144.2865;
+}
