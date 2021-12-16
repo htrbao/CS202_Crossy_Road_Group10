@@ -1,104 +1,105 @@
-﻿  CGRASS.cpp
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,20): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CGRASS.cpp(13,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CGRASS.cpp(14,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CGRASS.cpp(28,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CGRASS.cpp(29,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+﻿  CASSET.cpp
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,20): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
+  CGAME.cpp
+  CGRASS.cpp
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,20): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CGRASS.cpp(13,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CGRASS.cpp(27,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   CLANE.cpp
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,20): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CLANE.cpp(20,59): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CLANE.cpp(21,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CLANE.cpp(22,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CLANE.cpp(44,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CLANE.cpp(45,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,20): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CLANE.cpp(20,59): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CLANE.cpp(21,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CLANE.cpp(43,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   CRBLOCK.cpp
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,20): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,20): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
   CRCAR.cpp
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,20): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCAR.cpp(5,16): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCAR.cpp(19,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCAR.cpp(19,17): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCAR.cpp(24,26): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,20): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCAR.cpp(5,16): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCAR.cpp(19,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCAR.cpp(19,17): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCAR.cpp(24,26): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCAR.cpp(24,22): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCAR.cpp(24,22): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
   CRCARFACTORY.cpp
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,20): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCARFACTORY.cpp(61,36): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCARFACTORY.cpp(68,37): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCARFACTORY.cpp(77,36): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCARFACTORY.cpp(84,37): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,20): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCARFACTORY.cpp(61,36): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCARFACTORY.cpp(68,37): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCARFACTORY.cpp(77,36): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCARFACTORY.cpp(84,37): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
   CRCHARACTER.cpp
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,20): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCHARACTER.cpp(6,32): warning C4305: 'initializing': truncation from 'double' to 'float'
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCHARACTER.cpp(11,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCHARACTER.cpp(11,25): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCHARACTER.cpp(16,108): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCHARACTER.cpp(16,115): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCHARACTER.cpp(58,67): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCHARACTER.cpp(63,69): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,20): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCHARACTER.cpp(6,32): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCHARACTER.cpp(11,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCHARACTER.cpp(11,25): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCHARACTER.cpp(16,108): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCHARACTER.cpp(16,115): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCHARACTER.cpp(58,67): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCHARACTER.cpp(63,69): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   CRCOIN.cpp
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,20): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCOIN.cpp(22,46): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,20): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCOIN.cpp(22,46): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   CROAD.cpp
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,20): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROAD.cpp(44,33): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROAD.cpp(48,35): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROAD.cpp(53,33): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROAD.cpp(58,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,20): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROAD.cpp(44,33): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROAD.cpp(48,33): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROAD.cpp(52,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   CROADFACTORY.cpp
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,20): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROADFACTORY.cpp(9,55): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROADFACTORY.cpp(39,90): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,20): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROADFACTORY.cpp(9,55): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROADFACTORY.cpp(20,36): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROADFACTORY.cpp(30,36): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROADFACTORY.cpp(56,90): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROADFACTORY.cpp(96,26): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROADFACTORY.cpp(101,27): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROADFACTORY.cpp(113,26): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROADFACTORY.cpp(118,27): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   CROBJECT.cpp
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,20): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(5,69): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,20): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(5,69): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
           with
           [
               T=unsigned int
           ]
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(5,43): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(5,43): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
           with
           [
               T=unsigned int
           ]
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(6,28): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(6,18): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(7,28): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(7,24): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(22,111): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(22,50): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(24,111): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(24,50): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(32,88): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(32,36): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(6,28): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(6,18): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(7,28): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(7,24): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(22,111): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(22,50): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(24,111): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(24,50): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(32,88): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(32,36): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   CRTREE.cpp
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,20): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,20): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
   main.cpp
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,20): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(37,20): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
   Generating Code...
-  Crossy_Road.vcxproj -> D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Debug\Crossy_Road.exe
+  Crossy_Road.vcxproj -> C:\Users\Dell\source\repos\CS202_Crossy_Road_Group10\Crossy_Road\Debug\Crossy_Road.exe
