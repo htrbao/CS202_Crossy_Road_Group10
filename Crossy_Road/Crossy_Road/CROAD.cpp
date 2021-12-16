@@ -42,21 +42,15 @@ void CROAD::shiftObject(char UorD)
     if (UorD == 'U' || UorD == 'u')
     {
         sprite.move(-0.25, 0.25 * tan(Constants::Beta));
-        m_originX = sprite.getPosition().x;
-        m_originY = sprite.getPosition().y;
-        if (m_originY - m_originX * tan(Constants::Alpha) > disOrigin)
-            disOrigin = m_originY - m_originX * tan(Constants::Alpha);
-        shiftSubObj(UorD);
     }
-    else if ((UorD == 'D' || UorD == 'd') && (disOrigin - dis <= Constants::HIDDEN_ROAD_Y/1.2))
+    else if (UorD == 'D' || UorD == 'd')
     {
         sprite.move(0.25, -0.25 * tan(Constants::Beta));
-        m_originX = sprite.getPosition().x;
-        m_originY = sprite.getPosition().y;
-        shiftSubObj(UorD);
     }
+    m_originX = sprite.getPosition().x;
+    m_originY = sprite.getPosition().y;
     dis = m_originY - m_originX * tan(Constants::Alpha);
-    
+    shiftSubObj(UorD); 
     //sprite.setPosition(m_originX, m_originY);
 }
 
