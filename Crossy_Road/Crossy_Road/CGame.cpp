@@ -1,16 +1,21 @@
 #include "CGAME.h"
 
 //Private function
+double CROAD::numOfRoad = 0;
 void CGAME::initializeVariable()
 {
+	srand((unsigned)time(0));
 	this->window = nullptr;
 }
 
 void CGAME::initWindow()
 {
-	this->videoMode.height = SCREEN_HEIGHT;
-	this->videoMode.width = SCREEN_WIDTH;
+	this->videoMode.height = Constants::SCREEN_HEIGHT;
+	this->videoMode.width = Constants::SCREEN_WIDTH;
 	this->window = new sf::RenderWindow(this->videoMode, "CROSSY ROAD", sf::Style::Titlebar | sf::Style::Close);
+	roadFac = new CROADFACTORY;
+	player = new CRCHARACTER(this->window, 0, 512, 350);
+	roadFac->initRoadGame(player);
 }
 
 //Constructor | Destructor
@@ -22,6 +27,8 @@ CGAME::CGAME()
 
 CGAME::~CGAME()
 {
+	delete roadFac;
+	delete player;
 	delete this->window;
 }
 
@@ -45,8 +52,30 @@ void CGAME::pollEvent()
 			if (ev.key.code == sf::Keyboard::Escape)
 				this->window->close();
 			break;
-
 		}
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
+		player->moveUp();
+		roadFac->shiftObject('U');
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
+		player->moveRight();
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+		player->moveDown();
+		roadFac->shiftObject('D');
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
+		player->moveLeft();
+	}
+}
+
+void CGAME::run()
+{
+	while (running())
+	{
+		update();
+		render();
 	}
 }
 
@@ -54,11 +83,12 @@ void CGAME::pollEvent()
 void CGAME::update()
 {
 	pollEvent();
+	roadFac->update(*this->window);
 }
 void CGAME::render()
 {
 	this->window->clear();
-
 	//draw obj
+	roadFac->draw(*this->window);
 	this->window->display();
 }
