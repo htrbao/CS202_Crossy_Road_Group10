@@ -20,7 +20,7 @@ int main() {
     sf::RenderWindow window(sf::VideoMode(Constants::SCREEN_WIDTH, Constants::SCREEN_HEIGHT), "Crossy Road");
 
     CROADFACTORY roadFac;
-    CRCHARACTER player(&window, 1, 512, 350);
+    CRCHARACTER player(&window, 0, 512, 350);
     CRCOIN bsn("COIN_2", 1000, -160);
     //CRCAR fire("firetruck_NW", 458, 50, -1);
     //CRCAR fire2("raceFuture_SE", 123, 100, 1);

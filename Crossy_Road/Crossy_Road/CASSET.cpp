@@ -1,7 +1,7 @@
 #include "CASSET.h"
 
 void CASSET::initSound(string soundFileName) {
-	if (!soundMap[soundFileName].loadFromFile("assets/sound/" + soundFileName + ".mp3")) {
+	if (!soundMap[soundFileName].loadFromFile("assets/sounds/" + soundFileName + ".wav")) {
 		cout << "Cannot load assets/sound/" << soundFileName << ".wav\n";
 		return;
 	}
@@ -71,5 +71,6 @@ CASSET::CASSET() {
 	initSound("CAR_LARGE");
 	initSound("CAR_SMALL");
 	initSound("POLICE");
-
+	initSound("GAME_SOUND");
+	initSound("JUMP");
 }

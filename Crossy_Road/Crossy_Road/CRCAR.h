@@ -7,8 +7,7 @@
 class CRCAR : public CROBJECT {
 private:
 public:
-	CRCAR(string textureFileName, double y, double speed, int direction);
-	CRCAR(string textureFileName, float x, float y, double speed, int direction);
+	CRCAR(string textureFileName, string soundFileName, float x, float y, double speed, int direction);
 	int type();
 	void move(double x, double y);
 	sf::Vector2f getPosition();
