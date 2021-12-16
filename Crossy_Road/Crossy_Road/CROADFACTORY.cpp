@@ -78,7 +78,7 @@ CROAD* CROADFACTORY::createRoad(float index, bool is_road)
 	
 	RoadType type = RoadType(rand() % LAST);
 	double diff = 0;
-	if (index > 2)
+	if (index > 1)
 	{
 		type = GRASS;
 	}
