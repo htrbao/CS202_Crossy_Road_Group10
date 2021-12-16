@@ -2,6 +2,7 @@
 
 #define CRCARFACTORY_
 
+#include "CROBJECT.h"
 #include "CRCAR.h"
 
 #include <deque>
@@ -13,8 +14,6 @@ enum CarType {
 enum CarDir {
 	LEFT, RIGHT, LASTDIR
 };
-
-
 
 class CRCARFACTORY
 {

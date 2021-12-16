@@ -6,9 +6,7 @@
 #include "CASSET.h"
 #include "Constants.h"
 
-class CLANE :
-    public CROAD
-{
+class CLANE : public CROAD {
 private:
     const string asset_name_road_twoway = "LANE_N";
     const string asset_name_road_oneway = "LANE2_N";
@@ -29,8 +27,6 @@ public:
     void drawSubObj(sf::RenderWindow& window);
     void shiftSubObj(char UorD);
     void update(sf::RenderWindow& window);
-
-
 };
 
 

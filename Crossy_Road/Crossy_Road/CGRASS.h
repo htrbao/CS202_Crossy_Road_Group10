@@ -3,8 +3,8 @@
 #define CRGASS_
 
 #include "CROAD.h"
-class CGRASS :
-    public CROAD
+
+class CGRASS : public CROAD
 {
 private:
     const string asset_name_grass = "GRASS2";

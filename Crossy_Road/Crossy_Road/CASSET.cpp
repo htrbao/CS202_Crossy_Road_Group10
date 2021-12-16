@@ -71,5 +71,6 @@ CASSET::CASSET() {
 	initSound("CAR_LARGE");
 	initSound("CAR_SMALL");
 	initSound("POLICE");
-
+	initSound("BLCK_SOUND");
+	initSound("JUMP");
 }

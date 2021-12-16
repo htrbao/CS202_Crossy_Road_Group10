@@ -2,7 +2,7 @@
 
 #define CROADFACTORY_
 
-
+#include "CROAD.h"
 #include "CGRASS.h"
 #include "CLANE.h"
 #include "CRCHARACTER.h"

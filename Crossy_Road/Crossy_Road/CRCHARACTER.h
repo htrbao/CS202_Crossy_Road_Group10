@@ -2,14 +2,16 @@
 
 #define _CRCHARACTER_H_
 
-#include "CASSET.h"
+#include "CROAD.h"
+#include "CGRASS.h"
 #include "CLANE.h"
+#include "CASSET.h"
 #include "CROBJECT.h"
 
 class CRCHARACTER {
 private:
     friend class CGAME;
-    friend class CLANE;
+    friend class CROAD;
     friend class CROBJECT;
 
     float mX, mY;

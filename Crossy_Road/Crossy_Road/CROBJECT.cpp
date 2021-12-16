@@ -22,13 +22,39 @@ bool CROBJECT::checkOutWindow(sf::RenderWindow& window) {
     return (direction == 1 && (sprite.getPosition().x >= window.getSize().x + 100 || sprite.getPosition().y >= window.getSize().y + 100)) || (direction == -1 && (sprite.getPosition().x <= -100 || sprite.getPosition().y <= -100));
 }
 
+//bool CROBJECT::checkCollision(CRCHARACTER*& player) {
+//    //if (!player) return false;
+//    //cout << player->mX;
+//    //return player->sprite.getGlobalBounds().intersects(this->sprite.getGlobalBounds());
+//    return true;
+//}
+
+//bool CROBJECT::checkClose(CRCHARACTER*& player) {
+//    return true;// ((mX - player->mX) * (mX - player->mX) + (mY - player->mY) * (mY - player->mY) < 400000);
+//}
+
 void CROBJECT::move(float x, float y) {
     sprite.move(direction * 0.0025 * speed, direction * tan(Constants::Alpha) * 0.0025 * speed);
 }
 
 void CROBJECT::draw(sf::RenderWindow& window) {
-    //if (checkOutWindow(window) == 0) {
+    if (checkOutWindow(window) == 0) {
         //cout << "Object::drawing\n";
-    //}
-    window.draw(sprite);
+        window.draw(sprite);
+    }
 }
+
+//void CROBJECT::setupSound() {
+//    /*if (!buffer.loadFromFile(soundFile)) {
+//        cout << "Cannot load " << soundFile << " from object\n";
+//        return;
+//    }*/
+//    buffer = &CASSET::GetInstance().soundMap[soundFilename];
+//    sound.setBuffer(*buffer);
+//    sound.setVolume(100);
+//    sound.setLoop(false);
+//}
+//
+//void CROBJECT::playSound() {
+//    sound.play();
+//}
