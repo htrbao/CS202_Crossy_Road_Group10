@@ -9,14 +9,31 @@ void CROADFACTORY::initRoadGame(CRCHARACTER* player)
 		roadQueue.push_front(createRoad(Constants::MAX_ROAD - CROAD::getNumRoads(),is_road));
 		is_road = roadQueue.front()->is_road();
 	}
+	mY = 0;
+	mY_Origin = Constants::HIDDEN_ROAD_Y / 1.2;
 }
 
 void CROADFACTORY::shiftObject(char UorD)
 {
-	for (auto it : roadQueue)
+	if (UorD == 'U' || UorD == 'u')
 	{
-		it->shiftObject(UorD);
+		mY += 0.25 * tan(Constants::Beta);
+		if (mY > mY_Origin)
+			mY_Origin = mY;
+		for (auto it : roadQueue)
+		{
+			it->shiftObject(UorD);
+		}
 	}
+	else if ((UorD == 'D' || UorD == 'd') && ((mY_Origin - mY) <= Constants::HIDDEN_ROAD_Y / 1.2))
+	{
+		mY -= 0.25 * tan(Constants::Beta);
+		for (auto it : roadQueue)
+		{
+			it->shiftObject(UorD);
+		}
+	}
+
 }
 
 void CROADFACTORY::draw(sf::RenderWindow& window)

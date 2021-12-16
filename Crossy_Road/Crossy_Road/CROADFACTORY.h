@@ -17,6 +17,8 @@ class CROADFACTORY {
 private:
 	deque<CROAD*> roadQueue;
 	CRCHARACTER* player;
+	float mY;
+	float mY_Origin;
 public:
 
 	void initRoadGame(CRCHARACTER* player);
