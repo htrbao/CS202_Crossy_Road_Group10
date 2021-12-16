@@ -41,11 +41,11 @@ void CROAD::shiftObject(char UorD)
 
     if (UorD == 'U' || UorD == 'u')
     {
-        sprite.move(-0.25, 0.25 * tan(Constants::Beta));
+        sprite.move(-Constants::shiftVelocityX, Constants::shiftVelocityX * tan(Constants::Beta));
     }
     else if (UorD == 'D' || UorD == 'd')
     {
-        sprite.move(0.25, -0.25 * tan(Constants::Beta));
+        sprite.move(Constants::shiftVelocityX, -Constants::shiftVelocityX * tan(Constants::Beta));
     }
     m_originX = sprite.getPosition().x;
     m_originY = sprite.getPosition().y;

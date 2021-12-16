@@ -21,7 +21,8 @@ namespace Constants {
 	const double Alpha = 27 * PI / 180.0;
 	const double Beta = 63 * PI / 180.0;
 	//velocity
-	const double basicVelocityX = 0.5;
+	const float basicVelocityX = 0.0140625;
+	const float shiftVelocityX = 1.5;
 	// with Y i have formula to calculate it in CROBJECT.
 	//Vehical
 	const double positionXofVehical_SE = -30.0;

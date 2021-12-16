@@ -15,8 +15,6 @@
 #include "CRCOIN.h"
 #include "CRCHARACTER.h"
 
-
-
 class CGAME
 {
 private:
@@ -25,6 +23,10 @@ private:
 	sf::RenderWindow* window;
 	sf::Event ev;
 	sf::VideoMode videoMode;
+
+	//Game sound
+	sf::SoundBuffer* gameBuffer;
+	sf::Sound gameSound;
 
 	//Game obj
 	CROADFACTORY* roadFac;

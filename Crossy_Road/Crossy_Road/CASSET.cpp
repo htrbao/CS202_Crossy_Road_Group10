@@ -68,6 +68,7 @@ CASSET::CASSET() {
 	initTexture("TREEPINE");
 	initTexture("TREESNOW");
 	//sound
+	initSound("CROSSY");
 	initSound("CAR_LARGE");
 	initSound("CAR_SMALL");
 	initSound("POLICE");

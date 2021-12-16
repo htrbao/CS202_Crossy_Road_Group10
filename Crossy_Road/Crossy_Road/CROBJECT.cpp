@@ -13,9 +13,9 @@ CROBJECT::CROBJECT(double mX, double mY, double objScale, int direction = 1) : m
 
 void CROBJECT::shiftObject(char UorD) {
     if (UorD == 'U' || UorD == 'u')
-        sprite.move(direction * 0.000625 * speed - 0.25, direction * tan(Constants::Alpha) * 0.000625 * speed - 0.25 * tan(-Constants::Beta));
+        sprite.move(direction * 0.000625 * speed - Constants::shiftVelocityX, direction * tan(Constants::Alpha) * 0.000625 * speed - Constants::shiftVelocityX * tan(-Constants::Beta));
     else if (UorD == 'D' || UorD == 'd')
-        sprite.move(direction * 0.000625 * speed + 0.25, direction * tan(Constants::Alpha) * 0.000625 * speed + 0.25 * tan(-Constants::Beta));
+        sprite.move(direction * 0.000625 * speed + Constants::shiftVelocityX, direction * tan(Constants::Alpha) * 0.000625 * speed + Constants::shiftVelocityX * tan(-Constants::Beta));
 }
 
 bool CROBJECT::checkOutWindow(sf::RenderWindow& window) {
@@ -23,7 +23,7 @@ bool CROBJECT::checkOutWindow(sf::RenderWindow& window) {
 }
 
 void CROBJECT::move(float x, float y) {
-    sprite.move(direction * 0.0025 * speed, direction * tan(Constants::Alpha) * 0.0025 * speed);
+    sprite.move(direction * Constants::basicVelocityX * speed, direction * tan(Constants::Alpha) * Constants::basicVelocityX * speed);
 }
 
 void CROBJECT::draw(sf::RenderWindow& window) {

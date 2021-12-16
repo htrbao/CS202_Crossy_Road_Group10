@@ -66,13 +66,13 @@ void CRCHARACTER::moveUp() {
 void CRCHARACTER::moveRight() {
 	//side = RIGHT;
 	sound.play();
-	sprite.move(1 * 0.003125 * 250, 1 * tan(Constants::Alpha) * 0.003125 * 250);
+	sprite.move(1 * 0.021875 * 250, 1 * tan(Constants::Alpha) * 0.021875 * 250);
 	if (side != RIGHT) setSide(RIGHT);
 }
 
 void CRCHARACTER::moveLeft() {
 	sound.play();
-	sprite.move(-1 * 0.003125 * 250, -1 * tan(Constants::Alpha) * 0.003125 * 250);
+	sprite.move(-1 * 0.021875 * 250, -1 * tan(Constants::Alpha) * 0.021875 * 250);
 	//side = LEFT;
 	if(side != LEFT) setSide(LEFT);
 }
