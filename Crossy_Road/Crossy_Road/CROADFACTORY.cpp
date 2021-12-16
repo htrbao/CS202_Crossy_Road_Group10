@@ -69,6 +69,10 @@ void CROADFACTORY::update(sf::RenderWindow& window)
 	for (auto it : roadQueue)
 	{
 		it->update(window);
+		if (player->isNearRoand(*it))
+		{
+			
+		}
 	}
 }
 
