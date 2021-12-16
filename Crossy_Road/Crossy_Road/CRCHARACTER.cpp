@@ -13,8 +13,16 @@ void CRCHARACTER::initTexture() {
 	sprite.scale(SCALE, SCALE);
 }
 
+void CRCHARACTER::initSound() {
+	buffer = &CASSET::GetInstance().soundMap["JUMP"];
+	sound.setBuffer(*buffer);
+	sound.setVolume(100);
+	sound.setLoop(false);
+}
+
 CRCHARACTER::CRCHARACTER(sf::RenderWindow* window, int side, int x, int y) : window(window), side(side), mX(x), mY(y) {
 	initTexture();
+	initSound();
 	setSide(side);
 }
 
@@ -45,24 +53,28 @@ bool CRCHARACTER::canMoveLeft()
 }
 
 void CRCHARACTER::moveDown() {
-	setSide(DOWN);
+	sound.play();
+	if (side != DOWN) setSide(DOWN);
 }
 
 void CRCHARACTER::moveUp() {
+	sound.play();
 	//side = UP;
-	setSide(UP);
+	if (side != UP) setSide(UP);
 }
 
 void CRCHARACTER::moveRight() {
 	//side = RIGHT;
-	sprite.move(1 * 0.0025 * 250, 1 * tan(Constants::Alpha) * 0.0025 * 250);
-	setSide(RIGHT);
+	sound.play();
+	sprite.move(1 * 0.003125 * 250, 1 * tan(Constants::Alpha) * 0.003125 * 250);
+	if (side != RIGHT) setSide(RIGHT);
 }
 
 void CRCHARACTER::moveLeft() {
-	sprite.move(-1 * 0.0025 * 250, -1 * tan(Constants::Alpha) * 0.0025 * 250);
+	sound.play();
+	sprite.move(-1 * 0.003125 * 250, -1 * tan(Constants::Alpha) * 0.003125 * 250);
 	//side = LEFT;
-	setSide(LEFT);
+	if(side != LEFT) setSide(LEFT);
 }
 
 void CRCHARACTER::update()

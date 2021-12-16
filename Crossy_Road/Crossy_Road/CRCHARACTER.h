@@ -15,11 +15,16 @@ private:
     float mX, mY;
     int side;
 
+    sf::SoundBuffer* buffer;
+    sf::Sound sound;
+
     sf::Texture* textureSheet;
     sf::Texture* dieTexture;
+
     sf::Sprite sprite;
     sf::RenderWindow* window;
     void initTexture();
+    void initSound();
 public:
     static int UP, RIGHT, DOWN, LEFT;
     static int WIDTH, HEIGHT;

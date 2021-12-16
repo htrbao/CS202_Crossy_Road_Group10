@@ -15,6 +15,7 @@
 
 using namespace std;
 double CROAD::numOfRoad = 0;
+
 int main() {
     srand((unsigned)time(0));
     sf::RenderWindow window(sf::VideoMode(Constants::SCREEN_WIDTH, Constants::SCREEN_HEIGHT), "Crossy Road");
