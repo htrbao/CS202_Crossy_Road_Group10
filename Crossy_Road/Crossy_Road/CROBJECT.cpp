@@ -7,13 +7,7 @@ void CROBJECT::setUpTexture() {
     sprite.setPosition(mX, mY);
 }
 
-void CROBJECT::setUpSound() {
-    sound.setBuffer(*buffer);
-    sound.setVolume(100);
-    sound.setLoop(false);
-}
-
-CROBJECT::CROBJECT(double mX, double mY, double scale) : mX(mX), mY(mY), objScale(scale), direction(0), speed(0) {}
+CROBJECT::CROBJECT(double mX, double mY, double scale) : mX(mX), mY(mY), objScale(scale), direction(0), speed(0){}
 
 CROBJECT::CROBJECT(double mX, double mY, double objScale, int direction = 1) : mX(mX), mY(mY), objScale(objScale), direction(direction), speed(0) {}
 
@@ -33,8 +27,8 @@ void CROBJECT::move(float x, float y) {
 }
 
 void CROBJECT::draw(sf::RenderWindow& window) {
-    //if (checkOutWindow(window) == 0) {
+    if (checkOutWindow(window) == 0) {
         //cout << "Object::drawing\n";
-    //}
-    window.draw(sprite);
+        window.draw(sprite);
+    }
 }

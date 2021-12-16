@@ -1,13 +1,11 @@
 #include "CRCAR.h"
 
-CRCAR::CRCAR(string textureFileName, string soundFileName, float x, float y, double speed, int direction) : CROBJECT(x, y, 1, direction)
+CRCAR::CRCAR(string textureFileName, float x, float y, double speed, int direction) : CROBJECT(x, y, 1, direction)
 {
 	this->speed = speed;
 
 	texture = &CASSET::GetInstance().textureMap[textureFileName];
-	buffer = &CASSET::GetInstance().soundMap[soundFileName];
 	setUpTexture();
-	setUpSound();
 }
 
 int CRCAR::type()

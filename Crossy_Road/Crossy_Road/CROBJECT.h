@@ -20,13 +20,7 @@ protected:
 	sf::Texture* texture;
 	sf::Sprite sprite;
 
-	bool isSoundPlay = false;
-
-	sf::SoundBuffer* buffer;
-	sf::Sound sound;
-
 	void setUpTexture();
-	void setUpSound();
 public:
 	CROBJECT(double mX, double mY, double scale);
 	CROBJECT(double mX, double mY, double scale, int direction);
