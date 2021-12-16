@@ -7,10 +7,15 @@
 #include <SFML/Audio.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/Network.hpp>
+#include "Constants.h"
+#include "CRCAR.h"
+#include "CROADFACTORY.h"
+#include "CRBLOCK.h"
+#include "CRTREE.h"
+#include "CRCOIN.h"
+#include "CRCHARACTER.h"
 
 
-#define SCREEN_WIDTH 473
-#define SCREEN_HEIGHT 957
 
 class CGAME
 {
@@ -22,6 +27,8 @@ private:
 	sf::VideoMode videoMode;
 
 	//Game obj
+	CROADFACTORY* roadFac;
+	CRCHARACTER* player;
 
 	//Private function
 	void initializeVariable();
@@ -39,6 +46,7 @@ public:
 	void pollEvent();
 	void update();
 	void render();
+	void run();
 };
 
 
