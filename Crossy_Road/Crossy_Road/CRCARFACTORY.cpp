@@ -85,7 +85,7 @@ CRCAR* CRCARFACTORY::createCar(float mX, float mY, int frac)
 			}
 		}
 	}
-	return new CRCAR(Constants::CARNAME[type] + Constants::CARDIR[dir], "CAR_SMALL", mX, mY , Constants::CARSPEED[type] * 2.5 * frac, dir * 2 - 1);
+	return new CRCAR(Constants::CARNAME[type] + Constants::CARDIR[dir], mX, mY , Constants::CARSPEED[type] * 2.5 * frac, dir * 2 - 1);
 }
 
 CRCARFACTORY::~CRCARFACTORY()
