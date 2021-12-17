@@ -78,8 +78,6 @@ void CGAME::run()
 {
 	while (running())
 	{
-		player->moveUp();
-		roadFac->shiftObject('U');
 		update();
 		render();
 	}
