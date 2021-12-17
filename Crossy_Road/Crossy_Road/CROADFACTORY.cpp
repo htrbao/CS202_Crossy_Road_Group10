@@ -11,13 +11,14 @@ void CROADFACTORY::initRoadGame(CRCHARACTER* player)
 	}
 	mY = 0;
 	mY_Origin = Constants::HIDDEN_ROAD_Y / 1.2;
+	meter = -11;
 }
 
 void CROADFACTORY::shiftObject(char UorD)
 {
 	if (UorD == 'U' || UorD == 'u')
 	{
-		mY += 0.25 * tan(Constants::Beta);
+		mY += Constants::shiftVelocityX * tan(Constants::Beta);
 		if (mY > mY_Origin)
 			mY_Origin = mY;
 		for (auto it : roadQueue)
@@ -27,7 +28,7 @@ void CROADFACTORY::shiftObject(char UorD)
 	}
 	else if ((UorD == 'D' || UorD == 'd') && ((mY_Origin - mY) <= Constants::HIDDEN_ROAD_Y / 1.2))
 	{
-		mY -= 0.25 * tan(Constants::Beta);
+		mY -= Constants::shiftVelocityX * tan(Constants::Beta);
 		for (auto it : roadQueue)
 		{
 			it->shiftObject(UorD);
@@ -53,7 +54,7 @@ void CROADFACTORY::update(sf::RenderWindow& window)
 {
 	if (roadQueue.front()->checkOutWindow2(window))
 	{
-		roadQueue.push_front(createRoad(roadQueue.front()->getPosition() + sf::Vector2f(100,100*tan(Constants::Alpha)), roadQueue.front()->is_road()));
+		roadQueue.push_front(createRoad(roadQueue.front()->getPosition() + sf::Vector2f(60,60*tan(Constants::Alpha)), roadQueue.front()->is_road()));
 		roadQueue.front()->draw(window);
 	}
 	if (roadQueue.back()->checkOutWindow(window))
@@ -64,7 +65,10 @@ void CROADFACTORY::update(sf::RenderWindow& window)
 		
 		CROAD* tmp = roadQueue.back();
 		roadQueue.pop_back();
+		tmp->~CROAD();
 		delete tmp;
+		meter++;
+		cout << meter << endl;
 	}
 	for (auto it : roadQueue)
 	{

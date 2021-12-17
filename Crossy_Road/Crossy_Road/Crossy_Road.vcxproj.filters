@@ -57,6 +57,9 @@
     <ClCompile Include="CRCHARACTER.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CRBLOCKFACTORY.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CROBJECT.h">
@@ -102,6 +105,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CRGUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CRBLOCKFACTORY.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -15,8 +15,7 @@ private:
     const float scale = 1;
     const float half_scale = 0.5;
     bool is_oneway;
-    CRCARFACTORY carFac;
-    CRCARFACTORY carFac1;
+
 
 public:
     //constructor | destructor
@@ -29,7 +28,6 @@ public:
     void drawSubObj(sf::RenderWindow& window);
     void shiftSubObj(char UorD);
     void update(sf::RenderWindow& window);
-
 
 };
 

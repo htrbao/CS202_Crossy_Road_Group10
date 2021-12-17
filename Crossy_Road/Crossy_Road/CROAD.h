@@ -5,6 +5,7 @@
 #include "Constants.h"
 #include "CASSET.h"
 #include "CRCARFACTORY.h"
+#include "CRBLOCKFACTORY.h"
 
 class CROAD
 {
@@ -19,6 +20,9 @@ protected:
 
     sf::Texture* texture;
     sf::Sprite sprite;
+    CRCARFACTORY carFac;
+    CRCARFACTORY carFac1;
+    CRBLOCKFACTORY blcFac;
 private:
     static double numOfRoad;
 public:
@@ -37,6 +41,7 @@ public:
     float getDis();
     //virtual
     virtual bool is_road() = 0;
+
 
     //get total lane
     static double getNumRoads();

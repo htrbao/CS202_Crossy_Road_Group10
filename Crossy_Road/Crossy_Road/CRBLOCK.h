@@ -1,6 +1,6 @@
 #ifndef _CRBLOCK_H_
 
-#define _CR_BLOCK_H_
+#define _CRBLOCK_H_
 
 #include "CASSET.h"
 #include "CROBJECT.h"

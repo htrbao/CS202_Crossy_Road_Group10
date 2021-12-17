@@ -32,3 +32,8 @@ void CROBJECT::draw(sf::RenderWindow& window) {
         window.draw(sprite);
     }
 }
+
+sf::Vector2f CROBJECT::getPos()
+{
+    return sf::Vector2f(mX, mY);
+}

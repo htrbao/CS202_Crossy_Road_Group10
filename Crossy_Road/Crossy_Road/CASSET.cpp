@@ -65,8 +65,8 @@ CASSET::CASSET() {
 	initTexture("COIN_2");
 	//tree
 	initTexture("TREE");
-	initTexture("TREEPINE");
 	initTexture("TREESNOW");
+	initTexture("TREEPINE");
 	//sound
 	initSound("CROSSY");
 	initSound("CAR_LARGE");

@@ -19,6 +19,7 @@ private:
 	CRCHARACTER* player;
 	float mY;
 	float mY_Origin;
+	int meter;
 public:
 
 	void initRoadGame(CRCHARACTER* player);
