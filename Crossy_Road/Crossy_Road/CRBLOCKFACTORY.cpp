@@ -54,7 +54,14 @@ CROBJECT* CRBLOCKFACTORY::createObj(float dis, float i, bool init)
 		type = 10 + rand() % 3;
 	dis -= 12;
 	int gap = (rand() % 400 + rand() % 500 + 256);
-	float mX = i * gap + Constants::SCREEN_WIDTH/2;
+	float mX = i * gap + Constants::SCREEN_WIDTH / 2;
+	if (!objQueue.empty())
+	{
+		while (abs(mX - objQueue.back()->getPos().x) <= 300)
+		{
+			mX += 5;
+		}
+	}
 	float mY = mX * tan(Constants::Alpha) + dis;
 	if (type > 1)
 		return new CRBLOCK(Constants::BLOCKNAME[type], mX, mY);

@@ -29,6 +29,7 @@ public:
 	virtual int type() = 0;
 	virtual void move(float x, float y);
 	virtual void draw(sf::RenderWindow& window);
+	sf::Vector2f getPos();
 };
 
 #endif // !_CROBJECT_H_

@@ -13,6 +13,7 @@ CGRASS::CGRASS(sf::Vector2f pos, bool above)
     dis = m_originY - m_originX * tan(Constants::Alpha);
     sprite.setTexture(*texture);
     sprite.setPosition(m_originX, m_originY);
+    blcFac.initObjGame(dis);
 }
 
 CGRASS::CGRASS(float index, bool above): CROAD(true)
@@ -27,10 +28,12 @@ CGRASS::CGRASS(float index, bool above): CROAD(true)
     dis = m_originY - m_originX * tan(Constants::Alpha);
     sprite.setTexture(*texture);
     sprite.setPosition(m_originX, m_originY);
+    blcFac.initObjGame(dis,true);
 }
 
 CGRASS::~CGRASS()
 {
+    blcFac.~CRBLOCKFACTORY();
 }
 
 bool CGRASS::is_road()
@@ -40,12 +43,16 @@ bool CGRASS::is_road()
 
 void CGRASS::drawSubObj(sf::RenderWindow& window)
 {
+    blcFac.draw(window);
 }
 
 void CGRASS::shiftSubObj(char UorD)
 {
+    blcFac.shiftObject(UorD);
 }
 
 void CGRASS::update(sf::RenderWindow& window)
 {
+    blcFac.update(window);
 }
+

@@ -150,6 +150,7 @@
     <ClCompile Include="CGRASS.cpp" />
     <ClCompile Include="CLANE.cpp" />
     <ClCompile Include="CRBLOCK.cpp" />
+    <ClCompile Include="CRBLOCKFACTORY.cpp" />
     <ClCompile Include="CRCAR.cpp" />
     <ClCompile Include="CRCARFACTORY.cpp" />
     <ClCompile Include="CRCHARACTER.cpp" />
@@ -166,6 +167,7 @@
     <ClInclude Include="CGRASS.h" />
     <ClInclude Include="CLANE.h" />
     <ClInclude Include="CRBLOCK.h" />
+    <ClInclude Include="CRBLOCKFACTORY.h" />
     <ClInclude Include="CRCAR.h" />
     <ClInclude Include="CRCARFACTORY.h" />
     <ClInclude Include="CRCHARACTER.h" />

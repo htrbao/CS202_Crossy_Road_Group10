@@ -11,6 +11,9 @@ CROAD::CROAD(bool half_scale) {
 CROAD::~CROAD()
 {
     numOfRoad-= objScale;
+    carFac.~CRCARFACTORY();
+    carFac1.~CRCARFACTORY();
+    blcFac.~CRBLOCKFACTORY();
 }
 
 bool CROAD::checkOutWindow(sf::RenderWindow& window)
