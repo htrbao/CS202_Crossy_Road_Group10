@@ -12,14 +12,14 @@ void CRCOIN::move() {
 }
 
 void CRCOIN::jump() {
-	jump_coeff %= 500;
+	jump_coeff %= 400;
 	jump_coeff++;
 }
 
 void CRCOIN::draw(sf::RenderWindow& window) {
 	jump();
 	if (checkOutWindow(window) == 0) {
-		sprite.move(0, (jump_coeff < 400 ? -1 : 4) / 25.0);
+		sprite.move(0, (jump_coeff < 100 ? -3 : 1) / 6.0);
 		window.draw(sprite);
 	}
 }
