@@ -23,7 +23,7 @@ bool CROAD::checkOutWindow(sf::RenderWindow& window)
 
 bool CROAD::checkOutWindow2(sf::RenderWindow& window)
 {
-    return (sprite.getPosition().x  <= -Constants::SCREEN_WIDTH/2);
+    return (sprite.getPosition().x  <= 500);
 }
 
 

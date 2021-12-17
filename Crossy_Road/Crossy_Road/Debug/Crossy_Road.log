@@ -1,24 +1,8 @@
-﻿  CROBJECT.cpp
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(24,40): warning C4305: 'initializing': truncation from 'double' to 'float'
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(38,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(38,20): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(5,69): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(5,43): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(6,28): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(6,18): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(7,28): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(7,24): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(16,132): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(16,50): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(18,132): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(18,50): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CROBJECT.cpp(26,126): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  Crossy_Road.vcxproj -> D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Debug\Crossy_Road.exe
+﻿  CRBLOCKFACTORY.cpp
+C:\Users\acer\OneDrive\Documents\GitHub\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(24,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\acer\OneDrive\Documents\GitHub\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(38,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\acer\OneDrive\Documents\GitHub\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(38,20): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
+C:\Users\acer\OneDrive\Documents\GitHub\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRBLOCKFACTORY.cpp(67,67): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\acer\OneDrive\Documents\GitHub\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRBLOCKFACTORY.cpp(85,48): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\acer\OneDrive\Documents\GitHub\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRBLOCKFACTORY.cpp(90,82): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+  Crossy_Road.vcxproj -> C:\Users\acer\OneDrive\Documents\GitHub\CS202_Crossy_Road_Group10\Crossy_Road\Debug\Crossy_Road.exe

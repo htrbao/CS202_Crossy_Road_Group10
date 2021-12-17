@@ -18,6 +18,7 @@ private:
 	deque<CROAD*> roadQueue;
 	CRCHARACTER* player;
 	float mY;
+	float mX;
 	float mY_Origin;
 	int meter;
 public:

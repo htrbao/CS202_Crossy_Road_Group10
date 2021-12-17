@@ -13,7 +13,7 @@ CGRASS::CGRASS(sf::Vector2f pos, bool above)
     dis = m_originY - m_originX * tan(Constants::Alpha);
     sprite.setTexture(*texture);
     sprite.setPosition(m_originX, m_originY);
-    blcFac.initObjGame(dis);
+    blcFac.initObjGame(m_originX, m_originY);
 }
 
 CGRASS::CGRASS(float index, bool above): CROAD(true)
@@ -28,7 +28,7 @@ CGRASS::CGRASS(float index, bool above): CROAD(true)
     dis = m_originY - m_originX * tan(Constants::Alpha);
     sprite.setTexture(*texture);
     sprite.setPosition(m_originX, m_originY);
-    blcFac.initObjGame(dis,true);
+    blcFac.initObjGame(m_originX, m_originY,true);
 }
 
 CGRASS::~CGRASS()
