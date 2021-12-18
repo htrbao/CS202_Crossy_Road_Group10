@@ -29,6 +29,8 @@ public:
     void shiftSubObj(char UorD);
     void update(sf::RenderWindow& window);
     int typeSound();
+    int typeSound2();
+    bool isHighway();
 };
 
 

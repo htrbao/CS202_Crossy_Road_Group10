@@ -1,5 +1,28 @@
 #include "CROADFACTORY.h"
 
+
+void CROADFACTORY::processSoundQ(CROAD& it, int val)
+{
+	sf::Sound tmp = sf::Sound(CASSET::GetInstance().soundMap[Constants::SOUNDNAME[val]]);
+	
+	if (val == 3)
+		tmp.setVolume(2);
+	else if (val == 2)
+	{
+		tmp.setVolume(50);
+	}
+	else if (val == 1)
+	{
+		tmp.setVolume(50);
+	}
+	else
+	{
+		tmp.setVolume(8);
+	}
+	soundQueue.push(tmp);
+	soundQueue.back().play();
+}
+
 void CROADFACTORY::initRoadGame(CRCHARACTER* player)
 {
 	this->player = player;
@@ -137,17 +160,14 @@ void CROADFACTORY::addSound(CROAD& it)
 	int val = it.typeSound();
 	if (val != -1)
 	{
-		cout << val << endl;
-		sf::Sound tmp = sf::Sound(CASSET::GetInstance().soundMap[Constants::SOUNDNAME[val]]);
-		tmp.setVolume(10);
-		if (val == 3)
-			tmp.setVolume(2);
-		soundQueue.push(tmp);
-		soundQueue.back().play();
+		processSoundQ(it, val);
+		it.setPlaying();
+		if (it.isHighway())
+			processSoundQ(it, it.typeSound2());
+		it.setPlaying2();
 		if (soundQueue.front().getStatus() == sf::SoundSource::Stopped)
 		{
 			soundQueue.pop();
-			it.setPlaying();
 		}
 	}
 }

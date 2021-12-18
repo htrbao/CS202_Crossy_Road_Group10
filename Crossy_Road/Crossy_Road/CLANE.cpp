@@ -91,13 +91,23 @@ int CLANE::typeSound()
 {
     if (!playing) 
     {
-        playing = true;
-        if (carFac.typeSound() == 2 || carFac1.typeSound() == 2)
-            return 2;
-        else
-            return carFac.typeSound();
+        return carFac.typeSound();
     }
     return -1;
+}
+
+int CLANE::typeSound2()
+{
+    if (!playing2)
+    {
+        return carFac1.typeSound();
+    }
+    return -1;
+}
+
+bool CLANE::isHighway()
+{
+    return !is_oneway;
 }
 
 

@@ -60,9 +60,18 @@ int CGRASS::typeSound()
 {
     if (!playing)
     {
-        playing = true;
         return blcFac.typeSound();
     }
     return -1;
+}
+
+int CGRASS::typeSound2()
+{
+    return -1;
+}
+
+bool CGRASS::isHighway()
+{
+    return false;
 }
 

@@ -91,10 +91,13 @@ void CRCHARACTER::render() {
 
 bool CRCHARACTER::isBehindRoad(CROAD& road)
 {
-	return mY - mX*tan(Constants::Alpha) + (WIDTH*SCALE)/2 < road.getDis();
+	return mY - mX*tan(Constants::Alpha) + (WIDTH*SCALE)/2 <= road.getDis();
 }
 
 bool CRCHARACTER::isNearRoand(CROAD& road)
 {
-	return abs((mY - mX * tan(Constants::Alpha) + (WIDTH * SCALE) / 2) - road.getDis()) <= 144.2865;
+	int dis = 40;
+	if (road.isHighway())
+		dis *= 2;
+	return abs((mY - mX * tan(Constants::Alpha) + (WIDTH * SCALE) / 2) - road.getDis() - dis) <= 144.2865;
 }

@@ -23,6 +23,7 @@ private:
 	float mX;
 	float mY_Origin;
 	int meter;
+	void processSoundQ(CROAD& it, int val);
 public:
 
 	void initRoadGame(CRCHARACTER* player);

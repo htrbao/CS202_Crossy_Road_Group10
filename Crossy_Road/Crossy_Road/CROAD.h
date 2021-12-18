@@ -18,6 +18,7 @@ protected:
     float disOrigin;
     float dis;
     bool playing;
+    bool playing2;
     sf::Texture* texture;
     sf::Sprite sprite;
     CRCARFACTORY carFac;
@@ -42,7 +43,10 @@ public:
     virtual void shiftSubObj(char UorD) = 0;
     virtual void update(sf::RenderWindow& window) = 0;
     virtual int typeSound() = 0;
+    virtual int typeSound2() = 0;
+    virtual bool isHighway() = 0;
     void setPlaying();
+    void setPlaying2();
 
     //get total lane
     static double getNumRoads();
