@@ -22,6 +22,9 @@ protected:
 
 	void setUpTexture();
 public:
+	friend class CROAD;
+	friend class CRCHARACTER;
+
 	CROBJECT(double mX, double mY, double scale);
 	CROBJECT(double mX, double mY, double scale, int direction);
 	void shiftObject(char UorD);
