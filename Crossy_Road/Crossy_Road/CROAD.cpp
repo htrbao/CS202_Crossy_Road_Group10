@@ -6,6 +6,7 @@ CROAD::CROAD(bool half_scale) {
         numOfRoad += 0.5;
     else
         numOfRoad += 1;
+    playing = false;
 }
 
 CROAD::~CROAD()
@@ -60,6 +61,12 @@ void CROAD::shiftObject(char UorD)
 void CROAD::draw(sf::RenderWindow& window)
 {
    window.draw(sprite);
+}
+
+
+void CROAD::setPlaying()
+{
+    playing = false;
 }
 
 double CROAD::getNumRoads()

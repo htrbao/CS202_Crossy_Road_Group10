@@ -55,6 +55,7 @@ void CROADFACTORY::draw(sf::RenderWindow& window)
 
 void CROADFACTORY::update(sf::RenderWindow& window)
 {
+	playSound();
 	if (mX > 700)
 	{
 		roadQueue.push_front(createRoad(roadQueue.front()->getPosition() + sf::Vector2f(47,47*tan(Constants::Alpha)), roadQueue.front()->is_road()));
@@ -78,8 +79,9 @@ void CROADFACTORY::update(sf::RenderWindow& window)
 		it->update(window);
 		if (player->isNearRoand(*it))
 		{
-			
+			addSound(*it);
 		}
+		//it->setPlaying();
 	}
 }
 
@@ -128,6 +130,31 @@ CROAD* CROADFACTORY::createRoad(float index, bool is_road)
 		diff = 0.5;
 		return new CGRASS(index - diff , is_road);
 	}
+}
+
+void CROADFACTORY::addSound(CROAD& it)
+{
+	int val = it.typeSound();
+	if (val != -1)
+	{
+		cout << val << endl;
+		sf::Sound tmp = sf::Sound(CASSET::GetInstance().soundMap[Constants::SOUNDNAME[val]]);
+		tmp.setVolume(10);
+		if (val == 3)
+			tmp.setVolume(2);
+		soundQueue.push(tmp);
+		soundQueue.back().play();
+		if (soundQueue.front().getStatus() == sf::SoundSource::Stopped)
+		{
+			soundQueue.pop();
+			it.setPlaying();
+		}
+	}
+}
+
+void CROADFACTORY::playSound()
+{
+
 }
 
 CROADFACTORY::~CROADFACTORY()

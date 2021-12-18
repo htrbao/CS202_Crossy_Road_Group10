@@ -24,6 +24,7 @@ public:
 	void update(sf::RenderWindow& window);
 	CROBJECT* createBL(float mX, float mY, int i, bool init = false);
 	CROBJECT* createTR(float mX, float mY, int i, bool init = false);
+	int typeSound();
 	~CRBLOCKFACTORY();
 };
 

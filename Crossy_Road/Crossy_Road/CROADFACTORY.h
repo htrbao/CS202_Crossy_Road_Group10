@@ -7,6 +7,7 @@
 #include "CLANE.h"
 #include "CRCHARACTER.h"
 #include <deque>
+#include <queue>
 #include <random>
 
 enum RoadType {
@@ -16,6 +17,7 @@ enum RoadType {
 class CROADFACTORY {
 private:
 	deque<CROAD*> roadQueue;
+	queue<sf::Sound> soundQueue;
 	CRCHARACTER* player;
 	float mY;
 	float mX;
@@ -30,6 +32,8 @@ public:
 	void update(sf::RenderWindow& window);
 	CROAD* createRoad(sf::Vector2f pos, bool is_road = false);
 	CROAD* createRoad(float index = 1, bool is_road = false);
+	void addSound(CROAD& it);
+	void playSound();
 	~CROADFACTORY();
 };
 

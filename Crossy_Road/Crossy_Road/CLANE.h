@@ -28,7 +28,7 @@ public:
     void drawSubObj(sf::RenderWindow& window);
     void shiftSubObj(char UorD);
     void update(sf::RenderWindow& window);
-
+    int typeSound();
 };
 
 

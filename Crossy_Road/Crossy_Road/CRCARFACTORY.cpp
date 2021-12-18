@@ -88,6 +88,23 @@ CRCAR* CRCARFACTORY::createCar(float mX, float mY, int frac)
 	return new CRCAR(Constants::CARNAME[type] + Constants::CARDIR[dir], mX, mY , Constants::CARSPEED[type] * 2.5 * frac, dir * 2 - 1);
 }
 
+
+int CRCARFACTORY::typeSound()
+{
+	if (type <= 3)
+	{
+		return 1;
+	}
+	else if (type <= 8)
+	{
+		return 0;
+	}
+	else
+	{
+		return 2;
+	}
+}
+
 CRCARFACTORY::~CRCARFACTORY()
 {
 	while (!carQueue.empty())

@@ -7,7 +7,7 @@
 #include <deque>
 
 enum CarType {
-	AMBULANCE, CAR1, CAR2, DELIVERY, DELIVERY2, FIRETRUCK, GARBAGETRUCK, POLICE, RACE, RACE2, LASTTYPE
+	 CAR1, CAR2, RACE, RACE2, AMBULANCE, DELIVERY, DELIVERY2, FIRETRUCK, GARBAGETRUCK, POLICE, LASTTYPE
 };
 
 enum CarDir {
@@ -22,6 +22,7 @@ private:
 	deque<CRCAR*> carQueue;
 	CarType type;
 	CarDir dir;
+	bool playing;
 public:
 	CRCARFACTORY();
 	void initCarGame(float mX, float mY, int frac = 1);
@@ -29,6 +30,7 @@ public:
 	void draw(sf::RenderWindow& window);
 	void update(float mX, float mY, sf::RenderWindow& window, int frac = 1);
 	CRCAR* createCar(float mX, float mY, int frac = 1);
+	int typeSound();
 	~CRCARFACTORY();
 };
 

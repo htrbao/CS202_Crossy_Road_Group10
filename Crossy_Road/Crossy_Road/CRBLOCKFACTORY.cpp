@@ -103,6 +103,12 @@ CROBJECT* CRBLOCKFACTORY::createTR(float mX, float mY, int i, bool init)
 
 }
 
+int CRBLOCKFACTORY::typeSound()
+{
+	return 3;
+}
+
+
 
 CRBLOCKFACTORY::~CRBLOCKFACTORY()
 {

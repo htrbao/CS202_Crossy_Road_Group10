@@ -56,3 +56,13 @@ void CGRASS::update(sf::RenderWindow& window)
     blcFac.update(window);
 }
 
+int CGRASS::typeSound()
+{
+    if (!playing)
+    {
+        playing = true;
+        return blcFac.typeSound();
+    }
+    return -1;
+}
+
