@@ -17,7 +17,7 @@ protected:
 
     float disOrigin;
     float dis;
-
+    bool playing;
     sf::Texture* texture;
     sf::Sprite sprite;
     CRCARFACTORY carFac;
@@ -34,14 +34,15 @@ public:
     bool checkOutWindow2(sf::RenderWindow& window);
     void draw(sf::RenderWindow& window);
     void shiftObject(char UorD);
-    virtual void drawSubObj(sf::RenderWindow& window) = 0;
-    virtual void shiftSubObj(char UorD) = 0;
-    virtual void update(sf::RenderWindow& window) = 0;
     sf::Vector2f getPosition();
     float getDis();
     //virtual
     virtual bool is_road() = 0;
-
+    virtual void drawSubObj(sf::RenderWindow& window) = 0;
+    virtual void shiftSubObj(char UorD) = 0;
+    virtual void update(sf::RenderWindow& window) = 0;
+    virtual int typeSound() = 0;
+    void setPlaying();
 
     //get total lane
     static double getNumRoads();

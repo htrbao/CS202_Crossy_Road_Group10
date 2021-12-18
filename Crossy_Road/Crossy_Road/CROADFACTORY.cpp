@@ -10,8 +10,9 @@ void CROADFACTORY::initRoadGame(CRCHARACTER* player)
 		is_road = roadQueue.front()->is_road();
 	}
 	mY = 0;
+	mX = 0;
 	mY_Origin = Constants::HIDDEN_ROAD_Y / 1.2;
-	meter = -11;
+	meter = -12;
 }
 
 void CROADFACTORY::shiftObject(char UorD)
@@ -25,6 +26,7 @@ void CROADFACTORY::shiftObject(char UorD)
 		{
 			it->shiftObject(UorD);
 		}
+		mX += Constants::shiftVelocityX/2;
 	}
 	else if ((UorD == 'D' || UorD == 'd') && ((mY_Origin - mY) <= Constants::HIDDEN_ROAD_Y / 1.2))
 	{
@@ -33,6 +35,7 @@ void CROADFACTORY::shiftObject(char UorD)
 		{
 			it->shiftObject(UorD);
 		}
+		mX -= Constants::shiftVelocityX/2;
 	}
 
 }
@@ -52,10 +55,12 @@ void CROADFACTORY::draw(sf::RenderWindow& window)
 
 void CROADFACTORY::update(sf::RenderWindow& window)
 {
-	if (roadQueue.front()->checkOutWindow2(window))
+	playSound();
+	if (mX > 700)
 	{
-		roadQueue.push_front(createRoad(roadQueue.front()->getPosition() + sf::Vector2f(60,60*tan(Constants::Alpha)), roadQueue.front()->is_road()));
+		roadQueue.push_front(createRoad(roadQueue.front()->getPosition() + sf::Vector2f(47,47*tan(Constants::Alpha)), roadQueue.front()->is_road()));
 		roadQueue.front()->draw(window);
+		mX = 0;
 	}
 	if (roadQueue.back()->checkOutWindow(window))
 	{
@@ -68,15 +73,15 @@ void CROADFACTORY::update(sf::RenderWindow& window)
 		tmp->~CROAD();
 		delete tmp;
 		meter++;
-		cout << meter << endl;
 	}
 	for (auto it : roadQueue)
 	{
 		it->update(window);
 		if (player->isNearRoand(*it))
 		{
-			
+			addSound(*it);
 		}
+		//it->setPlaying();
 	}
 }
 
@@ -125,6 +130,31 @@ CROAD* CROADFACTORY::createRoad(float index, bool is_road)
 		diff = 0.5;
 		return new CGRASS(index - diff , is_road);
 	}
+}
+
+void CROADFACTORY::addSound(CROAD& it)
+{
+	int val = it.typeSound();
+	if (val != -1)
+	{
+		cout << val << endl;
+		sf::Sound tmp = sf::Sound(CASSET::GetInstance().soundMap[Constants::SOUNDNAME[val]]);
+		tmp.setVolume(10);
+		if (val == 3)
+			tmp.setVolume(2);
+		soundQueue.push(tmp);
+		soundQueue.back().play();
+		if (soundQueue.front().getStatus() == sf::SoundSource::Stopped)
+		{
+			soundQueue.pop();
+			it.setPlaying();
+		}
+	}
+}
+
+void CROADFACTORY::playSound()
+{
+
 }
 
 CROADFACTORY::~CROADFACTORY()

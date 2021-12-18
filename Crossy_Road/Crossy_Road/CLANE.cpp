@@ -87,6 +87,19 @@ void CLANE::update(sf::RenderWindow& window)
     }
 }
 
+int CLANE::typeSound()
+{
+    if (!playing) 
+    {
+        playing = true;
+        if (carFac.typeSound() == 2 || carFac1.typeSound() == 2)
+            return 2;
+        else
+            return carFac.typeSound();
+    }
+    return -1;
+}
+
 
 
 

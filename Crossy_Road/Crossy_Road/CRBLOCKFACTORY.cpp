@@ -4,23 +4,31 @@
 
 CRBLOCKFACTORY::CRBLOCKFACTORY()
 {
-	numBLC = rand() % 2 + 2;
+	numBLC = rand() % 2;
+	numTR = rand() % 6 + 6;
 	dif = (Constants::SCREEN_WIDTH * 1.0f) / numBLC;
 }
 
-void CRBLOCKFACTORY::initObjGame(float dis, bool init)
+void CRBLOCKFACTORY::initObjGame(float mX, float mY, bool init)
 {
-	
-	float i = 0;
 	if (init)
-	{	
-		numBLC = 5;
-		i = -2;
-	}
-	while (objQueue.size() < numBLC)
 	{
-		objQueue.push_back(createObj(dis, i, init));
-		i+=0.7;
+		numTR = 6;
+	}
+	int i = 0;
+	while (i <= numTR)
+	{
+		objQueue.push_back(createTR(mX,mY, i, init));
+		i++;
+	}
+	if (!init)
+	{
+		i = 1;
+		while (i <= numBLC)
+		{
+			objQueue.push_back(createBL(mX, mY, i));
+			i++;
+		}
 	}
 }
 
@@ -45,27 +53,61 @@ void CRBLOCKFACTORY::update(sf::RenderWindow& window)
 	
 }
 
-CROBJECT* CRBLOCKFACTORY::createObj(float dis, float i, bool init)
+CROBJECT* CRBLOCKFACTORY::createBL(float mX, float mY, int i, bool init)
 {
-	int type = rand() % 13;
-	if (init)
-		type = 10 + rand() % 3;
-	dis -= 12;
-	int gap = (rand() % 400 + rand() % 500 + 256);
-	float mX = i * gap + Constants::SCREEN_WIDTH / 2;
-	if (!objQueue.empty())
+	int coin = rand() % 50;
+	int type = rand() % 10;
+	int gap = 125, gaptr = 120, dis = 130;
+	if (!init)
+		dis += 20;
+	if (coin > 3)
 	{
-		while (abs(mX - objQueue.back()->getPos().x) <= 300)
-		{
-			mX += 5;
-		}
+		type = rand() % 8 + 2;
 	}
-	float mY = mX * tan(Constants::Alpha) + dis;
-	if (type > 1)
-		return new CRBLOCK(Constants::BLOCKNAME[type], mX, mY);
+	else {
+		type = rand() % 2;
+	}
+	if (type <= 9 && type >= 7)
+	{
+		gap += 40;
+	}
+	mX += (numTR / 2) * gaptr + dis + i * gap;
+	mY += ((numTR / 2) * gaptr + dis + i * gap) * tan(Constants::Alpha);
+	if (coin > 3)
+	{
+		return new CRBLOCK(Constants::BLOCKNAME[type], mX, mY - 10);
+	}
 	else
-		return new CRCOIN(Constants::BLOCKNAME[type], mX, mY - 35);
+	{
+		return new CRCOIN(Constants::BLOCKNAME[type], mX, mY - 42);
+	}
 }
+
+CROBJECT* CRBLOCKFACTORY::createTR(float mX, float mY, int i, bool init)
+{
+	int type = 10 + rand() % 3;
+	int gap = 120, dis = 130;
+	if (!init)
+		dis += 20;
+	if (i < numTR / 2) 
+	{
+		mX += i * gap + dis;
+		mY += (i * gap + dis) * tan(Constants::Alpha);
+	}
+	else
+	{
+		mX += Constants::SCREEN_WIDTH + 60 + (i - numTR / 2) * gap;
+		mY += (Constants::SCREEN_WIDTH + 60 + (i - numTR / 2) * gap) * tan(Constants::Alpha);
+	}
+	return new CRTREE(Constants::BLOCKNAME[type], mX, mY, 1);
+
+}
+
+int CRBLOCKFACTORY::typeSound()
+{
+	return 3;
+}
+
 
 
 CRBLOCKFACTORY::~CRBLOCKFACTORY()

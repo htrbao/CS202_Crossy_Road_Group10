@@ -14,6 +14,7 @@ void CGAME::initWindow()
 	this->videoMode.width = Constants::SCREEN_WIDTH;
 	this->window = new sf::RenderWindow(this->videoMode, "CROSSY ROAD", sf::Style::Titlebar | sf::Style::Close);
 	this->window->setFramerateLimit(60);
+	this->window->setVerticalSyncEnabled(true);
 	roadFac = new CROADFACTORY;
 	player = new CRCHARACTER(this->window, 0, 512, 350);
 	roadFac->initRoadGame(player);
