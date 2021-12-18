@@ -26,6 +26,11 @@ CRCHARACTER::CRCHARACTER(sf::RenderWindow* window, int side, int x, int y) : win
 	setSide(side);
 }
 
+bool CRCHARACTER::checkCollision(CROBJECT*& obj) {
+	if (obj) cout << obj->mX;
+	return true;
+}
+
 void CRCHARACTER::setSide(int side) {
 	// Move the rectangle to the corresponding figure.
 	this->side = side;

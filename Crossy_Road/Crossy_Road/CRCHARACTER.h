@@ -4,13 +4,11 @@
 
 #include "CASSET.h"
 #include "CLANE.h"
-#include "CROBJECT.h"
 
 class CRCHARACTER {
 private:
     friend class CGAME;
     friend class CLANE;
-    friend class CROBJECT;
 
     float mX, mY;
     int side;
@@ -30,6 +28,8 @@ public:
     static int WIDTH, HEIGHT;
     static float SCALE;
     CRCHARACTER(sf::RenderWindow* window, int side, int x, int y);
+
+    bool checkCollision(CROBJECT*& obj);
 
     void setSide(int side);
 

@@ -45,8 +45,6 @@ void CRBLOCKFACTORY::update(sf::RenderWindow& window)
 	
 }
 
-
-
 CROBJECT* CRBLOCKFACTORY::createObj(float dis, float i, bool init)
 {
 	int type = rand() % 13;
