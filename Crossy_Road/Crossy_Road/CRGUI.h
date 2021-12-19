@@ -4,9 +4,11 @@
 
 #include "CASSET.h"
 #include "Constants.h"
+#include "CGame.h"
 
 class CRGUI {
 private:
+	friend class CGAME;
 
 public:
 };
