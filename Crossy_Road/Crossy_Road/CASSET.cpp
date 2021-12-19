@@ -69,8 +69,13 @@ CASSET::CASSET() {
 	initTexture("TREEPINE");
 	//menu
 	initTexture("MENU");
-	initTexture("SCORE");
-	initTexture("PAUSE1");
+	initTexture("YOURSCORE");
+	initTexture("HIGHSCORE");
+	initTexture("PAUSE");
+	initTexture("PLAYBUTTON");
+	initTexture("PLAY");
+	initTexture("EXIT");
+
 	//sound
 	initSound("CROSSY");
 	initSound("CAR_LARGE");
