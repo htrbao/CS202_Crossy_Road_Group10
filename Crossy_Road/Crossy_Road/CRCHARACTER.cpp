@@ -26,9 +26,24 @@ CRCHARACTER::CRCHARACTER(sf::RenderWindow* window, int side, int x, int y) : win
 	setSide(side);
 }
 
-bool CRCHARACTER::checkCollision(CROBJECT*& obj) {
-	if (obj) cout << obj->mX;
-	return true;
+int CRCHARACTER::checkCollision(CROBJECT*& obj) {
+	if (obj) {
+		double xX = sprite.getPosition().x - obj->sprite.getPosition().x;
+		double yY = sprite.getPosition().y - obj->sprite.getPosition().y;
+		double dis = xX * xX + yY * yY;
+		switch (obj->type()) {
+		case Constants::BLOCK:
+			if (dis < 70) return 1;
+			break;
+		case Constants::CAR:
+			if (dis < 50) return 2;
+			break;
+		case Constants::COIN:
+			if (dis < 40) return 3;
+			break;
+		}
+	}
+	return 0;
 }
 
 void CRCHARACTER::setSide(int side) {
@@ -38,7 +53,6 @@ void CRCHARACTER::setSide(int side) {
 }
 
 bool CRCHARACTER::canMoveDown() {
-	bool canDecreaseX = (mX >= 0);
 	return false;
 }
 
