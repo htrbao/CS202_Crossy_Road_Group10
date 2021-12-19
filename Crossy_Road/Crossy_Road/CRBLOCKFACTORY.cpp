@@ -57,7 +57,7 @@ CROBJECT* CRBLOCKFACTORY::createBL(float mX, float mY, int i, bool init)
 {
 	int coin = rand() % 50;
 	int type = rand() % 10;
-	int gap = 125, gaptr = 120, dis = 130;
+	int gap = 100, gaptr = 120, dis = (mX / 512 + 1) * 40;
 	if (!init)
 		dis += 20;
 	if (coin > 3)
@@ -69,7 +69,7 @@ CROBJECT* CRBLOCKFACTORY::createBL(float mX, float mY, int i, bool init)
 	}
 	if (type <= 9 && type >= 7)
 	{
-		gap += 40;
+		gap += 20;
 	}
 	mX += (numTR / 2) * gaptr + dis + i * gap;
 	mY += ((numTR / 2) * gaptr + dis + i * gap) * tan(Constants::Alpha);
@@ -86,9 +86,11 @@ CROBJECT* CRBLOCKFACTORY::createBL(float mX, float mY, int i, bool init)
 CROBJECT* CRBLOCKFACTORY::createTR(float mX, float mY, int i, bool init)
 {
 	int type = 10 + rand() % 3;
-	int gap = 120, dis = 130;
+	int gap = 120, dis = (mX / 512 + 1) * 40;
 	if (!init)
 		dis += 20;
+	else
+		dis = 130;
 	if (i < numTR / 2) 
 	{
 		mX += i * gap + dis;

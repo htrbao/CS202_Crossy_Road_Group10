@@ -159,6 +159,7 @@
     <ClCompile Include="CROADFACTORY.cpp" />
     <ClCompile Include="CROBJECT.cpp" />
     <ClCompile Include="CRTREE.cpp" />
+    <ClCompile Include="CTRAFFIC.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -178,6 +179,7 @@
     <ClInclude Include="CROBJECT.h" />
     <ClInclude Include="CROADFACTORY.h" />
     <ClInclude Include="CRTREE.h" />
+    <ClInclude Include="CTRAFFIC.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

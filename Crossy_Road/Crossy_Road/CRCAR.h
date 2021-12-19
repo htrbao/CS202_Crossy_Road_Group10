@@ -9,7 +9,7 @@ private:
 public:
 	CRCAR(string textureFileName, float x, float y, double speed, int direction);
 	int type();
-	void move(double x, double y);
+	void move(float x, float y, float frac = 1);
 	sf::Vector2f getPosition();
 };
 
