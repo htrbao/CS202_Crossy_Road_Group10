@@ -29,7 +29,7 @@ public:
     static float SCALE;
     CRCHARACTER(sf::RenderWindow* window, int side, int x, int y);
 
-    bool checkCollision(CROBJECT*& obj);
+    int checkCollision(CROBJECT*& obj);
 
     void setSide(int side);
 
