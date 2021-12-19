@@ -38,7 +38,7 @@ namespace Constants {
 	const float speed = sqrt(pow((SIZE_ROAD_Y + bias) / 2, 2) / (1 + pow(tan(Beta), 2)));
 	//Car
 	const std::string CARNAME[] = { "car_1_","car_2_","race_","raceFuture_","ambulance_","delivery_","deliveryFlat_","firetruck_","garbageTruck_","police_" };
-	const float CARSPEED[] = { 85, 70, 120, 130, 70, 75, 80, 75, 72, 90};
+	const float CARSPEED[] = { 90, 80, 125, 135, 75, 80, 85, 80, 77, 95};
 	const std::string CARDIR[] = { "NW" , "SE" };
 	//Block
 	const std::string BLOCKNAME[] = { "COIN_1", "COIN_2", "BLOCK_1","BLOCK_3","BLOCK_4","BLOCK_5","BLOCK_SNOW_2","BLOCK_SNOW_1","BLOCK_2","BLOCK_SNOW_3", "TREE", "TREESNOW", "TREELARGE", "TREEPINE"};

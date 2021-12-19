@@ -11,6 +11,7 @@ void CTRAFFIC::setUpTexture()
 
 CTRAFFIC::CTRAFFIC()
 {
+    hasTraff = false;
 }
 
 CTRAFFIC::CTRAFFIC(float x, float y)
@@ -20,6 +21,7 @@ CTRAFFIC::CTRAFFIC(float x, float y)
     mY = y + tmp * tan(Constants::Alpha) + 50;
     texture = &CASSET::GetInstance().textureMap[Constants::TRAFFICNAME];
     diff = rand() % 6 - 1;
+    hasTraff = true;
     setUpTexture();
     green();
 }
@@ -95,5 +97,10 @@ void CTRAFFIC::shiftObject(char UorD)
     }
     mX = sprite.getPosition().x;
     mY = sprite.getPosition().y;
+}
+
+bool CTRAFFIC::hasTraffic()
+{
+    return hasTraff;
 }
 

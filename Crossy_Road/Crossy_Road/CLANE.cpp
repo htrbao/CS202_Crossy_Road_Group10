@@ -21,7 +21,8 @@ CLANE::CLANE(sf::Vector2f pos, bool one_way):CROAD(one_way)
     dis = m_originY - m_originX * tan(Constants::Alpha);
     sprite.setTexture(*texture);
     sprite.setPosition(m_originX, m_originY);
-    traffic = CTRAFFIC(m_originX, m_originY);
+    if ((rand() % 6) == 0)
+        traffic = CTRAFFIC(m_originX, m_originY);
     //carFac.initCarGame(m_originX, m_originY);
 }
 
@@ -44,7 +45,8 @@ CLANE::CLANE(float index, bool one_way) : CROAD(one_way)
     dis = m_originY - m_originX * tan(Constants::Alpha);
     sprite.setTexture(*texture); 
     sprite.setPosition(m_originX , m_originY);
-    traffic = CTRAFFIC(m_originX, m_originY);
+    if ((rand() % 6) == 0)
+        traffic = CTRAFFIC(m_originX, m_originY);
     //carFac.initCarGame(m_originX, m_originY);
 }
 
@@ -64,7 +66,8 @@ bool CLANE::is_road()
 
 void CLANE::drawSubObj(sf::RenderWindow& window)
 {
-    traffic.draw(window);
+    if (traffic.hasTraffic())
+        traffic.draw(window);
     carFac.draw(window);
     if (!is_oneway)
     {
@@ -79,12 +82,14 @@ void CLANE::shiftSubObj(char UorD)
     {
         carFac1.shiftObject(UorD);
     }
-    traffic.shiftObject(UorD);
+    if (traffic.hasTraffic())
+        traffic.shiftObject(UorD);
 }
 
 void CLANE::update(sf::RenderWindow& window)
 {
-    traffic.update(window);
+    if (traffic.hasTraffic())
+        traffic.update(window);
     carFac.update(m_originX, m_originY, window,traffic);
     if (!is_oneway)
     {
