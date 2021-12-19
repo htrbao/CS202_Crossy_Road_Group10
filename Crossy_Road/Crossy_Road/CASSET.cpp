@@ -66,6 +66,7 @@ CASSET::CASSET() {
 	//tree
 	initTexture("TREE");
 	initTexture("TREESNOW");
+	initTexture("TREELARGE");
 	initTexture("TREEPINE");
 	//traffic
 	initTexture("TRAFFICLIGHT");

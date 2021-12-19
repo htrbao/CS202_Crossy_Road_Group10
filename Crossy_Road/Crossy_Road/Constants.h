@@ -41,8 +41,8 @@ namespace Constants {
 	const float CARSPEED[] = { 90, 80, 125, 135, 75, 80, 85, 80, 77, 95};
 	const std::string CARDIR[] = { "NW" , "SE" };
 	//Block
-	const std::string BLOCKNAME[] = { "COIN_1", "COIN_2", "BLOCK_1","BLOCK_3","BLOCK_4","BLOCK_5","BLOCK_SNOW_2","BLOCK_SNOW_1","BLOCK_2","BLOCK_SNOW_3", "TREE", "TREESNOW","TREEPINE"};
-	//Sound
+	const std::string BLOCKNAME[] = { "COIN_1", "COIN_2", "BLOCK_1","BLOCK_3","BLOCK_4","BLOCK_5","BLOCK_SNOW_2","BLOCK_SNOW_1","BLOCK_2","BLOCK_SNOW_3", "TREE", "TREESNOW", "TREELARGE", "TREEPINE"};
+	//Sond
 	const std::string SOUNDNAME[] = { "CAR_LARGE", "CAR_SMALL", "POLICE", "BIRDS" };
 	//Traffic
 	const std::string TRAFFICNAME = "TRAFFICLIGHT";

@@ -85,8 +85,8 @@ CROBJECT* CRBLOCKFACTORY::createBL(float mX, float mY, int i, bool init)
 
 CROBJECT* CRBLOCKFACTORY::createTR(float mX, float mY, int i, bool init)
 {
-	int type = 10 + rand() % 3;
-	int gap = 120, dis = (mX / 512 + 1) * 40;
+	int type = 10 + rand() % 4;
+	int gap = 120, dis = 130;
 	if (!init)
 		dis += 20;
 	else
