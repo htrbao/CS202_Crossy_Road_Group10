@@ -13,6 +13,7 @@ private:
 	float mY;
 	float diff;
 	int status;
+	bool hasTraff;
 	sf::Clock clc;
 	sf::Texture* texture;
 	sf::Sprite sprite;
@@ -28,6 +29,7 @@ public:
 	void update(sf::RenderWindow& window);
 	void draw(sf::RenderWindow& window);
 	void shiftObject(char UorD);
+	bool hasTraffic();
 };
 
 #endif // !_CTRAFFIC_H_

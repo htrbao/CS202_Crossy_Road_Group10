@@ -35,10 +35,24 @@ void CRCARFACTORY::update(float mX, float mY, sf::RenderWindow& window, CTRAFFIC
 {
 	for (auto i : carQueue)
 	{
-		if (traffic.statusTraffic() == 2)
+		if (traffic.hasTraffic())
+		{
+			if (traffic.statusTraffic() == 2)
+			{
+				if (type == RACE || type == RACE2)
+					i->move(0, 0, 3);
+				else
+					i->move(0, 0);
+			}
+			else if (traffic.statusTraffic() == 1)
+			{
+				i->move(0, 0, 0.6);
+			}
+		}
+		else
+		{
 			i->move(0, 0);
-		else if (traffic.statusTraffic() == 1)
-			i->move(0, 0, 0.6);
+		}
 	}
 	if (carQueue.empty())
 		initCarGame(mX, mY, frac);
