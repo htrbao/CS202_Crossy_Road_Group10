@@ -14,6 +14,7 @@
 #include "CRTREE.h"
 #include "CRCOIN.h"
 #include "CRCHARACTER.h"
+#include "CRGUI.h"
 
 class CGAME
 {
@@ -23,18 +24,19 @@ private:
 	sf::RenderWindow* window;
 	sf::Event ev;
 	sf::VideoMode videoMode;
-
 	//Game sound
 	sf::SoundBuffer* gameBuffer;
 	sf::Sound gameSound;
 
 	//Game obj
+	CRGUI *menu;
 	CROADFACTORY* roadFac;
 	CRCHARACTER* player;
 
 	//Private function
 	void initializeVariable();
 	void initWindow();
+	void initMenu();
 
 public:
 	//Constructor | Destructor

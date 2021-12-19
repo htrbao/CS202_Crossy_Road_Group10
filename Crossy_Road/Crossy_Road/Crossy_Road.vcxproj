@@ -155,6 +155,7 @@
     <ClCompile Include="CRCARFACTORY.cpp" />
     <ClCompile Include="CRCHARACTER.cpp" />
     <ClCompile Include="CRCOIN.cpp" />
+    <ClCompile Include="CRGUI.cpp" />
     <ClCompile Include="CROAD.cpp" />
     <ClCompile Include="CROADFACTORY.cpp" />
     <ClCompile Include="CROBJECT.cpp" />

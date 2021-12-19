@@ -22,11 +22,17 @@ void CGAME::initWindow()
 
 }
 
+void CGAME::initMenu()
+{
+	this->menu = new CRGUI(300,50);
+}
+
 //Constructor | Destructor
 CGAME::CGAME()
 {
 	this->initializeVariable();
 	this->initWindow();
+	this->initMenu();
 }
 
 CGAME::~CGAME()
@@ -86,13 +92,19 @@ void CGAME::run()
 //Other function
 void CGAME::update()
 {
-	pollEvent();
-	roadFac->update(*this->window);
+	this->menu->eventListener(this->window);
+	if (this->menu->isClickEnter() == true)
+	{
+		pollEvent();
+		roadFac->update(*this->window);
+	}
+	
 }
 void CGAME::render()
 {
 	this->window->clear();
 	//draw obj
 	roadFac->draw(*this->window);
+	this->menu->draw(this->window);
 	this->window->display();
 }
