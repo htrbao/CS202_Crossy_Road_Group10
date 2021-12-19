@@ -79,9 +79,10 @@ void CROADFACTORY::draw(sf::RenderWindow& window)
 void CROADFACTORY::update(sf::RenderWindow& window)
 {
 	playSound();
-	if (mX > 700)
+	if (mX > 1700)
 	{
-		roadQueue.push_front(createRoad(roadQueue.front()->getPosition() + sf::Vector2f(47,47*tan(Constants::Alpha)), roadQueue.front()->is_road()));
+		cout << 1 << endl;
+		roadQueue.push_front(createRoad(roadQueue.front()->getPosition() + sf::Vector2f(100,100*tan(Constants::Alpha)), roadQueue.front()->is_road()));
 		roadQueue.front()->draw(window);
 		mX = 0;
 	}

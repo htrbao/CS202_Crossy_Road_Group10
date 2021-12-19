@@ -1,1 +1,10 @@
-﻿  Crossy_Road.vcxproj -> D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Debug\Crossy_Road.exe
+﻿  CTRAFFIC.cpp
+C:\Users\acer\OneDrive\Documents\GitHub\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(24,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\acer\OneDrive\Documents\GitHub\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(38,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\acer\OneDrive\Documents\GitHub\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(38,20): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
+C:\Users\acer\OneDrive\Documents\GitHub\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CTRAFFIC.cpp(7,25): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\acer\OneDrive\Documents\GitHub\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CTRAFFIC.cpp(20,42): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\acer\OneDrive\Documents\GitHub\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CTRAFFIC.cpp(22,23): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\acer\OneDrive\Documents\GitHub\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CTRAFFIC.cpp(90,75): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\acer\OneDrive\Documents\GitHub\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CTRAFFIC.cpp(94,75): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Crossy_Road.vcxproj -> C:\Users\acer\OneDrive\Documents\GitHub\CS202_Crossy_Road_Group10\Crossy_Road\Debug\Crossy_Road.exe

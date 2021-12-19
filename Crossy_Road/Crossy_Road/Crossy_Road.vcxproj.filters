@@ -60,6 +60,9 @@
     <ClCompile Include="CRBLOCKFACTORY.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CTRAFFIC.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CROBJECT.h">
@@ -108,6 +111,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CRBLOCKFACTORY.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CTRAFFIC.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

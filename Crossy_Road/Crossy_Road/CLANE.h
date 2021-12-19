@@ -4,18 +4,19 @@
 
 #include "CROAD.h"
 #include "CASSET.h"
+#include "CTRAFFIC.h"
 #include "Constants.h"
 
 class CLANE :
     public CROAD
 {
 private:
+    CTRAFFIC traffic;
     const string asset_name_road_twoway = "LANE_N";
     const string asset_name_road_oneway = "LANE2_N";
     const float scale = 1;
     const float half_scale = 0.5;
     bool is_oneway;
-
 
 public:
     //constructor | destructor

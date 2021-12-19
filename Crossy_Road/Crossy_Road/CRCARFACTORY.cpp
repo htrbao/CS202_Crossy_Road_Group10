@@ -31,11 +31,14 @@ void CRCARFACTORY::draw(sf::RenderWindow& window)
 	}
 }
 
-void CRCARFACTORY::update(float mX, float mY, sf::RenderWindow& window, int frac)
+void CRCARFACTORY::update(float mX, float mY, sf::RenderWindow& window, CTRAFFIC& traffic, int frac)
 {
 	for (auto i : carQueue)
 	{
-		i->move(0, 0);
+		if (traffic.statusTraffic() == 2)
+			i->move(0, 0);
+		else if (traffic.statusTraffic() == 1)
+			i->move(0, 0, 0.6);
 	}
 	if (carQueue.empty())
 		initCarGame(mX, mY, frac);
@@ -86,6 +89,11 @@ CRCAR* CRCARFACTORY::createCar(float mX, float mY, int frac)
 		}
 	}
 	return new CRCAR(Constants::CARNAME[type] + Constants::CARDIR[dir], mX, mY , Constants::CARSPEED[type] * 2.5 * frac, dir * 2 - 1);
+}
+
+int CRCARFACTORY::direction()
+{
+	return dir;
 }
 
 

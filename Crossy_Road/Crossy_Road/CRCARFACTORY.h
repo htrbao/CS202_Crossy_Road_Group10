@@ -3,6 +3,7 @@
 #define CRCARFACTORY_
 
 #include "CRCAR.h"
+#include "CTRAFFIC.h"
 
 #include <deque>
 
@@ -28,8 +29,9 @@ public:
 	void initCarGame(float mX, float mY, int frac = 1);
 	void shiftObject(char UorD);
 	void draw(sf::RenderWindow& window);
-	void update(float mX, float mY, sf::RenderWindow& window, int frac = 1);
+	void update(float mX, float mY, sf::RenderWindow& window, CTRAFFIC& traffic, int frac = 1);
 	CRCAR* createCar(float mX, float mY, int frac = 1);
+	int direction();
 	int typeSound();
 	~CRCARFACTORY();
 };

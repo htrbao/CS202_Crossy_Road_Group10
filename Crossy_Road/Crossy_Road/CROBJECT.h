@@ -30,7 +30,7 @@ public:
 	void shiftObject(char UorD);
 	bool checkOutWindow(sf::RenderWindow& window);
 	virtual int type() = 0;
-	virtual void move(float x, float y);
+	virtual void move(float x, float y, float frac = 1);
 	virtual void draw(sf::RenderWindow& window);
 	sf::Vector2f getPos();
 };

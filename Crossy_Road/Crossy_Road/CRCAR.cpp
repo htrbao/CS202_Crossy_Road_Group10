@@ -13,8 +13,8 @@ int CRCAR::type()
 	return Constants::CAR;
 }
 
-void CRCAR::move(double x, double y) {
-	CROBJECT::move(x, y);
+void CRCAR::move(float x, float y, float frac) {
+	CROBJECT::move(x, y, frac);
 }
 
 sf::Vector2f CRCAR::getPosition()

@@ -22,8 +22,8 @@ bool CROBJECT::checkOutWindow(sf::RenderWindow& window) {
     return (direction == 1 && (sprite.getPosition().x >= window.getSize().x + 100 || sprite.getPosition().y >= window.getSize().y + 100)) || (direction == -1 && (sprite.getPosition().x <= -100 || sprite.getPosition().y <= -100));
 }
 
-void CROBJECT::move(float x, float y) {
-    sprite.move(direction * Constants::basicVelocityX * speed, direction * tan(Constants::Alpha) * Constants::basicVelocityX * speed);
+void CROBJECT::move(float x, float y, float frac) {
+    sprite.move(direction * Constants::basicVelocityX * speed * frac, direction * tan(Constants::Alpha) * Constants::basicVelocityX * speed * frac);
 }
 
 void CROBJECT::draw(sf::RenderWindow& window) {
