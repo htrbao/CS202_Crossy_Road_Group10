@@ -47,6 +47,7 @@ public:
 	const bool running() const;
 
 	//Other function
+	bool checkMove();
 	void pollEvent();
 	void update();
 	void render();

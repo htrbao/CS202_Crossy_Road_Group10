@@ -1,5 +1,14 @@
-﻿  CRGUI.cpp
-D:\CS203\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(24,40): warning C4305: 'initializing': truncation from 'double' to 'float'
-D:\CS203\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(38,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-D:\CS203\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(38,20): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
-  Crossy_Road.vcxproj -> D:\CS203\CS202_Crossy_Road_Group10\Crossy_Road\Debug\Crossy_Road.exe
+﻿  CRCHARACTER.cpp
+D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(24,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(38,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(38,20): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
+D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCHARACTER.cpp(6,32): warning C4305: 'initializing': truncation from 'double' to 'float'
+D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCHARACTER.cpp(11,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCHARACTER.cpp(11,25): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCHARACTER.cpp(23,108): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCHARACTER.cpp(23,115): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCHARACTER.cpp(91,71): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCHARACTER.cpp(93,74): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCHARACTER.cpp(99,73): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRCHARACTER.cpp(101,72): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Crossy_Road.vcxproj -> D:\HCMUS\CS202_programSystems\CS202_Crossy_Road_Group10\Crossy_Road\Debug\Crossy_Road.exe

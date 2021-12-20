@@ -46,6 +46,21 @@ const bool CGAME::running() const
 	return this->window->isOpen();
 }
 
+bool CGAME::checkMove() {
+	for (auto road : roadFac->roadQueue) {
+		if (player->isNearRoad(*road)) {
+			deque<CROBJECT*>* curRoad = (road->getObjFac() != nullptr ? road->getObjFac() : road->getObjFac2());
+			for (long i = 0; i < curRoad->size(); i++) {
+				int collisionType = player->checkCollision(curRoad->at(i));
+				if (collisionType % 3) {
+					return false;
+				}
+			}
+		}
+	}
+	return true;
+}
+
 //Other function
 void CGAME::pollEvent()
 {
@@ -65,16 +80,32 @@ void CGAME::pollEvent()
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
 		player->moveUp();
 		roadFac->shiftObject('U');
+		if (!checkMove()) {
+			roadFac->shiftObject('D');
+		}
+		if (player->side != CRCHARACTER::UP) player->setSide(CRCHARACTER::UP);
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
 		player->moveRight();
+		if (!checkMove()) {
+			player->moveLeft();
+		}
+		if (player->side != CRCHARACTER::RIGHT) player->setSide(CRCHARACTER::RIGHT);
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
 		player->moveDown();
 		roadFac->shiftObject('D');
+		if (!checkMove()) {
+			roadFac->shiftObject('U');
+		}
+		if (player->side != CRCHARACTER::DOWN) player->setSide(CRCHARACTER::DOWN);
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
 		player->moveLeft();
+		if (!checkMove()) {
+			player->moveRight();
+		}
+		if (player->side != CRCHARACTER::LEFT) player->setSide(CRCHARACTER::LEFT);
 	}
 }
 

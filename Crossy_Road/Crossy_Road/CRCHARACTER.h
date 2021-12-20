@@ -47,7 +47,7 @@ public:
     void render();
 
     bool isBehindRoad(CROAD& road);
-    bool isNearRoand(CROAD& road);
+    bool isNearRoad(CROAD& road);
 };
 
 #endif // !_CRCHARACTER_H_

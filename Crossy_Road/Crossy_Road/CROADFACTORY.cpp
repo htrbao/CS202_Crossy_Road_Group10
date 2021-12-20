@@ -101,7 +101,7 @@ void CROADFACTORY::update(sf::RenderWindow& window)
 	for (auto it : roadQueue)
 	{
 		it->update(window);
-		if (player->isNearRoand(*it))
+		if (player->isNearRoad(*it))
 		{
 			addSound(*it);
 			//it->getObjFac(); get objDeque

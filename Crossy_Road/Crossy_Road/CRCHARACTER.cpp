@@ -30,16 +30,17 @@ int CRCHARACTER::checkCollision(CROBJECT*& obj) {
 	if (obj) {
 		double xX = sprite.getPosition().x - obj->sprite.getPosition().x;
 		double yY = sprite.getPosition().y - obj->sprite.getPosition().y;
-		double dis = xX * xX + yY * yY;
+		double dis = abs(xX * xX + yY * yY);
+		//cout << dis << endl;
 		switch (obj->type()) {
 		case Constants::BLOCK:
-			if (dis < 70) return 1;
+			if (dis < 2000.0) return 1;
 			break;
 		case Constants::CAR:
-			if (dis < 50) return 2;
+			if (dis < 2000.0) return 2;
 			break;
 		case Constants::COIN:
-			if (dis < 40) {
+			if (obj->isVisible && dis < 2500.0) {
 				obj->setVisible(false);
 				return 3;
 			}
@@ -76,7 +77,6 @@ bool CRCHARACTER::canMoveLeft()
 
 void CRCHARACTER::moveDown() {
 	sound.play();
-	if (side != DOWN) setSide(DOWN);
 }
 
 void CRCHARACTER::moveUp() {
@@ -89,12 +89,16 @@ void CRCHARACTER::moveRight() {
 	//side = RIGHT;
 	sound.play();
 	sprite.move(1 * 0.021875 * 250, 1 * tan(Constants::Alpha) * 0.021875 * 250);
+	if(sprite.getPosition().x > Constants::SCREEN_WIDTH || sprite.getPosition().y > Constants::SCREEN_HEIGHT)
+		sprite.move(-1 * 0.021875 * 250, -1 * tan(Constants::Alpha) * 0.021875 * 250);
 	if (side != RIGHT) setSide(RIGHT);
 }
 
 void CRCHARACTER::moveLeft() {
 	sound.play();
 	sprite.move(-1 * 0.021875 * 250, -1 * tan(Constants::Alpha) * 0.021875 * 250);
+	if (sprite.getPosition().x < 0 || sprite.getPosition().y < 0)
+		sprite.move(1 * 0.021875 * 250, 1 * tan(Constants::Alpha) * 0.021875 * 250);
 	//side = LEFT;
 	if(side != LEFT) setSide(LEFT);
 }
@@ -116,7 +120,7 @@ bool CRCHARACTER::isBehindRoad(CROAD& road)
 	return mY - mX*tan(Constants::Alpha) + (WIDTH*SCALE)/2 <= road.getDis();
 }
 
-bool CRCHARACTER::isNearRoand(CROAD& road)
+bool CRCHARACTER::isNearRoad(CROAD& road)
 {
 	int dis = 40;
 	if (road.isHighway())

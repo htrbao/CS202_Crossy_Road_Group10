@@ -16,6 +16,7 @@ enum RoadType {
 
 class CROADFACTORY {
 private:
+	friend class CGAME;
 	deque<CROAD*> roadQueue;
 	queue<sf::Sound> soundQueue;
 	CRCHARACTER* player;
