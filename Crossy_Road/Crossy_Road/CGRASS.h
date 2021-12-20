@@ -27,6 +27,8 @@ public:
     int typeSound();
     int typeSound2();
     bool isHighway();
+    deque<CROBJECT*>* getObjFac();
+    deque<CROBJECT*>* getObjFac2();
 };
 
 #endif // !CRGASS_

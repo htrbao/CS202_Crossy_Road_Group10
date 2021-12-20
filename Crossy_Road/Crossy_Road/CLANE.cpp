@@ -120,6 +120,18 @@ bool CLANE::isHighway()
     return !is_oneway;
 }
 
+deque<CROBJECT*>* CLANE::getObjFac()
+{
+    return carFac.getObjQueue();
+}
+
+deque<CROBJECT*>* CLANE::getObjFac2()
+{
+    if (!is_oneway)
+        return carFac1.getObjQueue();
+    return nullptr;
+}
+
 
 
 

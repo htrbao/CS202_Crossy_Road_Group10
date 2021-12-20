@@ -105,6 +105,11 @@ CROBJECT* CRBLOCKFACTORY::createTR(float mX, float mY, int i, bool init)
 
 }
 
+deque<CROBJECT*>* CRBLOCKFACTORY::getObjQueue()
+{
+	return &objQueue;
+}
+
 int CRBLOCKFACTORY::typeSound()
 {
 	return 3;

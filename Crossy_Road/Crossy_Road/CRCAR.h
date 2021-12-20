@@ -10,7 +10,6 @@ public:
 	CRCAR(string textureFileName, float x, float y, double speed, int direction);
 	int type();
 	void move(float x, float y, float frac = 1);
-	sf::Vector2f getPosition();
 };
 
 #endif // !_CRCAR_H_

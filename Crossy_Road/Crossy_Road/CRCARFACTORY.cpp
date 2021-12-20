@@ -60,7 +60,7 @@ void CRCARFACTORY::update(float mX, float mY, sf::RenderWindow& window, CTRAFFIC
 	while (!carQueue.empty() && carQueue.back()->checkOutWindow(window))
 	{
 		
-		CRCAR* tmp = carQueue.back();
+		CROBJECT* tmp = carQueue.back();
 		carQueue.pop_back();
 		delete tmp; 
 	}
@@ -79,7 +79,7 @@ CRCAR* CRCARFACTORY::createCar(float mX, float mY, int frac)
 		}
 		if (!carQueue.empty())
 		{
-			while (mX  < carQueue.front()->getPosition().x + 612)
+			while (mX  < carQueue.front()->getPos().x + 612)
 			{
 				mX += 10;
 				mY += 10 * tan(Constants::Alpha);
@@ -95,7 +95,7 @@ CRCAR* CRCARFACTORY::createCar(float mX, float mY, int frac)
 		}
 		if (!carQueue.empty())
 		{
-			while (mX  > carQueue.front()->getPosition().x - 612)
+			while (mX  > carQueue.front()->getPos().x - 612)
 			{
 				mX -= 10;
 				mY -= 10 * tan(Constants::Alpha);
@@ -103,6 +103,11 @@ CRCAR* CRCARFACTORY::createCar(float mX, float mY, int frac)
 		}
 	}
 	return new CRCAR(Constants::CARNAME[type] + Constants::CARDIR[dir], mX, mY , Constants::CARSPEED[type] * 2.5 * frac, dir * 2 - 1);
+}
+
+deque<CROBJECT*>* CRCARFACTORY::getObjQueue()
+{
+	return &carQueue;
 }
 
 int CRCARFACTORY::direction()
@@ -131,7 +136,7 @@ CRCARFACTORY::~CRCARFACTORY()
 {
 	while (!carQueue.empty())
 	{
-		CRCAR* tmp = carQueue.front();
+		CROBJECT* tmp = carQueue.front();
 		carQueue.pop_front();
 		delete tmp;
 	}

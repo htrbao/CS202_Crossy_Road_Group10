@@ -104,6 +104,8 @@ void CROADFACTORY::update(sf::RenderWindow& window)
 		if (player->isNearRoand(*it))
 		{
 			addSound(*it);
+			//it->getObjFac(); get objDeque
+			//it->getObjFac2(); if not highway, it will be nullptr
 		}
 		//it->setPlaying();
 	}

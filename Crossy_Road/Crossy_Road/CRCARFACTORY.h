@@ -20,7 +20,7 @@ enum CarDir {
 class CRCARFACTORY
 {
 private:
-	deque<CRCAR*> carQueue;
+	deque<CROBJECT*> carQueue;
 	CarType type;
 	CarDir dir;
 	bool playing;
@@ -31,6 +31,7 @@ public:
 	void draw(sf::RenderWindow& window);
 	void update(float mX, float mY, sf::RenderWindow& window, CTRAFFIC& traffic, int frac = 1);
 	CRCAR* createCar(float mX, float mY, int frac = 1);
+	deque<CROBJECT*>* getObjQueue();
 	int direction();
 	int typeSound();
 	~CRCARFACTORY();
