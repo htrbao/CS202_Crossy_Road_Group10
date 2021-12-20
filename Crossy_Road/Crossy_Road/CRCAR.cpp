@@ -17,7 +17,3 @@ void CRCAR::move(float x, float y, float frac) {
 	CROBJECT::move(x, y, frac);
 }
 
-sf::Vector2f CRCAR::getPosition()
-{
-	return sf::Vector2f(mX, mY);
-}

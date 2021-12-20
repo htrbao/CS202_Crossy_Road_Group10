@@ -101,8 +101,15 @@ CROBJECT* CRBLOCKFACTORY::createTR(float mX, float mY, int i, bool init)
 		mX += Constants::SCREEN_WIDTH + 60 + (i - numTR / 2) * gap;
 		mY += (Constants::SCREEN_WIDTH + 60 + (i - numTR / 2) * gap) * tan(Constants::Alpha);
 	}
+	if (type == 12)
+		mY -= 25;
 	return new CRTREE(Constants::BLOCKNAME[type], mX, mY, 1);
 
+}
+
+deque<CROBJECT*>* CRBLOCKFACTORY::getObjQueue()
+{
+	return &objQueue;
 }
 
 int CRBLOCKFACTORY::typeSound()

@@ -46,6 +46,8 @@ public:
     virtual int typeSound() = 0;
     virtual int typeSound2() = 0;
     virtual bool isHighway() = 0;
+    virtual deque<CROBJECT*>* getObjFac() = 0;
+    virtual deque<CROBJECT*>* getObjFac2() = 0;
     void setPlaying();
     void setPlaying2();
 

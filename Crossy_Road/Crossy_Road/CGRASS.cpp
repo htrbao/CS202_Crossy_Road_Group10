@@ -75,3 +75,13 @@ bool CGRASS::isHighway()
     return false;
 }
 
+deque<CROBJECT*>* CGRASS::getObjFac()
+{
+    return blcFac.getObjQueue();
+}
+
+deque<CROBJECT*>* CGRASS::getObjFac2()
+{
+    return nullptr;
+}
+
