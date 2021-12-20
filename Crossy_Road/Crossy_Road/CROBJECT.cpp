@@ -7,7 +7,7 @@ void CROBJECT::setUpTexture() {
     sprite.setPosition(mX, mY);
 }
 
-CROBJECT::CROBJECT(double mX, double mY, double scale) : mX(mX), mY(mY), objScale(scale), direction(0), speed(0){}
+CROBJECT::CROBJECT(double mX, double mY, double scale) : mX(mX), mY(mY), objScale(scale), direction(0), speed(0), isVisible(true) {}
 
 CROBJECT::CROBJECT(double mX, double mY, double objScale, int direction = 1) : mX(mX), mY(mY), objScale(objScale), direction(direction), speed(0) {}
 
@@ -20,6 +20,10 @@ void CROBJECT::shiftObject(char UorD) {
 
 bool CROBJECT::checkOutWindow(sf::RenderWindow& window) {
     return (direction == 1 && (sprite.getPosition().x >= window.getSize().x + 100 || sprite.getPosition().y >= window.getSize().y + 100)) || (direction == -1 && (sprite.getPosition().x <= -100 || sprite.getPosition().y <= -100));
+}
+
+void CROBJECT::setVisible(bool typ) {
+    isVisible = true;
 }
 
 void CROBJECT::move(float x, float y, float frac) {

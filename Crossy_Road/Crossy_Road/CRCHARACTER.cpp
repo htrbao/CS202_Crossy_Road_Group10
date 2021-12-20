@@ -39,7 +39,10 @@ int CRCHARACTER::checkCollision(CROBJECT*& obj) {
 			if (dis < 50) return 2;
 			break;
 		case Constants::COIN:
-			if (dis < 40) return 3;
+			if (dis < 40) {
+				obj->setVisible(false);
+				return 3;
+			}
 			break;
 		}
 	}

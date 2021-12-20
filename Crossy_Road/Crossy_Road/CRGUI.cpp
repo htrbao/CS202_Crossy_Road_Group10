@@ -13,7 +13,7 @@ CRGUI::CRGUI(float width, float height)
 
 bool CRGUI::isClickEnter()
 {
-	return this->clickEnter    ;
+	return this->clickEnter;
 }
 ;
 void CRGUI::draw(sf::RenderTarget* window) {

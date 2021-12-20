@@ -8,8 +8,12 @@ using namespace std;
 
 class CROBJECT {
 protected:
+	friend class CGAME;
+	friend class CRCHARACTER;
 	double mX;
 	double mY;
+
+	bool isVisible;
 
 	double objScale;
 
@@ -29,6 +33,7 @@ public:
 	CROBJECT(double mX, double mY, double scale, int direction);
 	void shiftObject(char UorD);
 	bool checkOutWindow(sf::RenderWindow& window);
+	virtual void setVisible(bool typ);
 	virtual int type() = 0;
 	virtual void move(float x, float y, float frac = 1);
 	virtual void draw(sf::RenderWindow& window);

@@ -18,8 +18,6 @@ void CGAME::initWindow()
 	roadFac = new CROADFACTORY;
 	player = new CRCHARACTER(this->window, 0, 512, 350);
 	roadFac->initRoadGame(player);
-
-
 }
 
 void CGAME::initMenu()

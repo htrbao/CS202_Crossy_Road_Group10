@@ -12,6 +12,7 @@ private:
 	int jump_coeff;
 public:
 	CRCOIN(string textureFileName, double x, double y);
+	void setVisible(bool typ);
 	void move();
 	void jump();
 	int type();

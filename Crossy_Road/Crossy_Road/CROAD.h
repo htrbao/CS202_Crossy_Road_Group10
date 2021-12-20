@@ -10,6 +10,7 @@
 class CROAD
 {
 protected:
+    friend class CGAME;
     float m_originX;
     float m_originY;
 
