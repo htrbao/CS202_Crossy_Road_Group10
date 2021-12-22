@@ -1,6 +1,17 @@
 
 #include "CROAD.h"
 
+CROAD::CROAD(float x, float y, bool half_scale): m_originX{x},m_originY{y}
+{
+    if (half_scale)
+        numOfRoad += 0.5;
+    else
+        numOfRoad += 1;
+    dis = m_originY - m_originX * tan(Constants::Alpha);
+    playing = false;
+    playing2 = false;
+}
+
 CROAD::CROAD(bool half_scale) {
     if (half_scale)
         numOfRoad += 0.5;
@@ -37,6 +48,17 @@ sf::Vector2f CROAD::getPosition()
 float CROAD::getDis()
 {
     return dis;
+}
+
+void CROAD::save(ofstream& of)
+{
+    bool isroad = is_road();
+    bool ishighway = isHighway();
+    of.write((char*)&isroad, sizeof(isroad));
+    of.write((char*)&ishighway, sizeof(ishighway));
+    of.write((char*)&m_originX, sizeof(m_originX));
+    of.write((char*)&m_originY, sizeof(m_originY));
+    saveDerivedRoad(of);
 }
 
 

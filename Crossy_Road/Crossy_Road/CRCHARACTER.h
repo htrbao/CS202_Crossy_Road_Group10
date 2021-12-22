@@ -45,6 +45,8 @@ public:
 
     void update();
     void render();
+    void save(ofstream& of);
+    void load(ifstream& inf);
 
     bool isBehindRoad(CROAD& road);
     bool isNearRoad(CROAD& road);

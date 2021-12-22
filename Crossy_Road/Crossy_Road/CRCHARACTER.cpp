@@ -115,6 +115,27 @@ void CRCHARACTER::render() {
 	//}
 }
 
+void CRCHARACTER::save(ofstream& of)
+{
+	float x = sprite.getPosition().x;
+	float y = sprite.getPosition().y;
+
+	of.write((char*)&x, sizeof(x));
+	of.write((char*)&y, sizeof(y));
+	of.write((char*)&side, sizeof(side));
+}
+
+void CRCHARACTER::load(ifstream& inf)
+{
+	float x;
+	float y;
+	inf.read((char*)&x, sizeof(x));
+	inf.read((char*)&y, sizeof(y));
+	inf.read((char*)&side, sizeof(side));
+	setSide(side);
+	sprite.setPosition(x, y);
+}
+
 bool CRCHARACTER::isBehindRoad(CROAD& road)
 {
 	return mY - mX*tan(Constants::Alpha) + (WIDTH*SCALE)/2 <= road.getDis();

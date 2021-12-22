@@ -22,6 +22,7 @@ public:
     //constructor | destructor
     CLANE(sf::Vector2f pos, bool one_way = false);
     CLANE(float index = 1, bool one_way = false);
+    CLANE(float x, float y, bool one_way, bool hasTraffic);
     ~CLANE();
 
     //other function
@@ -34,6 +35,7 @@ public:
     bool isHighway();
     deque<CROBJECT*>* getObjFac();
     deque<CROBJECT*>* getObjFac2();
+    void saveDerivedRoad(ofstream& of);
 };
 
 

@@ -6,6 +6,7 @@
 #include "CGRASS.h"
 #include "CLANE.h"
 #include "CRCHARACTER.h"
+#include <fstream>
 #include <deque>
 #include <queue>
 #include <random>
@@ -26,8 +27,8 @@ private:
 	int meter;
 	void processSoundQ(CROAD& it, int val);
 public:
-
-	void initRoadGame(CRCHARACTER* player);
+	CROADFACTORY(CRCHARACTER* player);
+	void initRoadGame();
 
 	void shiftObject(char UorD);
 	void draw(sf::RenderWindow& window);
@@ -36,6 +37,8 @@ public:
 	CROAD* createRoad(float index = 1, bool is_road = false);
 	void addSound(CROAD& it);
 	void playSound();
+	void save(ofstream& of);
+	void load(ifstream& inf);
 	~CROADFACTORY();
 };
 

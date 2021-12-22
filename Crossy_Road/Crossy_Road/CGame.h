@@ -15,6 +15,7 @@
 #include "CRCOIN.h"
 #include "CRCHARACTER.h"
 #include "CRGUI.h"
+#include <fstream>
 
 class CGAME
 {
@@ -52,6 +53,8 @@ public:
 	void update();
 	void render();
 	void run();
+	void save();
+	void load();
 };
 
 

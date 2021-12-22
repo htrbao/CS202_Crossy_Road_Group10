@@ -6,6 +6,7 @@
 #include "CASSET.h"
 #include "CRCARFACTORY.h"
 #include "CRBLOCKFACTORY.h"
+#include <fstream>
 
 class CROAD
 {
@@ -16,7 +17,6 @@ protected:
 
     float objScale;
 
-    float disOrigin;
     float dis;
     bool playing;
     bool playing2;
@@ -29,6 +29,7 @@ private:
     static double numOfRoad;
 public:
     //constructor | destructor
+    CROAD(float x, float y, bool half_scale = false);
     CROAD(bool half_scale = false);
     ~CROAD();
     //other function
@@ -38,6 +39,7 @@ public:
     void shiftObject(char UorD);
     sf::Vector2f getPosition();
     float getDis();
+    void save(ofstream& of);
     //virtual
     virtual bool is_road() = 0;
     virtual void drawSubObj(sf::RenderWindow& window) = 0;
@@ -48,6 +50,7 @@ public:
     virtual bool isHighway() = 0;
     virtual deque<CROBJECT*>* getObjFac() = 0;
     virtual deque<CROBJECT*>* getObjFac2() = 0;
+    virtual void saveDerivedRoad(ofstream& of) = 0;
     void setPlaying();
     void setPlaying2();
 

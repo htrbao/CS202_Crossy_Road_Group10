@@ -9,6 +9,7 @@ class CGRASS :
     public CROAD
 {
 private:
+    bool is_above;
     const string asset_name_grass = "GRASS2";
     const string asset_name_grass_above = "GRASS";
     const float half_scale = 0.5;
@@ -17,6 +18,7 @@ public:
     //constructor | destructor
     CGRASS(sf::Vector2f pos, bool above = false);
     CGRASS(float index = 1, bool above = false);
+    CGRASS(float x, float y, bool above);
     ~CGRASS();
 
     //other function
@@ -29,6 +31,7 @@ public:
     bool isHighway();
     deque<CROBJECT*>* getObjFac();
     deque<CROBJECT*>* getObjFac2();
+    void saveDerivedRoad(ofstream& of);
 };
 
 #endif // !CRGASS_

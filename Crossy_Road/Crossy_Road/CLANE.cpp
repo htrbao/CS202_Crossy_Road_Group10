@@ -50,6 +50,27 @@ CLANE::CLANE(float index, bool one_way) : CROAD(one_way)
     //carFac.initCarGame(m_originX, m_originY);
 }
 
+CLANE::CLANE(float x, float y, bool one_way, bool hasTraffic) : CROAD(x,y,one_way)
+{
+    objScale = scale;
+    is_oneway = one_way;
+    if (one_way)
+    {
+        texture = &CASSET::GetInstance().textureMap[asset_name_road_oneway];
+        objScale -= half_scale;
+    }
+    else
+    {
+        texture = &CASSET::GetInstance().textureMap[asset_name_road_twoway];
+    }
+    sprite.setTexture(*texture);
+    sprite.setPosition(m_originX, m_originY);
+    if (hasTraffic)
+    {
+        traffic = CTRAFFIC(m_originX, m_originY);
+    }
+}
+
 CLANE::~CLANE()
 {
     carFac.~CRCARFACTORY();
@@ -130,6 +151,12 @@ deque<CROBJECT*>* CLANE::getObjFac2()
     if (!is_oneway)
         return carFac1.getObjQueue();
     return nullptr;
+}
+
+void CLANE::saveDerivedRoad(ofstream& of)
+{
+    bool is_traffic = traffic.hasTraffic();
+    of.write((char*)&is_traffic, sizeof(is_traffic));
 }
 
 

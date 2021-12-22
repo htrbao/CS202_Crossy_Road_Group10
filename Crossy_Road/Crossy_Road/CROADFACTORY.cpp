@@ -23,19 +23,23 @@ void CROADFACTORY::processSoundQ(CROAD& it, int val)
 	soundQueue.back().play();
 }
 
-void CROADFACTORY::initRoadGame(CRCHARACTER* player)
+CROADFACTORY::CROADFACTORY(CRCHARACTER* player)
 {
 	this->player = player;
+	mY = 0;
+	mX = 0;
+	mY_Origin = Constants::HIDDEN_ROAD_Y / 1.2;
+	meter = -12;
+}
+
+void CROADFACTORY::initRoadGame()
+{
 	bool is_road = false;
 	while (CROAD::getNumRoads() <= Constants::MAX_ROAD)
 	{
 		roadQueue.push_front(createRoad(Constants::MAX_ROAD - CROAD::getNumRoads(),is_road));
 		is_road = roadQueue.front()->is_road();
 	}
-	mY = 0;
-	mX = 0;
-	mY_Origin = Constants::HIDDEN_ROAD_Y / 1.2;
-	meter = -12;
 }
 
 void CROADFACTORY::shiftObject(char UorD)
@@ -178,6 +182,45 @@ void CROADFACTORY::addSound(CROAD& it)
 void CROADFACTORY::playSound()
 {
 
+}
+
+void CROADFACTORY::save(ofstream& of)
+{
+	of.write((char*)&mY, sizeof(mY));
+	of.write((char*)&mX, sizeof(mX));
+	of.write((char*)&mY_Origin, sizeof(mY_Origin));
+	of.write((char*)&meter, sizeof(meter));
+	for (auto i : roadQueue)
+	{
+		i->save(of);
+	}
+
+}
+
+void CROADFACTORY::load(ifstream& inf)
+{
+	inf.read((char*)&mY, sizeof(mY));
+	inf.read((char*)&mX, sizeof(mX));
+	inf.read((char*)&mY_Origin, sizeof(mY_Origin));
+	inf.read((char*)&meter, sizeof(meter));
+	while (!inf.eof())
+	{
+		bool is_road, ishighway, special;
+		float x, y;
+		inf.read((char*)&is_road, sizeof(is_road));
+		inf.read((char*)&ishighway, sizeof(ishighway));
+		inf.read((char*)&x, sizeof(x));
+		inf.read((char*)&y, sizeof(y));
+		inf.read((char*)&special, sizeof(special));
+		if (is_road)
+		{
+			roadQueue.push_back(new CLANE(x, y, !ishighway, special));
+		}
+		else
+		{
+			roadQueue.push_back(new CGRASS(x, y, special));
+		}
+	}
 }
 
 CROADFACTORY::~CROADFACTORY()

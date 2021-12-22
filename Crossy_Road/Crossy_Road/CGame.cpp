@@ -15,14 +15,15 @@ void CGAME::initWindow()
 	this->window = new sf::RenderWindow(this->videoMode, "CROSSY ROAD", sf::Style::Titlebar | sf::Style::Close);
 	this->window->setFramerateLimit(60);
 	this->window->setVerticalSyncEnabled(true);
-	roadFac = new CROADFACTORY;
 	player = new CRCHARACTER(this->window, 0, 512, 350);
-	roadFac->initRoadGame(player);
+	roadFac = new CROADFACTORY(player);
+	roadFac->initRoadGame();
+	//load();
 }
 
 void CGAME::initMenu()
 {
-	this->menu = new CRGUI(300,50);
+	this->menu = new CRGUI(300, 50);
 }
 
 //Constructor | Destructor
@@ -73,7 +74,7 @@ void CGAME::pollEvent()
 			break;
 		case sf::Event::KeyPressed:
 			if (ev.key.code == sf::Keyboard::Escape)
-				this->window->close();
+				//this->window->close();
 			break;
 		}
 	}
@@ -107,6 +108,11 @@ void CGAME::pollEvent()
 		}
 		if (player->side != CRCHARACTER::LEFT) player->setSide(CRCHARACTER::LEFT);
 	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+	{
+		save();
+		this->window->close();
+	}
 }
 
 void CGAME::run()
@@ -136,4 +142,25 @@ void CGAME::render()
 	roadFac->draw(*this->window);
 	this->menu->draw(this->window);
 	this->window->display();
+}
+
+void CGAME::save()
+{
+	ofstream file;
+	file.open("game.dat", ios::binary);
+	player->save(file);
+	roadFac->save(file);
+	file.close();
+	cout << "save successfully\n";
+}
+
+void CGAME::load()
+{
+	ifstream file;
+	file.open("game.dat", ios::binary);
+	player->load(file);
+	roadFac->load(file);
+	file.close();
+	cout << "load successfully\n";
+
 }
