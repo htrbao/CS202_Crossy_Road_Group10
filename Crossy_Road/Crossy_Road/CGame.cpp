@@ -17,13 +17,18 @@ void CGAME::initWindow()
 	this->window->setVerticalSyncEnabled(true);
 	player = new CRCHARACTER(this->window, 0, 512, 350);
 	roadFac = new CROADFACTORY(player);
-	roadFac->initRoadGame();
+	initGame();
 	//load();
 }
 
 void CGAME::initMenu()
 {
 	this->menu = new CRGUI(300, 50);
+}
+
+void CGAME::initGame()
+{
+	roadFac->initRoadGame();
 }
 
 //Constructor | Destructor

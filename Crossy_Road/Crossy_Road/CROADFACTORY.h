@@ -6,6 +6,8 @@
 #include "CGRASS.h"
 #include "CLANE.h"
 #include "CRCHARACTER.h"
+#include "CPOINTHUD.h"
+
 #include <fstream>
 #include <deque>
 #include <queue>
@@ -21,6 +23,8 @@ private:
 	deque<CROAD*> roadQueue;
 	queue<sf::Sound> soundQueue;
 	CRCHARACTER* player;
+	CPOINTHUD* point;
+
 	float mY;
 	float mX;
 	float mY_Origin;

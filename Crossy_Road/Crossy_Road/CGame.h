@@ -38,6 +38,7 @@ private:
 	void initializeVariable();
 	void initWindow();
 	void initMenu();
+	void initGame();
 
 public:
 	//Constructor | Destructor

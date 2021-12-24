@@ -29,7 +29,7 @@ CROADFACTORY::CROADFACTORY(CRCHARACTER* player)
 	mY = 0;
 	mX = 0;
 	mY_Origin = Constants::HIDDEN_ROAD_Y / 1.2;
-	meter = -12;
+	point = new CPOINTHUD(Constants::pointFont, 40, Constants::SCREEN_WIDTH - 200, 20, -11);
 }
 
 void CROADFACTORY::initRoadGame()
@@ -40,6 +40,7 @@ void CROADFACTORY::initRoadGame()
 		roadQueue.push_front(createRoad(Constants::MAX_ROAD - CROAD::getNumRoads(),is_road));
 		is_road = roadQueue.front()->is_road();
 	}
+
 }
 
 void CROADFACTORY::shiftObject(char UorD)
@@ -78,6 +79,7 @@ void CROADFACTORY::draw(sf::RenderWindow& window)
 		}
 		it->drawSubObj(window);
 	}
+	point->draw(window);
 }
 
 void CROADFACTORY::update(sf::RenderWindow& window)
@@ -85,7 +87,6 @@ void CROADFACTORY::update(sf::RenderWindow& window)
 	playSound();
 	if (mX > 1500)
 	{
-		cout << 1 << endl;
 		roadQueue.push_front(createRoad(roadQueue.front()->getPosition() + sf::Vector2f(130,130*tan(Constants::Alpha)), roadQueue.front()->is_road()));
 		roadQueue.front()->draw(window);
 		mX = 0;
@@ -100,7 +101,7 @@ void CROADFACTORY::update(sf::RenderWindow& window)
 		roadQueue.pop_back();
 		tmp->~CROAD();
 		delete tmp;
-		meter++;
+		point->increaseP();
 	}
 	for (auto it : roadQueue)
 	{
@@ -111,7 +112,6 @@ void CROADFACTORY::update(sf::RenderWindow& window)
 			//it->getObjFac(); get objDeque
 			//it->getObjFac2(); if not highway, it will be nullptr
 		}
-		//it->setPlaying();
 	}
 }
 
@@ -189,7 +189,7 @@ void CROADFACTORY::save(ofstream& of)
 	of.write((char*)&mY, sizeof(mY));
 	of.write((char*)&mX, sizeof(mX));
 	of.write((char*)&mY_Origin, sizeof(mY_Origin));
-	of.write((char*)&meter, sizeof(meter));
+	point->save(of);
 	for (auto i : roadQueue)
 	{
 		i->save(of);
@@ -202,7 +202,7 @@ void CROADFACTORY::load(ifstream& inf)
 	inf.read((char*)&mY, sizeof(mY));
 	inf.read((char*)&mX, sizeof(mX));
 	inf.read((char*)&mY_Origin, sizeof(mY_Origin));
-	inf.read((char*)&meter, sizeof(meter));
+	point->load(inf);
 	while (!inf.eof())
 	{
 		bool is_road, ishighway, special;
@@ -230,5 +230,5 @@ CROADFACTORY::~CROADFACTORY()
 		it->~CROAD();
 		delete it;
 	}
-		
+	delete point;
 }

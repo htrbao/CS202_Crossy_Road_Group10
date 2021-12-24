@@ -18,6 +18,15 @@ void CASSET::initTexture(string textureFileName, bool isPlayer) {
 	cout << filepath << " loaded successfully" << endl;
 }
 
+void CASSET::initFont(string fontFileName)
+{
+	if (!fontMap[fontFileName].loadFromFile("./assets/fonts/" + fontFileName + ".ttf")) {
+		cout << "Cannot load assets/fonts/" << fontFileName << ".ttf\n";
+		return;
+	}
+	cout << fontFileName << "loaded successfully\n";
+}
+
 CASSET::CASSET() {
 	//load player
 	initTexture("CAT", 1);
@@ -88,4 +97,8 @@ CASSET::CASSET() {
 	initSound("JUMP");
 	initSound("BIRDS");
 	initSound("COIN");
+
+	//font
+	initFont("Flap");
+	initFont("vectroid");
 }

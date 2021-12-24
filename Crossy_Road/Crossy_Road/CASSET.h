@@ -24,6 +24,7 @@ private:
 	CASSET& operator=(const CASSET&) {};
 	void initSound(string soundFileName);
 	void initTexture(string textureFileName, bool isPlayer = false);
+	void initFont(string fontFileName);
 public:
 	static CASSET& GetInstance() {
 		static CASSET instance;
@@ -31,6 +32,7 @@ public:
 	}
 	unordered_map<string, sf::SoundBuffer> soundMap;
 	unordered_map<string, sf::Texture> textureMap;
+	unordered_map<string, sf::Font> fontMap;
 };
 
 #endif // !_CASSET_H_
