@@ -28,10 +28,9 @@ private:
 	float mY;
 	float mX;
 	float mY_Origin;
-	int meter;
 	void processSoundQ(CROAD& it, int val);
 public:
-	CROADFACTORY(CRCHARACTER* player);
+	CROADFACTORY(CRCHARACTER* player, CPOINTHUD* p);
 	void initRoadGame();
 
 	void shiftObject(char UorD);

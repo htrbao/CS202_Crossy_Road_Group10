@@ -11,14 +11,14 @@ CPOINTHUD::CPOINTHUD(string nameFont, int pxSize, float x, float y, int val)
 	text.setPosition(x, y);
 }
 
-void CPOINTHUD::increaseP()
+void CPOINTHUD::increaseP(int i)
 {
-	point++;
+	point+=i;
 }
 
-void CPOINTHUD::descreaseP()
+void CPOINTHUD::descreaseP(int i)
 {
-	point--;
+	point-=i;
 }
 
 void CPOINTHUD::draw(sf::RenderWindow& window)

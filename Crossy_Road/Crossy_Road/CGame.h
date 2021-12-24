@@ -15,6 +15,7 @@
 #include "CRCOIN.h"
 #include "CRCHARACTER.h"
 #include "CRGUI.h"
+#include "CPOINTHUD.h"
 #include <fstream>
 
 class CGAME
@@ -38,6 +39,7 @@ private:
 	CRGUI *menu;
 	CROADFACTORY* roadFac;
 	CRCHARACTER* player;
+	CPOINTHUD* point;
 
 	//Private function
 	void initializeVariable();

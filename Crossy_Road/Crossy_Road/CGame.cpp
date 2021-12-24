@@ -16,9 +16,10 @@ void CGAME::initWindow()
 	this->window->setFramerateLimit(60);
 	this->window->setVerticalSyncEnabled(true);
 	player = new CRCHARACTER(this->window, 0, 512, 350);
-	roadFac = new CROADFACTORY(player);
-	initGame();
-	//load();
+	point = new CPOINTHUD(Constants::pointFont, 100, Constants::SCREEN_WIDTH - 350, -30, -11);
+	roadFac = new CROADFACTORY(player, point);
+	//initGame();
+	load();
 }
 
 void CGAME::initMenu()
@@ -53,6 +54,7 @@ CGAME::~CGAME()
 {
 	delete roadFac;
 	delete player;
+	delete point;
 	delete this->window;
 }
 
@@ -70,6 +72,10 @@ bool CGAME::checkMove() {
 				int collisionType = player->checkCollision(curRoad->at(i));
 				if (collisionType % 3) {
 					return false;
+				}
+				if (collisionType == 3)
+				{
+					point->increaseP(5);
 				}
 			}
 		}
@@ -179,6 +185,7 @@ void CGAME::save()
 {
 	ofstream file;
 	file.open("game.dat", ios::binary);
+	point->save(file);
 	player->save(file);
 	roadFac->save(file);
 	file.close();
@@ -189,6 +196,7 @@ void CGAME::load()
 {
 	ifstream file;
 	file.open("game.dat", ios::binary);
+	point->load(file);
 	player->load(file);
 	roadFac->load(file);
 	file.close();

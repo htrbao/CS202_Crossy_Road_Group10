@@ -23,13 +23,13 @@ void CROADFACTORY::processSoundQ(CROAD& it, int val)
 	soundQueue.back().play();
 }
 
-CROADFACTORY::CROADFACTORY(CRCHARACTER* player)
+CROADFACTORY::CROADFACTORY(CRCHARACTER* player, CPOINTHUD* p)
 {
 	this->player = player;
 	mY = 0;
 	mX = 0;
 	mY_Origin = Constants::HIDDEN_ROAD_Y / 1.2;
-	point = new CPOINTHUD(Constants::pointFont, 100, Constants::SCREEN_WIDTH - 350, -30, -11);
+	point = p;
 }
 
 void CROADFACTORY::initRoadGame()
@@ -189,7 +189,6 @@ void CROADFACTORY::save(ofstream& of)
 	of.write((char*)&mY, sizeof(mY));
 	of.write((char*)&mX, sizeof(mX));
 	of.write((char*)&mY_Origin, sizeof(mY_Origin));
-	point->save(of);
 	for (auto i : roadQueue)
 	{
 		i->save(of);
@@ -202,7 +201,6 @@ void CROADFACTORY::load(ifstream& inf)
 	inf.read((char*)&mY, sizeof(mY));
 	inf.read((char*)&mX, sizeof(mX));
 	inf.read((char*)&mY_Origin, sizeof(mY_Origin));
-	point->load(inf);
 	while (!inf.eof())
 	{
 		bool is_road, ishighway, special;

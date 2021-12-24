@@ -10,7 +10,7 @@ using namespace std;
 class CRBLOCK : public CROBJECT {
 private:
 public:
-	CRBLOCK(string textureFileName, double x, double y);
+	CRBLOCK(string textureFileName, double x, double y, float scale = 1);
 	int type();
 	void move(double x, double y);
 	bool isCar();

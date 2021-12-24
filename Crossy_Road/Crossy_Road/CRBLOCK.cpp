@@ -1,6 +1,6 @@
 #include "CRBLOCK.h"
 
-CRBLOCK::CRBLOCK(string textureFileName, double x, double y) : CROBJECT(x, y, 1) {
+CRBLOCK::CRBLOCK(string textureFileName, double x, double y, float scale) : CROBJECT(x, y, scale) {
 	texture = &CASSET::GetInstance().textureMap[textureFileName];
 
 	setUpTexture();

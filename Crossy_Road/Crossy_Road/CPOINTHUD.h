@@ -19,8 +19,8 @@ private:
 
 public:
 	CPOINTHUD(string nameFont, int pxSize, float x, float y, int val);
-	void increaseP();
-	void descreaseP();
+	void increaseP(int i = 1);
+	void descreaseP(int i = 1);
 	void draw(sf::RenderWindow& window);
 	void update();
 	void save(ofstream& of);
