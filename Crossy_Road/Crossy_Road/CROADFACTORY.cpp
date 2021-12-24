@@ -29,7 +29,7 @@ CROADFACTORY::CROADFACTORY(CRCHARACTER* player)
 	mY = 0;
 	mX = 0;
 	mY_Origin = Constants::HIDDEN_ROAD_Y / 1.2;
-	point = new CPOINTHUD(Constants::pointFont, 40, Constants::SCREEN_WIDTH - 200, 20, -11);
+	point = new CPOINTHUD(Constants::pointFont, 100, Constants::SCREEN_WIDTH - 350, -30, -11);
 }
 
 void CROADFACTORY::initRoadGame()
@@ -85,9 +85,9 @@ void CROADFACTORY::draw(sf::RenderWindow& window)
 void CROADFACTORY::update(sf::RenderWindow& window)
 {
 	playSound();
-	if (mX > 1500)
+	if (mX > 1650)
 	{
-		roadQueue.push_front(createRoad(roadQueue.front()->getPosition() + sf::Vector2f(130,130*tan(Constants::Alpha)), roadQueue.front()->is_road()));
+		roadQueue.push_front(createRoad(roadQueue.front()->getPosition() + sf::Vector2f(120,120*tan(Constants::Alpha)), roadQueue.front()->is_road()));
 		roadQueue.front()->draw(window);
 		mX = 0;
 	}

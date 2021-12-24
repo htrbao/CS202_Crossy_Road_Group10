@@ -24,7 +24,7 @@ private:
 	CASSET& operator=(const CASSET&) {};
 	void initSound(string soundFileName);
 	void initTexture(string textureFileName, bool isPlayer = false);
-	void initFont(string fontFileName);
+	void initFont(string fontFileName, string extend);
 public:
 	static CASSET& GetInstance() {
 		static CASSET instance;

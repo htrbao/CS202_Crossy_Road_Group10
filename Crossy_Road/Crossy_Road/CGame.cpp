@@ -125,6 +125,7 @@ void CGAME::run()
 	while (running())
 	{
 		update();
+		
 		render();
 	}
 }

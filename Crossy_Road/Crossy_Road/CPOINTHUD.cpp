@@ -6,7 +6,7 @@ CPOINTHUD::CPOINTHUD(string nameFont, int pxSize, float x, float y, int val)
 	font = &CASSET::GetInstance().fontMap[nameFont];
 	text.setFont(*font);
 	text.setCharacterSize(pxSize);
-	text.setFillColor(sf::Color::Yellow);
+	text.setFillColor(sf::Color(255, 252, 211));
 	update();
 	text.setPosition(x, y);
 }
@@ -29,7 +29,7 @@ void CPOINTHUD::draw(sf::RenderWindow& window)
 
 void CPOINTHUD::update()
 {
-	string display = "POINT: " + to_string(point);
+	string display = "(Point: " + to_string(point) + ")";
 	text.setString(display);
 }
 
