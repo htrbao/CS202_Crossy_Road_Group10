@@ -46,6 +46,8 @@ namespace Constants {
 	const std::string SOUNDNAME[] = { "CAR_LARGE", "CAR_SMALL", "POLICE", "BIRDS" };
 	//Traffic
 	const std::string TRAFFICNAME = "TRAFFICLIGHT";
+	//Font
+	const std::string pointFont = "Christmas";
 	//type
 	const int BLOCK = 0;
 	const int CAR = 1;

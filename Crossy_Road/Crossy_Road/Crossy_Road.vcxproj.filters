@@ -66,6 +66,9 @@
     <ClCompile Include="CRGUI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CPOINTHUD.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CROBJECT.h">
@@ -117,6 +120,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CTRAFFIC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPOINTHUD.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

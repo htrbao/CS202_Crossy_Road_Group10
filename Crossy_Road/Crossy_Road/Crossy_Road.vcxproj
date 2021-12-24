@@ -149,6 +149,7 @@
     <ClCompile Include="CGAME.cpp" />
     <ClCompile Include="CGRASS.cpp" />
     <ClCompile Include="CLANE.cpp" />
+    <ClCompile Include="CPOINTHUD.cpp" />
     <ClCompile Include="CRBLOCK.cpp" />
     <ClCompile Include="CRBLOCKFACTORY.cpp" />
     <ClCompile Include="CRCAR.cpp" />
@@ -168,6 +169,7 @@
     <ClInclude Include="CGAME.h" />
     <ClInclude Include="CGRASS.h" />
     <ClInclude Include="CLANE.h" />
+    <ClInclude Include="CPOINTHUD.h" />
     <ClInclude Include="CRBLOCK.h" />
     <ClInclude Include="CRBLOCKFACTORY.h" />
     <ClInclude Include="CRCAR.h" />
