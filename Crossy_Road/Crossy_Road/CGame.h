@@ -21,6 +21,11 @@ class CGAME
 {
 private:
 	//Variables
+	
+	sf::Texture* snowTexture;
+	sf::Sprite snow;
+	sf::Sprite snowNext;
+
 	//Window
 	sf::RenderWindow* window;
 	sf::Event ev;

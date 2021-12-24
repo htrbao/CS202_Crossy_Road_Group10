@@ -78,7 +78,7 @@ CASSET::CASSET() {
 	initTexture("PLAYBUTTON");
 	initTexture("PLAY");
 	initTexture("EXIT");
-
+	initTexture("SNOW");
 	//sound
 	initSound("CROSSY");
 	initSound("CAR_LARGE");

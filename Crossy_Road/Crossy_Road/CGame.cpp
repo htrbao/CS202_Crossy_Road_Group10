@@ -29,6 +29,16 @@ void CGAME::initMenu()
 //Constructor | Destructor
 CGAME::CGAME()
 {
+	//SNOW section
+	snowTexture = &CASSET::GetInstance().textureMap["SNOW"];
+	snow.setTexture(*snowTexture);
+	snow.scale(1.5, 1.5);
+	snowNext.setTexture(*snowTexture);
+	snowNext.scale(1.5, 1.5);
+	snowNext.setPosition(0, 0);
+	long setUpY = snowTexture->getSize().y;
+	snow.setPosition(0, -setUpY);
+	//end SNOW section
 	this->initializeVariable();
 	this->initWindow();
 	this->initMenu();
@@ -78,7 +88,9 @@ void CGAME::pollEvent()
 			break;
 		}
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {/*
+		snow.move(-Constants::shiftVelocityX, Constants::shiftVelocityX * tan(Constants::Beta));
+		snowNext.move(-Constants::shiftVelocityX, Constants::shiftVelocityX * tan(Constants::Beta));*/
 		player->moveUp();
 		roadFac->shiftObject('U');
 		if (!checkMove()) {
@@ -93,7 +105,9 @@ void CGAME::pollEvent()
 		}
 		if (player->side != CRCHARACTER::RIGHT) player->setSide(CRCHARACTER::RIGHT);
 	}
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {/*
+		snow.move(Constants::shiftVelocityX, -Constants::shiftVelocityX * tan(Constants::Beta));
+		snowNext.move(Constants::shiftVelocityX, -Constants::shiftVelocityX * tan(Constants::Beta));*/
 		player->moveDown();
 		roadFac->shiftObject('D');
 		if (!checkMove()) {
@@ -127,6 +141,14 @@ void CGAME::run()
 //Other function
 void CGAME::update()
 {
+	snowNext.move(0, 1);
+	snow.move(0, 1);
+	if (snow.getPosition().y == 0) {
+		snowNext.setPosition(0, 0);
+		long setUpY = snowTexture->getSize().y;
+		snow.setPosition(0, -setUpY);
+	}
+
 	this->menu->eventListener(this->window);
 	if (this->menu->isClickEnter() == true)
 	{
@@ -139,8 +161,11 @@ void CGAME::render()
 {
 	this->window->clear();
 	//draw obj
+
 	roadFac->draw(*this->window);
 	this->menu->draw(this->window);
+	this->window->draw(snow);
+	this->window->draw(snowNext);
 	this->window->display();
 }
 
