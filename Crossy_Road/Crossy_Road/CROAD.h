@@ -14,24 +14,19 @@ protected:
     friend class CGAME;
     float m_originX;
     float m_originY;
-
     float objScale;
-
     float dis;
     bool playing;
     bool playing2;
     sf::Texture* texture;
     sf::Sprite sprite;
-    CRCARFACTORY carFac;
-    CRCARFACTORY carFac1;
-    CRBLOCKFACTORY blcFac;
 private:
     static double numOfRoad;
 public:
     //constructor | destructor
     CROAD(float x, float y, bool half_scale = false);
     CROAD(bool half_scale = false);
-    ~CROAD();
+    virtual ~CROAD();
     //other function
     bool checkOutWindow(sf::RenderWindow& window);
     bool checkOutWindow2(sf::RenderWindow& window);

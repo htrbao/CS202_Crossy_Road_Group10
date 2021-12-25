@@ -17,7 +17,8 @@ private:
     const float scale = 1;
     const float half_scale = 0.5;
     bool is_oneway;
-
+    CRCARFACTORY carFac;
+    CRCARFACTORY carFac1;
 public:
     //constructor | destructor
     CLANE(sf::Vector2f pos, bool one_way = false);
