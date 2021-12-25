@@ -21,11 +21,6 @@ void CGAME::initWindow()
 	initGame();
 }
 
-void CGAME::initMenu()
-{
-	this->menu = new CRGUI(300, 50);
-}
-
 void CGAME::initGame()
 {
 	roadFac->initRoadGame();
@@ -44,9 +39,11 @@ CGAME::CGAME()
 	long setUpY = snowTexture->getSize().y;
 	snow.setPosition(0, -setUpY);
 	//end SNOW section
+
+	game_state = PLAYING;
+
 	this->initializeVariable();
 	this->initWindow();
-	this->initMenu();
 }
 
 CGAME::~CGAME()
@@ -169,12 +166,20 @@ void CGAME::render()
 {
 	this->window->clear();
 	//draw obj
-
-	roadFac->draw(*this->window);
-	this->menu->draw(this->window);
-	this->window->draw(snow);
-	this->window->draw(snowNext);
-	this->window->display();
+	switch (game_state){
+	case MENU:
+		break;
+	case PLAYING:
+		roadFac->draw(*this->window);
+		this->window->draw(snow);
+		this->window->draw(snowNext);
+		this->window->display();
+		break;
+	case GAMEOVER:
+		break;
+	case PAUSE:
+		break;
+	}
 }
 
 void CGAME::save()

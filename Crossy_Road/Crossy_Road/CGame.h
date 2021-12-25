@@ -18,11 +18,16 @@
 #include "CPOINTHUD.h"
 #include <fstream>
 
+enum GAME_STATUS {MENU, PLAYING, GAMEOVER, PAUSE};
+
 class CGAME
 {
 private:
 	//Variables
 	
+
+	GAME_STATUS game_state;
+
 	sf::Texture* snowTexture;
 	sf::Sprite snow;
 	sf::Sprite snowNext;
@@ -36,7 +41,7 @@ private:
 	sf::Sound gameSound;
 
 	//Game obj
-	CRGUI *menu;
+	CRGUI* gui;
 	CROADFACTORY* roadFac;
 	CRCHARACTER* player;
 	CPOINTHUD* point;
@@ -44,7 +49,6 @@ private:
 	//Private function
 	void initializeVariable();
 	void initWindow();
-	void initMenu();
 	void initGame();
 
 public:
