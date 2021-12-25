@@ -78,6 +78,7 @@ CLANE::~CLANE()
     {
         carFac1.~CRCARFACTORY();
     }
+
 }
 
 bool CLANE::is_road()

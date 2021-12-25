@@ -24,9 +24,6 @@ CROAD::CROAD(bool half_scale) {
 CROAD::~CROAD()
 {
     numOfRoad-= objScale;
-    carFac.~CRCARFACTORY();
-    carFac1.~CRCARFACTORY();
-    blcFac.~CRBLOCKFACTORY();
 }
 
 bool CROAD::checkOutWindow(sf::RenderWindow& window)
@@ -60,7 +57,6 @@ void CROAD::save(ofstream& of)
     of.write((char*)&m_originY, sizeof(m_originY));
     saveDerivedRoad(of);
 }
-
 
 
 void CROAD::shiftObject(char UorD)

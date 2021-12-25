@@ -18,8 +18,8 @@ void CGAME::initWindow()
 	player = new CRCHARACTER(this->window, 0, 512, 350);
 	point = new CPOINTHUD(Constants::pointFont, 100, Constants::SCREEN_WIDTH - 350, -30, -11);
 	roadFac = new CROADFACTORY(player, point);
-	//initGame();
-	load();
+	initGame();
+	//load();
 }
 
 void CGAME::initMenu()

@@ -26,7 +26,7 @@ void CRBLOCKFACTORY::initObjGame(float mX, float mY, bool init)
 		i = 1;
 		while (i <= numBLC)
 		{
-			objQueue.push_back(createBL(mX, mY, i));
+			objQueue.push_front(createBL(mX, mY, i));
 			i++;
 		}
 	}
@@ -57,7 +57,7 @@ CROBJECT* CRBLOCKFACTORY::createBL(float mX, float mY, int i, bool init)
 {
 	int coin = rand() % 50;
 	int type = rand() % 10;
-	int gap = 100 + rand()%50, gaptr = 120, dis = (mX / 512 + 1) * 40;
+	int gap = 100 + rand()%25, gaptr = 120, dis = (mX / 512 + 1) * 40;
 	if (!init)
 		dis += 20;
 	if (coin > 3)
