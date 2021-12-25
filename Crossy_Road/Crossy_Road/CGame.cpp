@@ -18,8 +18,7 @@ void CGAME::initWindow()
 	player = new CRCHARACTER(this->window, 0, 512, 350);
 	point = new CPOINTHUD(Constants::pointFont, 100, Constants::SCREEN_WIDTH - 350, -30, -11);
 	roadFac = new CROADFACTORY(player, point);
-	//initGame();
-	load();
+	initGame();
 }
 
 void CGAME::initMenu()
@@ -161,12 +160,9 @@ void CGAME::update()
 		snow.setPosition(0, -setUpY);
 	}
 
-	this->menu->eventListener(this->window);
-	if (this->menu->isClickEnter() == true)
-	{
-		pollEvent();
-		roadFac->update(*this->window);
-	}
+
+	pollEvent();
+	roadFac->update(*this->window);
 	
 }
 void CGAME::render()

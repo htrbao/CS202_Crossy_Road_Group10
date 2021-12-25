@@ -2,37 +2,24 @@
 
 CRGUI::CRGUI(float width, float height)
 {
-	this->textTitle.loadFromFile("assets\\graphics\\TiTLE.png");
-	this->textButton.loadFromFile("assets\\graphics\\PLAY.png");
-	this->Title.setTexture(this->textTitle);
-	this->Button.setTexture(this->textButton);
-	this->Button.scale(0.5, 0.5);
-	this->Title.setPosition(width, height);
-	this->Button.setPosition(width + 45, height + 300);
+	font = CASSET::GetInstance().fontMap["Flap"];
+	pauseTexture = &CASSET::GetInstance().textureMap["PAUSE"];
 }
 
-bool CRGUI::isClickEnter()
-{
-	return this->clickEnter;
-}
-;
 void CRGUI::draw(sf::RenderTarget* window) {
-	if (this->isDelete == false)
-	{
-		window->draw(this->Title);
-		window->draw(this->Button);
-	}
+	
+}
 
+void CRGUI::nextChoice() {
+	options[0].first.setFillColor(sf::Color(255, 247, 182));
+	options.push_back(options[0]);
+	options.pop_front();
+	options[0].first.setFillColor(sf::Color(244, 188, 1));
 }
-void CRGUI::eventListener(sf::RenderWindow* window)
-{
-	while (window->pollEvent(this->ev))
-	{
-		if (this->ev.type == sf::Event::KeyReleased && this->ev.key.code == sf::Keyboard::Return)
-		{
-			this->clickEnter = true;
-			this->isDelete = true;
-		}
-	}
+
+void CRGUI::prevChoice() {
+	options[0].first.setFillColor(sf::Color(255, 247, 182));
+	options.push_front(options.back());
+	options.pop_back();
+	options[0].first.setFillColor(sf::Color(244, 188, 1));
 }
-;

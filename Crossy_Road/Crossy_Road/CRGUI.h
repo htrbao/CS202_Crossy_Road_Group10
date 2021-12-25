@@ -4,22 +4,33 @@
 
 #include "CASSET.h"
 #include "Constants.h"
-//#include "CGame.h"
+#include <deque>
+
 class CRGUI {
 private:
 	friend class CGAME;
-	sf::Sprite Title;
-	sf::Sprite Button;
-	sf::Texture textTitle;
-	sf::Texture textButton;
+	
+	//
+	float width;
+	float height;
+
+	//pause then play
+	sf::Texture* pauseTexture;
+	sf::Texture* playTexture;
+	sf::Sprite pauseButton;
+	sf::Sprite playButton;
+
+	sf::Font font;
+
 	sf::Event ev;
-	bool clickEnter = false;
-	bool isDelete = false;
+
+	vector<double> yText;
+	deque<pair<sf::Text, int>> options;
 public:
 	CRGUI(float width, float height);
-	bool isClickEnter();
 	void draw(sf::RenderTarget* window);
-	void eventListener(sf::RenderWindow* window);
+	void nextChoice();
+	void prevChoice();
 };
 
 #endif // !_CRGUI_H_
