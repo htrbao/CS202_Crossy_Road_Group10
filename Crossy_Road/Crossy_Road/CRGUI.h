@@ -20,6 +20,10 @@ private:
 	sf::Sprite pauseButton;
 	sf::Sprite playButton;
 
+	sf::Texture* titleTexture;
+	sf::Sprite title;
+
+
 	sf::Font font;
 
 	sf::Event ev;
@@ -28,7 +32,8 @@ private:
 	deque<pair<sf::Text, int>> options;
 public:
 	CRGUI(float width, float height);
-	void draw(sf::RenderTarget* window);
+	void draw(sf::RenderTarget& window);
+	void drawTest();
 	void nextChoice();
 	void prevChoice();
 };

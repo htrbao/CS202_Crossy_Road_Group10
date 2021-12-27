@@ -13,5 +13,6 @@ int main() {
 	//snow.setPosition(0, -setUpY);
 	CGAME game;
 	game.run();
+	cout << "OK to out!";
 	return 0;
 }

@@ -15,6 +15,7 @@ void CGAME::initWindow()
 	this->window = new sf::RenderWindow(this->videoMode, "CROSSY ROAD", sf::Style::Titlebar | sf::Style::Close);
 	this->window->setFramerateLimit(60);
 	this->window->setVerticalSyncEnabled(true);
+	//this->window->setKeyRepeatEnabled(false);
 	player = new CRCHARACTER(this->window, 0, 512, 350);
 	point = new CPOINTHUD(Constants::pointFont, 100, Constants::SCREEN_WIDTH - 350, -30, -11);
 	roadFac = new CROADFACTORY(player, point);
@@ -40,7 +41,10 @@ CGAME::CGAME()
 	snow.setPosition(0, -setUpY);
 	//end SNOW section
 
-	game_state = PLAYING;
+	gui = new CRGUI(0, 0);
+	gui->drawTest();
+
+	game_state = MENU;
 
 	this->initializeVariable();
 	this->initWindow();
@@ -51,6 +55,7 @@ CGAME::~CGAME()
 	delete roadFac;
 	delete player;
 	delete point;
+	delete gui;
 	delete this->window;
 }
 
@@ -84,17 +89,37 @@ void CGAME::pollEvent()
 {
 	while (this->window->pollEvent(this->ev))
 	{
+		if (game_state == PLAYING) continue;
 		switch (this->ev.type)
 		{
 		case sf::Event::Closed:
 			this->window->close();
 			break;
-		case sf::Event::KeyPressed:
-			if (ev.key.code == sf::Keyboard::Escape)
+		case sf::Event::KeyReleased:
+			//if (ev.key.code == sf::Keyboard::Escape)
 				//this->window->close();
+			switch (ev.key.code) {
+			case sf::Keyboard::Up:
+				gui->prevChoice();
+				break;
+			case sf::Keyboard::Right:
+				break;
+			case sf::Keyboard::Down:
+				gui->nextChoice();
+				break;
+			case sf::Keyboard::Left:
+				break;
+			case sf::Keyboard::Enter:
+				game_state = PLAYING;
+				break;
+			case sf::Keyboard::Escape:
+				this->window->close();
+				break;
+			}
 			break;
 		}
 	}
+	if (game_state != PLAYING) return;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {/*
 		snow.move(-Constants::shiftVelocityX, Constants::shiftVelocityX * tan(Constants::Beta));
 		snowNext.move(-Constants::shiftVelocityX, Constants::shiftVelocityX * tan(Constants::Beta));*/
@@ -131,7 +156,6 @@ void CGAME::pollEvent()
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
 	{
-		save();
 		this->window->close();
 	}
 }
@@ -157,10 +181,8 @@ void CGAME::update()
 		snow.setPosition(0, -setUpY);
 	}
 
-
 	pollEvent();
-	roadFac->update(*this->window);
-	
+	roadFac->update(*this->window);	
 }
 void CGAME::render()
 {
@@ -168,18 +190,21 @@ void CGAME::render()
 	//draw obj
 	switch (game_state){
 	case MENU:
+		this->window->draw(snow);
+		this->window->draw(snowNext);
+		gui->draw(*this->window);
 		break;
 	case PLAYING:
 		roadFac->draw(*this->window);
 		this->window->draw(snow);
 		this->window->draw(snowNext);
-		this->window->display();
 		break;
 	case GAMEOVER:
 		break;
 	case PAUSE:
 		break;
 	}
+	this->window->display();
 }
 
 void CGAME::save()
