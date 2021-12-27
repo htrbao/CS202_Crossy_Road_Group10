@@ -17,13 +17,15 @@ void CGAME::initWindow()
 	this->window->setVerticalSyncEnabled(true);
 	//this->window->setKeyRepeatEnabled(false);
 	player = new CRCHARACTER(this->window, 0, 512, 350);
-	point = new CPOINTHUD(Constants::pointFont, 100, Constants::SCREEN_WIDTH - 350, -30, -11);
-	roadFac = new CROADFACTORY(player, point);
 	initGame();
 }
 
 void CGAME::initGame()
 {
+	delete point;
+	delete roadFac;
+	point = new CPOINTHUD(Constants::pointFont, 100, Constants::SCREEN_WIDTH - 350, -30, -11);
+	roadFac = new CROADFACTORY(player, point);
 	roadFac->initRoadGame();
 }
 
