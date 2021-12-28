@@ -1,8 +1,37 @@
-﻿  CGAME.cpp
+﻿  CRGUI.cpp
 D:\CS203\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(24,40): warning C4305: 'initializing': truncation from 'double' to 'float'
 D:\CS203\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(38,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 D:\CS203\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\Constants.h(38,20): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
-D:\CS203\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CGAME.cpp(43,22): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-D:\CS203\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CGAME.cpp(73,23): warning C4018: '<': signed/unsigned mismatch
-D:\CS203\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CGAME.cpp(182,23): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+D:\CS203\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRGUI.cpp(16,75): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+D:\CS203\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRGUI.cpp(16,44): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+D:\CS203\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRGUI.cpp(22,21): warning C4018: '<': signed/unsigned mismatch
+D:\CS203\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRGUI.cpp(25,58): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+D:\CS203\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRGUI.cpp(25,42): warning C4244: 'argument': conversion from '_Ty2' to 'float', possible loss of data
+          with
+          [
+              _Ty2=int
+          ]
+D:\CS203\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRGUI.cpp(64,21): warning C4018: '<': signed/unsigned mismatch
+D:\CS203\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRGUI.cpp(67,58): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+D:\CS203\CS202_Crossy_Road_Group10\Crossy_Road\Crossy_Road\CRGUI.cpp(67,42): warning C4244: 'argument': conversion from '_Ty2' to 'float', possible loss of data
+          with
+          [
+              _Ty2=int
+          ]
   Crossy_Road.vcxproj -> D:\CS203\CS202_Crossy_Road_Group10\Crossy_Road\Debug\Crossy_Road.exe
