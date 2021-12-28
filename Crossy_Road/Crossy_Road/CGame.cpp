@@ -44,8 +44,7 @@ CGAME::CGAME()
 	//end SNOW section
 
 	gui = new CRGUI(0, 0);
-	gui->drawTest();
-
+	gui->drawMenu();
 	game_state = MENU;
 
 	this->initializeVariable();

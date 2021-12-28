@@ -5,6 +5,7 @@
 #include "CASSET.h"
 #include "Constants.h"
 #include <deque>
+#include<string>
 
 class CRGUI {
 private:
@@ -25,6 +26,8 @@ private:
 
 
 	sf::Font font;
+	
+	sf::Text scoreText, highScoreText;
 
 	sf::Event ev;
 
@@ -33,7 +36,8 @@ private:
 public:
 	CRGUI(float width, float height);
 	void draw(sf::RenderTarget& window);
-	void drawTest();
+	void drawMenu();
+	void drawGameOver(sf::RenderTarget& window,int score,int highScore);
 	void nextChoice();
 	void prevChoice();
 };
