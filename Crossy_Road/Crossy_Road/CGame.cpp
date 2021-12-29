@@ -17,7 +17,6 @@ void CGAME::initWindow()
 	this->window->setVerticalSyncEnabled(true);
 	//this->window->setKeyRepeatEnabled(false);
 	player = new CRCHARACTER(this->window, 0, 512, 350);
-	initGame();
 }
 
 void CGAME::initGame()
@@ -27,6 +26,7 @@ void CGAME::initGame()
 	point = new CPOINTHUD(Constants::pointFont, 100, Constants::SCREEN_WIDTH - 350, -30, -11);
 	roadFac = new CROADFACTORY(player, point);
 	roadFac->initRoadGame();
+	game_state = PLAYING;
 }
 
 //Constructor | Destructor
@@ -109,9 +109,18 @@ void CGAME::pollEvent()
 			case sf::Keyboard::Left:
 				break;
 			case sf::Keyboard::Enter:
-				game_state = PLAYING;
-				break;
+			{
+				int choice = gui->getChoice();
+				if (choice == 0)
+					initGame();
+				else if (choice == 1)
+					load();
+				else
+					this->window->close();
+				break; 
+			}
 			case sf::Keyboard::Escape:
+				//pause game here
 				this->window->close();
 				break;
 			}
@@ -181,7 +190,8 @@ void CGAME::update()
 	}
 
 	pollEvent();
-	roadFac->update(*this->window);	
+	if (roadFac)
+		roadFac->update(*this->window);	
 }
 void CGAME::render()
 {
@@ -219,6 +229,10 @@ void CGAME::save()
 
 void CGAME::load()
 {
+	delete point;
+	delete roadFac;
+	point = new CPOINTHUD(Constants::pointFont, 100, Constants::SCREEN_WIDTH - 350, -30, -11);
+	roadFac = new CROADFACTORY(player, point);
 	ifstream file;
 	file.open("game.dat", ios::binary);
 	point->load(file);
@@ -226,5 +240,5 @@ void CGAME::load()
 	roadFac->load(file);
 	file.close();
 	cout << "load successfully\n";
-
+	game_state = PLAYING;
 }

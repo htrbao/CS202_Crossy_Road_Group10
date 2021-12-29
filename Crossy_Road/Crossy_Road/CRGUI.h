@@ -15,6 +15,8 @@ private:
 	float width;
 	float height;
 
+	int choice;
+
 	//pause then play
 	sf::Texture* pauseTexture;
 	sf::Texture* playTexture;
@@ -44,8 +46,10 @@ public:
 	void draw(sf::RenderTarget& window);
 	void drawMenu();
 	void drawGameOver(int score,int highScore);
+	void drawPause();
 	void nextChoice();
 	void prevChoice();
+	int getChoice();
 };
 
 #endif // !_CRGUI_H_
