@@ -82,6 +82,8 @@ CASSET::CASSET() {
 	initTexture("TRAFFICLIGHT");
 	//menu
 	initTexture("MENU");
+	initTexture("TEXTGAMEOVER");
+	initTexture("TEXTHIGH");
 	initTexture("TITLE");
 	initTexture("PAUSE");
 	initTexture("PLAYBUTTON");
@@ -99,4 +101,5 @@ CASSET::CASSET() {
 	//font
 	initFont("Christmas",".otf");
 	initFont("Flap", ".TTF");
+	initFont("DIMIS___", ".TTF");
 }

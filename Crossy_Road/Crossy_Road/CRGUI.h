@@ -21,13 +21,19 @@ private:
 	sf::Sprite pauseButton;
 	sf::Sprite playButton;
 
+	sf::Texture* gameOverTexture;
+	sf::Sprite gameOver;
+
 	sf::Texture* titleTexture;
 	sf::Sprite title;
 
+	int cur;
 
 	sf::Font font;
+	sf::Font fontScore;
 	
-	sf::Text scoreText, highScoreText;
+	sf::Text scoreText;
+	sf::Text highScoreText;
 
 	sf::Event ev;
 
@@ -37,7 +43,7 @@ public:
 	CRGUI(float width, float height);
 	void draw(sf::RenderTarget& window);
 	void drawMenu();
-	void drawGameOver(sf::RenderTarget& window,int score,int highScore);
+	void drawGameOver(int score,int highScore);
 	void nextChoice();
 	void prevChoice();
 };

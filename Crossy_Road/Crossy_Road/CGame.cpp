@@ -44,7 +44,7 @@ CGAME::CGAME()
 	//end SNOW section
 
 	gui = new CRGUI(0, 0);
-	gui->drawMenu();
+	gui->drawGameOver(15, 15);
 	game_state = MENU;
 
 	this->initializeVariable();
@@ -97,8 +97,6 @@ void CGAME::pollEvent()
 			this->window->close();
 			break;
 		case sf::Event::KeyReleased:
-			//if (ev.key.code == sf::Keyboard::Escape)
-				//this->window->close();
 			switch (ev.key.code) {
 			case sf::Keyboard::Up:
 				gui->prevChoice();
