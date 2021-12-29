@@ -1,8 +1,7 @@
 
 #include "CROAD.h"
 
-CROAD::CROAD(float x, float y, bool half_scale): m_originX{x},m_originY{y}
-{
+CROAD::CROAD(float x, float y, bool half_scale): m_originX{x},m_originY{y} {
     if (half_scale)
         numOfRoad += 0.5;
     else

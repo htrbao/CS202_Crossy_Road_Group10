@@ -16,7 +16,6 @@ void CGAME::initWindow()
 	this->window->setFramerateLimit(60);
 	this->window->setVerticalSyncEnabled(true);
 	//this->window->setKeyRepeatEnabled(false);
-	player = new CRCHARACTER(this->window, 0, 512, 350);
 	loadHighPoint();
 }
 
@@ -24,6 +23,8 @@ void CGAME::initGame()
 {
 	delete point;
 	delete roadFac;
+	delete player;
+	player = new CRCHARACTER(this->window, 0, 520, 350);
 	point = new CPOINTHUD(Constants::pointFont, 100, Constants::SCREEN_WIDTH - 350, -30, -11);
 	roadFac = new CROADFACTORY(player, point);
 	roadFac->initRoadGame();
@@ -120,16 +121,13 @@ void CGAME::pollEvent()
 			case sf::Keyboard::Left:
 				break;
 			case sf::Keyboard::Enter:
-			{
 				if (game_state == MENU)
 					choiceMenu(gui->getChoice());
 				else if (game_state == GAMEOVER)
 					choiceGameOver(gui->getChoice());
+				else if (game_state == PAUSE)
+					choicePause(gui->getChoice());
 				break; 
-			}
-			case sf::Keyboard::Escape:
-
-				break;
 			}
 			break;
 		}
@@ -169,6 +167,10 @@ void CGAME::pollEvent()
 		}
 		if (player->side != CRCHARACTER::LEFT) player->setSide(CRCHARACTER::LEFT);
 	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
+		game_state = PAUSE;
+		gui->drawPause();
+	}
 }
 
 void CGAME::run()
@@ -195,8 +197,10 @@ void CGAME::update()
 	pollEvent();
 	if (roadFac)
 	{
-		checkMove();
-		roadFac->update(*this->window);
+		if (game_state == PLAYING) {
+			checkMove();
+			roadFac->update(*this->window);
+		}
 	}
 }
 void CGAME::render()
@@ -220,6 +224,10 @@ void CGAME::render()
 		gui->draw(*this->window);
 		break;
 	case PAUSE:
+		roadFac->draw(*this->window);
+		this->window->draw(snow);
+		this->window->draw(snowNext);
+		gui->draw(*this->window);
 		break;
 	}
 	this->window->display();
@@ -240,10 +248,17 @@ void CGAME::load()
 {
 	delete point;
 	delete roadFac;
+	delete player;
+	player = new CRCHARACTER(this->window, 0, 520, 350);
 	point = new CPOINTHUD(Constants::pointFont, 100, Constants::SCREEN_WIDTH - 350, -30, -11);
 	roadFac = new CROADFACTORY(player, point);
 	ifstream file;
 	file.open("game.dat", ios::binary);
+	if (file.fail()) {
+		initGame();
+		file.close();
+		return;
+	}
 	point->load(file);
 	player->load(file);
 	roadFac->load(file);
@@ -287,6 +302,11 @@ void CGAME::choiceGameOver(int c)
 		initGame();
 	}
 	else if (c == 1)
+	{
+		game_state = MENU;
+		gui->drawMenu();
+	}
+	else if (c == 2)
 	{
 		this->window->close();
 	}

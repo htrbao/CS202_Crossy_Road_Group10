@@ -32,7 +32,6 @@ void CROBJECT::move(float x, float y, float frac) {
 
 void CROBJECT::draw(sf::RenderWindow& window) {
     if (checkOutWindow(window) == 0) {
-        //cout << "Object::drawing\n";
         window.draw(sprite);
     }
 }

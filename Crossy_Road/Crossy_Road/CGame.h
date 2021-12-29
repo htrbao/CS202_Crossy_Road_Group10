@@ -74,7 +74,5 @@ public:
 	void updateHighPoint();
 };
 
-
-
 #endif // !1
 

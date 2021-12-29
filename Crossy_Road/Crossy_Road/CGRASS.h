@@ -14,7 +14,6 @@ private:
     const string asset_name_grass_above = "GRASS";
     const float half_scale = 0.5;
     CRBLOCKFACTORY blcFac;
-
 public:
     //constructor | destructor
     CGRASS(sf::Vector2f pos, bool above = false);

@@ -24,6 +24,7 @@ private:
     sf::RenderWindow* window;
     void initTexture();
     void initSound();
+
 public:
     static int UP, RIGHT, DOWN, LEFT;
     static int WIDTH, HEIGHT;

@@ -1,7 +1,6 @@
 #include "CRCAR.h"
 
-CRCAR::CRCAR(string textureFileName, float x, float y, double speed, int direction) : CROBJECT(x, y, 1, direction)
-{
+CRCAR::CRCAR(string textureFileName, float x, float y, double speed, int direction) : CROBJECT(x, y, 1, direction) {
 	this->speed = speed;
 
 	texture = &CASSET::GetInstance().textureMap[textureFileName];
@@ -16,4 +15,3 @@ int CRCAR::type()
 void CRCAR::move(float x, float y, float frac) {
 	CROBJECT::move(x, y, frac);
 }
-

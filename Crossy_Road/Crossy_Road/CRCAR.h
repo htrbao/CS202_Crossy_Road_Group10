@@ -6,6 +6,7 @@
 
 class CRCAR : public CROBJECT {
 private:
+
 public:
 	CRCAR(string textureFileName, float x, float y, double speed, int direction);
 	int type();

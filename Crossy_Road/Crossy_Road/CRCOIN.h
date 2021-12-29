@@ -9,7 +9,9 @@ using namespace std;
 
 class CRCOIN : public CROBJECT {
 private:
+
 	int jump_coeff;
+
 public:
 	CRCOIN(string textureFileName, double x, double y);
 	void setVisible(bool typ);

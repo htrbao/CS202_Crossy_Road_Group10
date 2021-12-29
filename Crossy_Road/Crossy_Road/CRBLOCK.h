@@ -15,4 +15,5 @@ public:
 	void move(double x, double y);
 	bool isCar();
 };
+
 #endif // !_CRBLOCK_H_

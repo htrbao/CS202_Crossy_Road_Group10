@@ -1,8 +1,6 @@
 #include "CROADFACTORY.h"
 
-
-void CROADFACTORY::processSoundQ(CROAD& it, int val)
-{
+void CROADFACTORY::processSoundQ(CROAD& it, int val) {
 	sf::Sound tmp = sf::Sound(CASSET::GetInstance().soundMap[Constants::SOUNDNAME[val]]);
 	
 	if (val == 3)

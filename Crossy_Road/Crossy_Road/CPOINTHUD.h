@@ -27,7 +27,6 @@ public:
 	void load(ifstream& inf);
 	int getPoint();
 };
-
 #endif // !_CPOINTHUD_H_
 
 

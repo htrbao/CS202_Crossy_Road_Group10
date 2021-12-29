@@ -35,4 +35,4 @@ public:
 	unordered_map<string, sf::Font> fontMap;
 };
 
-#endif // !_CASSET_H_
+#endif //!_CASSET_H_

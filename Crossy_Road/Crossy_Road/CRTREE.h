@@ -8,6 +8,7 @@
 
 class CRTREE : public CROBJECT {
 private:
+
 public:
 	CRTREE(string textureFileName, double x, double y, double scale);
 	int type();

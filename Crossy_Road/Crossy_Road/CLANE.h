@@ -39,5 +39,4 @@ public:
     void saveDerivedRoad(ofstream& of);
 };
 
-
 #endif // !CLANE_

@@ -16,6 +16,7 @@ private:
 	int numBLC;
 	int numTR;
 	float dif;
+
 public:
 	CRBLOCKFACTORY();
 	void initObjGame(float mX, float mY, bool init = false);

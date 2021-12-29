@@ -95,6 +95,7 @@ void CTRAFFIC::shiftObject(char UorD)
     {
         sprite.move(Constants::shiftVelocityX, -Constants::shiftVelocityX * tan(Constants::Beta));
     }
+
     mX = sprite.getPosition().x;
     mY = sprite.getPosition().y;
 }

@@ -1,7 +1,6 @@
 #include "CRCOIN.h"
 
-CRCOIN::CRCOIN(string textureFileName, double x, double y) : CROBJECT(x, y, 1.8), jump_coeff(0){
-
+CRCOIN::CRCOIN(string textureFileName, double x, double y) : CROBJECT(x, y, 1.8), jump_coeff(0) {
 	texture = &CASSET::GetInstance().textureMap[textureFileName];
 
 	setUpTexture();

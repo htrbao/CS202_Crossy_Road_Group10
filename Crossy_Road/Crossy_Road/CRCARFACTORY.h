@@ -15,8 +15,6 @@ enum CarDir {
 	LEFT, RIGHT, LASTDIR
 };
 
-
-
 class CRCARFACTORY
 {
 private:

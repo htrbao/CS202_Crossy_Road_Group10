@@ -21,8 +21,10 @@ CGRASS::CGRASS(float index, bool above): CROAD(true)
 {
     m_originX = -index * Constants::SIZE_ROAD_X + Constants::HIDDEN_ROAD_X;
     m_originY = index * (Constants::SIZE_ROAD_Y + Constants::bias) - Constants::HIDDEN_ROAD_Y;
+
     objScale = half_scale;
     is_above = above;
+
     if (above)
         texture = &CASSET::GetInstance().textureMap[asset_name_grass_above];
     else

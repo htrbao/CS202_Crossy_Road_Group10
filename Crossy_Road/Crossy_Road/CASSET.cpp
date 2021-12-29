@@ -82,8 +82,8 @@ CASSET::CASSET() {
 	initTexture("TRAFFICLIGHT");
 	//menu
 	initTexture("MENU");
-	initTexture("TEXTGAMEOVER");
-	initTexture("TEXTHIGH");
+	initTexture("GAMEOVER");
+	initTexture("HIGH");
 	initTexture("TITLE");
 	initTexture("PAUSE");
 	initTexture("PLAYBUTTON");

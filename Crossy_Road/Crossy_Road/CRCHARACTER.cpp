@@ -139,8 +139,7 @@ void CRCHARACTER::load(ifstream& inf)
 	sprite.setPosition(x, y);
 }
 
-bool CRCHARACTER::isBehindRoad(CROAD& road)
-{
+bool CRCHARACTER::isBehindRoad(CROAD& road) {
 	return mY - mX*tan(Constants::Alpha) + (WIDTH*SCALE)/2 <= road.getDis();
 }
 

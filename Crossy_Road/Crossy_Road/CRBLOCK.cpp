@@ -2,7 +2,6 @@
 
 CRBLOCK::CRBLOCK(string textureFileName, double x, double y, float scale) : CROBJECT(x, y, scale) {
 	texture = &CASSET::GetInstance().textureMap[textureFileName];
-
 	setUpTexture();
 }
 

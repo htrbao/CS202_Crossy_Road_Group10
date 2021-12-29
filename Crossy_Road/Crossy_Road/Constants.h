@@ -8,7 +8,6 @@ namespace Constants {
 	const double PI = 3.14159265359;
 	const int SCREEN_WIDTH = 1024;
 	const int SCREEN_HEIGHT = 730;
-
 	//--------
 	//\Alpha) |
 	// \      |

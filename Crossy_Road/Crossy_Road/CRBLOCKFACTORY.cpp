@@ -1,7 +1,5 @@
 #include "CRBLOCKFACTORY.h"
 
-
-
 CRBLOCKFACTORY::CRBLOCKFACTORY()
 {
 	numBLC = rand() % 2;

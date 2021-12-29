@@ -8,16 +8,19 @@
 #include "CRBLOCKFACTORY.h"
 #include <fstream>
 
-class CROAD
-{
+class CROAD {
 protected:
     friend class CGAME;
+
     float m_originX;
     float m_originY;
+
     float objScale;
     float dis;
+
     bool playing;
     bool playing2;
+
     sf::Texture* texture;
     sf::Sprite sprite;
 private:

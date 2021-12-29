@@ -6,8 +6,7 @@ CRCARFACTORY::CRCARFACTORY()
 	dir = CarDir(rand() % LASTDIR);
 }
 
-void CRCARFACTORY::initCarGame(float mX, float mY, int frac)
-{
+void CRCARFACTORY::initCarGame(float mX, float mY, int frac) {
 	while (carQueue.size() < 25)
 	{
 		carQueue.push_front(createCar(mX, mY, frac));

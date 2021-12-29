@@ -14,8 +14,8 @@ CRGUI::CRGUI(float width, float height)
 	pauseTexture = &CASSET::GetInstance().textureMap["PAUSE"];
 	pauseButton.setTexture(*pauseTexture);
 	
-	newHighTexture = &CASSET::GetInstance().textureMap["TEXTHIGH"];
-	gameOverTexture = &CASSET::GetInstance().textureMap["TEXTGAMEOVER"];
+	newHighTexture = &CASSET::GetInstance().textureMap["HIGH"];
+	gameOverTexture = &CASSET::GetInstance().textureMap["GAMEOVER"];
 
 	titleTexture = &CASSET::GetInstance().textureMap["TITLE"];
 	title.setTexture(*titleTexture);
@@ -30,12 +30,12 @@ void CRGUI::draw(sf::RenderTarget& window) {
 		window.draw(title);
 	}
 	else if (cur == 2) {
-
+		window.draw(title);
 	}
 	else if (cur == 3) {
+		window.draw(highScoreText);
 		window.draw(gameOver);
 		window.draw(scoreText);
-		window.draw(highScoreText);
 	}
 	for (long i = 0; i < options.size(); i++) {
 		sf::FloatRect textRect = options[i].first.getLocalBounds();
@@ -66,6 +66,7 @@ void CRGUI::drawMenu(){
 
 void CRGUI::drawPause()
 {
+	cur = 2;
 	options.clear();
 	options.assign(3, { sf::Text(), Constants::SCREEN_WIDTH / 2 });
 
@@ -86,7 +87,7 @@ void CRGUI::drawPause()
 void CRGUI::drawGameOver(int score, int highScore) {
 	cur = 3;
 	options.clear();
-	options.assign(2, { sf::Text(), Constants::SCREEN_WIDTH / 2 });
+	options.assign(3, { sf::Text(), Constants::SCREEN_WIDTH / 2 });
 
 	options[0].first.setFont(font);
 	options[0].first.setFillColor(sf::Color(244, 188, 1));
@@ -94,12 +95,16 @@ void CRGUI::drawGameOver(int score, int highScore) {
 
 	options[1].first.setFont(font);
 	options[1].first.setFillColor(sf::Color(255, 247, 182));
-	options[1].first.setString("QUIT");
+	options[1].first.setString("MENU");
+
+	options[2].first.setFont(font);
+	options[2].first.setFillColor(sf::Color(255, 247, 182));
+	options[2].first.setString("QUIT");
 
 	if (score == highScore) {
-		gameOver.setTexture(*gameOverTexture);
-		gameOver.setOrigin(gameOverTexture->getSize().x / 2, gameOverTexture->getSize().y / 2);
-		gameOver.scale(0.3, 0.3);
+		gameOver.setTexture(*newHighTexture);
+		gameOver.setOrigin(newHighTexture->getSize().x / 2, newHighTexture->getSize().y / 2);
+		//gameOver.scale(0.3, 0.3);
 		gameOver.setPosition(330, 250);
 
 		this->scoreText.setFont(font);
@@ -118,9 +123,9 @@ void CRGUI::drawGameOver(int score, int highScore) {
 		return;
 	}
 
-	gameOver.setTexture(*newHighTexture);
+	gameOver.setTexture(*gameOverTexture);
 	gameOver.setOrigin(gameOverTexture->getSize().x / 2, gameOverTexture->getSize().y / 2);
-	gameOver.scale(1.5, 1.5);
+	//gameOver.scale(1.5, 1.5);
 	gameOver.setPosition(Constants::SCREEN_WIDTH / 2, 200);
 
 	this->scoreText.setFont(fontScore);
@@ -138,14 +143,10 @@ void CRGUI::drawGameOver(int score, int highScore) {
 
 void CRGUI::nextChoice() {
 	options[0].first.setFillColor(sf::Color(255, 247, 182));
-	options.push_back(options[0]);
+	options.push_back(options.front());
 	options.pop_front();
 	options[0].first.setFillColor(sf::Color(244, 188, 1));
-	if (cur == 3)
-		choice = (++choice) % 2;
-	else
-		choice = (++choice) % 3;
-
+	choice = (++choice) % 3;
 }
 
 void CRGUI::prevChoice() {
@@ -154,7 +155,7 @@ void CRGUI::prevChoice() {
 	options.pop_back();
 	options[0].first.setFillColor(sf::Color(244, 188, 1));
 	if (choice == 0)
-		choice = (cur == 3) ? 1 : 2;
+		choice = 2;
 	else
 		choice--;
 }

@@ -11,7 +11,6 @@ class CRGUI {
 private:
 	friend class CGAME;
 	
-	//
 	float width;
 	float height;
 

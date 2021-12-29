@@ -7,7 +7,9 @@ CPOINTHUD::CPOINTHUD(string nameFont, int pxSize, float x, float y, int val)
 	text.setFont(*font);
 	text.setCharacterSize(pxSize);
 	text.setFillColor(sf::Color(255, 252, 211));
+
 	update();
+
 	text.setPosition(x, y);
 }
 

@@ -31,6 +31,7 @@ public:
 
 	CROBJECT(double mX, double mY, double scale);
 	CROBJECT(double mX, double mY, double scale, int direction);
+
 	void shiftObject(char UorD);
 	bool checkOutWindow(sf::RenderWindow& window);
 	virtual void setVisible(bool typ);
