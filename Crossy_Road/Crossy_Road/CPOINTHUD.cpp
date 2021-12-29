@@ -31,6 +31,10 @@ void CPOINTHUD::update()
 {
 	string display = "(Point: " + to_string(point) + ")";
 	text.setString(display);
+	while (text.getPosition().x + text.getLocalBounds().width >= Constants::SCREEN_WIDTH)
+	{
+		text.setPosition(text.getPosition().x - 10, text.getPosition().y);
+	}
 }
 
 void CPOINTHUD::save(ofstream& of)

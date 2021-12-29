@@ -16,6 +16,7 @@ CRGUI::CRGUI(float width, float height)
 	title.setOrigin(titleTexture->getSize().x / 2, titleTexture->getSize().y / 2);
 	title.setPosition(Constants::SCREEN_WIDTH / 2, 200);
 
+	choice = 0;
 }
 
 void CRGUI::draw(sf::RenderTarget& window) {
@@ -98,6 +99,10 @@ void CRGUI::nextChoice() {
 	options.push_back(options[0]);
 	options.pop_front();
 	options[0].first.setFillColor(sf::Color(244, 188, 1));
+	if (choice == 2)
+		choice = 0;
+	else
+		choice++;
 }
 
 void CRGUI::prevChoice() {
@@ -105,4 +110,13 @@ void CRGUI::prevChoice() {
 	options.push_front(options.back());
 	options.pop_back();
 	options[0].first.setFillColor(sf::Color(244, 188, 1));
+	if (choice == 0)
+		choice = 2;
+	else
+		choice--;
+}
+
+int CRGUI::getChoice()
+{
+	return choice;
 }
