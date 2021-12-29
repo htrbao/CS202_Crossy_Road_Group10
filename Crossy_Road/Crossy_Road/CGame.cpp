@@ -44,7 +44,7 @@ CGAME::CGAME()
 	//end SNOW section
 
 	gui = new CRGUI(0, 0);
-	gui->drawGameOver(15, 15);
+	gui->drawMenu();
 	game_state = MENU;
 
 	this->initializeVariable();
@@ -73,6 +73,10 @@ bool CGAME::checkMove() {
 			for (long i = 0; i < curRoad->size(); i++) {
 				int collisionType = player->checkCollision(curRoad->at(i));
 				if (collisionType % 3) {
+					if (collisionType == 2) {
+						game_state = GAMEOVER;
+						gui->drawGameOver(999, 999);
+					}
 					return false;
 				}
 				if (collisionType == 3)
@@ -205,6 +209,9 @@ void CGAME::render()
 		this->window->draw(snowNext);
 		break;
 	case GAMEOVER:
+		this->window->draw(snow);
+		this->window->draw(snowNext);
+		gui->draw(*this->window);
 		break;
 	case PAUSE:
 		break;
