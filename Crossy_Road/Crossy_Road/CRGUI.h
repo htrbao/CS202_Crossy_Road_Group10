@@ -24,6 +24,7 @@ private:
 	sf::Sprite playButton;
 
 	sf::Texture* gameOverTexture;
+	sf::Texture* newHighTexture;
 	sf::Sprite gameOver;
 
 	sf::Texture* titleTexture;
