@@ -37,6 +37,7 @@ public:
 	CRGUI(float width, float height);
 	void draw(sf::RenderTarget& window);
 	void drawMenu();
+	void drawPause();
 	void drawGameOver(sf::RenderTarget& window,int score,int highScore);
 	void nextChoice();
 	void prevChoice();

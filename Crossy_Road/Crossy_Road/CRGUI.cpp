@@ -15,6 +15,7 @@ CRGUI::CRGUI(float width, float height)
 	title.setTexture(*titleTexture);
 	title.setOrigin(titleTexture->getSize().x / 2, titleTexture->getSize().y / 2);
 	title.setPosition(Constants::SCREEN_WIDTH / 2, 200);
+
 }
 
 void CRGUI::draw(sf::RenderTarget& window) {
@@ -42,6 +43,24 @@ void CRGUI::drawMenu(){
 	options[2].first.setFont(font);
 	options[2].first.setFillColor(sf::Color(255, 247, 182));
 	options[2].first.setString("QUIT");
+}
+void CRGUI::drawPause()
+{
+	options.clear();
+	options.assign(3, { sf::Text(), Constants::SCREEN_WIDTH / 2 });
+
+	options[0].first.setFont(font);
+	options[0].first.setFillColor(sf::Color(244, 188, 1));
+	options[0].first.setString("MENU");
+
+	options[1].first.setFont(font);
+	options[1].first.setFillColor(sf::Color(255, 247, 182));
+	options[1].first.setString("RESUME");
+
+	options[2].first.setFont(font);
+	options[2].first.setFillColor(sf::Color(255, 247, 182));
+	options[2].first.setString("SAVE AND EXIT");
+	
 }
 void CRGUI::drawGameOver(sf::RenderTarget& window,int score, int highScore) {
 	options.clear();
