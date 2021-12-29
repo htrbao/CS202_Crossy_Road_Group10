@@ -12,6 +12,7 @@ private:
 
     float mX, mY;
     int side;
+    float radius;
 
     sf::SoundBuffer* buffer;
     sf::Sound sound;

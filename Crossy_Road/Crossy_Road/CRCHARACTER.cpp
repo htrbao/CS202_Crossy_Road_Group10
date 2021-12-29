@@ -11,6 +11,7 @@ void CRCHARACTER::initTexture() {
 	sprite.setOrigin(WIDTH / 2, HEIGHT / 2);
 	sprite.setPosition(mX, mY);
 	sprite.scale(SCALE, SCALE);
+	radius = WIDTH / 16;
 }
 
 void CRCHARACTER::initSound() {
@@ -28,19 +29,21 @@ CRCHARACTER::CRCHARACTER(sf::RenderWindow* window, int side, int x, int y) : win
 
 int CRCHARACTER::checkCollision(CROBJECT*& obj) {
 	if (obj) {
-		double xX = sprite.getPosition().x - obj->sprite.getPosition().x;
-		double yY = sprite.getPosition().y - obj->sprite.getPosition().y;
-		double dis = abs(xX * xX + yY * yY);
+		float hRadius = obj->sprite.getLocalBounds().width / 16;
+		float vRadius = obj->sprite.getLocalBounds().height / 32;
+		double xX = (sprite.getPosition().x + radius) - (obj->sprite.getPosition().x + hRadius);
+		double yY = (sprite.getPosition().y + radius) - (obj->sprite.getPosition().y + vRadius + 25);
+		double dis = sqrt(xX * xX + yY * yY);
 		//cout << dis << endl;
 		switch (obj->type()) {
 		case Constants::BLOCK:
-			if (dis < 2000.0) return 1;
+			if (dis < radius + sqrt(hRadius * hRadius + vRadius * vRadius)) return 1;
 			break;
 		case Constants::CAR:
-			if (dis < 2000.0) return 2;
+			if (dis < radius + sqrt(hRadius * hRadius + vRadius * vRadius)) return 2;
 			break;
 		case Constants::COIN:
-			if (obj->isVisible && dis < 2500.0) {
+			if (obj->isVisible && dis < radius + sqrt(hRadius * hRadius + vRadius * vRadius)) {
 				obj->setVisible(false);
 				return 3;
 			}

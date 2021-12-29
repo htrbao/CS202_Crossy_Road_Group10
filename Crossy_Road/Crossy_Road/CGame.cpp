@@ -194,7 +194,10 @@ void CGAME::update()
 
 	pollEvent();
 	if (roadFac)
-		roadFac->update(*this->window);	
+	{
+		checkMove();
+		roadFac->update(*this->window);
+	}
 }
 void CGAME::render()
 {

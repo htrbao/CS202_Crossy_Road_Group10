@@ -161,5 +161,7 @@ void CRGUI::prevChoice() {
 
 int CRGUI::getChoice()
 {
-	return choice;
+	int tmp = choice;
+	choice = 0;
+	return tmp;
 }
