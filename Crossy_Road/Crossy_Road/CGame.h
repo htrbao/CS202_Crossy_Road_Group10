@@ -61,6 +61,8 @@ public:
 
 	//Other function
 	bool checkMove();
+	void choiceMenu(int c);
+	void choicePause(int c);
 	void pollEvent();
 	void update();
 	void render();

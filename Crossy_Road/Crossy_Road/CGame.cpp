@@ -110,18 +110,18 @@ void CGAME::pollEvent()
 				break;
 			case sf::Keyboard::Enter:
 			{
-				int choice = gui->getChoice();
-				if (choice == 0)
-					initGame();
-				else if (choice == 1)
-					load();
-				else
-					this->window->close();
+				if (game_state == MENU)
+					choiceMenu(gui->getChoice());
+				else if (game_state == PAUSE)
+					choicePause(gui->getChoice());
 				break; 
 			}
 			case sf::Keyboard::Escape:
-				//pause game here
-				this->window->close();
+				if (game_state == PLAYING)
+				{
+					gui->drawPause();
+					game_state = PAUSE;
+				}
 				break;
 			}
 			break;
@@ -161,10 +161,6 @@ void CGAME::pollEvent()
 			player->moveRight();
 		}
 		if (player->side != CRCHARACTER::LEFT) player->setSide(CRCHARACTER::LEFT);
-	}
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
-	{
-		this->window->close();
 	}
 }
 
@@ -241,4 +237,32 @@ void CGAME::load()
 	file.close();
 	cout << "load successfully\n";
 	game_state = PLAYING;
+}
+
+void CGAME::choicePause(int c)
+{
+	if (c == 0)
+	{
+		gui->drawMenu();
+		game_state = MENU;
+	}
+	else if (c == 1)
+	{
+		game_state = PLAYING;
+	}
+	else
+	{
+		save();
+		this->window->close();
+	}
+}
+
+void CGAME::choiceMenu(int c)
+{
+	if (c == 0)
+		initGame();
+	else if (c == 1)
+		load();
+	else
+		this->window->close();
 }
