@@ -46,3 +46,8 @@ void CPOINTHUD::load(ifstream& inf)
 {
 	inf.read((char*)&point, sizeof(point));
 }
+
+int CPOINTHUD::getPoint()
+{
+	return point;
+}

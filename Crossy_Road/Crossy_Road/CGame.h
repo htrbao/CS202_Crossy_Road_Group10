@@ -25,7 +25,7 @@ class CGAME
 private:
 	//Variables
 	
-
+	int highestPoint;
 	GAME_STATUS game_state;
 
 	sf::Texture* snowTexture;
@@ -63,12 +63,15 @@ public:
 	bool checkMove();
 	void choiceMenu(int c);
 	void choicePause(int c);
+	void choiceGameOver(int c);
 	void pollEvent();
 	void update();
 	void render();
 	void run();
 	void save();
 	void load();
+	void loadHighPoint();
+	void updateHighPoint();
 };
 
 

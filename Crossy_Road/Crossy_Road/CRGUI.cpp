@@ -141,7 +141,11 @@ void CRGUI::nextChoice() {
 	options.push_back(options[0]);
 	options.pop_front();
 	options[0].first.setFillColor(sf::Color(244, 188, 1));
-	choice = (++choice) % 3;
+	if (cur == 3)
+		choice = (++choice) % 2;
+	else
+		choice = (++choice) % 3;
+
 }
 
 void CRGUI::prevChoice() {
@@ -150,7 +154,7 @@ void CRGUI::prevChoice() {
 	options.pop_back();
 	options[0].first.setFillColor(sf::Color(244, 188, 1));
 	if (choice == 0)
-		choice = 2;
+		choice = (cur == 3) ? 1 : 2;
 	else
 		choice--;
 }

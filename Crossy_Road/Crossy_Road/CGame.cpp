@@ -17,6 +17,7 @@ void CGAME::initWindow()
 	this->window->setVerticalSyncEnabled(true);
 	//this->window->setKeyRepeatEnabled(false);
 	player = new CRCHARACTER(this->window, 0, 512, 350);
+	loadHighPoint();
 }
 
 void CGAME::initGame()
@@ -69,19 +70,25 @@ const bool CGAME::running() const
 bool CGAME::checkMove() {
 	for (auto road : roadFac->roadQueue) {
 		if (player->isNearRoad(*road)) {
-			deque<CROBJECT*>* curRoad = (road->getObjFac() != nullptr ? road->getObjFac() : road->getObjFac2());
-			for (long i = 0; i < curRoad->size(); i++) {
-				int collisionType = player->checkCollision(curRoad->at(i));
-				if (collisionType % 3) {
-					if (collisionType == 2) {
-						game_state = GAMEOVER;
-						gui->drawGameOver(999, 999);
-					}
-					return false;
-				}
-				if (collisionType == 3)
+			deque<CROBJECT*>* curRoad[2] = { road->getObjFac(), road->getObjFac2() };
+			for (long j = 0; j < 2; j++) {
+				if (curRoad[j])
 				{
-					point->increaseP(5);
+					for (long i = 0; i < curRoad[j]->size(); i++) {
+						int collisionType = player->checkCollision(curRoad[j]->at(i));
+						if (collisionType % 3) {
+							if (collisionType == 2) {
+								game_state = GAMEOVER;
+								updateHighPoint();
+								gui->drawGameOver(point->getPoint(), highestPoint);
+							}
+							return false;
+						}
+						if (collisionType == 3)
+						{
+							point->increaseP(5);
+						}
+					}
 				}
 			}
 		}
@@ -116,16 +123,12 @@ void CGAME::pollEvent()
 			{
 				if (game_state == MENU)
 					choiceMenu(gui->getChoice());
-				else if (game_state == PAUSE)
-					choicePause(gui->getChoice());
+				else if (game_state == GAMEOVER)
+					choiceGameOver(gui->getChoice());
 				break; 
 			}
 			case sf::Keyboard::Escape:
-				if (game_state == PLAYING)
-				{
-					gui->drawPause();
-					game_state = PAUSE;
-				}
+
 				break;
 			}
 			break;
@@ -272,4 +275,40 @@ void CGAME::choiceMenu(int c)
 		load();
 	else
 		this->window->close();
+}
+
+void CGAME::choiceGameOver(int c)
+{
+	if (c == 0)
+	{
+		initGame();
+	}
+	else if (c == 1)
+	{
+		this->window->close();
+	}
+}
+
+void CGAME::loadHighPoint()
+{
+	ifstream file;
+	file.open("point.dat", ios::binary);
+	if (file.fail())
+		highestPoint = 0;
+	else
+		file.read((char*)&highestPoint, sizeof(highestPoint));
+	file.close();
+}
+
+void CGAME::updateHighPoint()
+{
+	if (point->getPoint() > highestPoint)
+	{
+		highestPoint = point->getPoint();
+		ofstream file;
+		file.open("point.dat", ios::binary);
+		file.write((char*)&highestPoint, sizeof(highestPoint));
+		file.close();
+	}
+	
 }

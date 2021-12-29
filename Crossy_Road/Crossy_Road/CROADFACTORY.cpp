@@ -99,7 +99,6 @@ void CROADFACTORY::update(sf::RenderWindow& window)
 		
 		CROAD* tmp = roadQueue.back();
 		roadQueue.pop_back();
-		tmp->~CROAD();
 		delete tmp;
 		point->increaseP();
 	}
@@ -109,8 +108,6 @@ void CROADFACTORY::update(sf::RenderWindow& window)
 		if (player->isNearRoad(*it))
 		{
 			addSound(*it);
-			//it->getObjFac(); get objDeque
-			//it->getObjFac2(); if not highway, it will be nullptr
 		}
 	}
 }
@@ -225,8 +222,6 @@ CROADFACTORY::~CROADFACTORY()
 {
 	for (auto it : roadQueue)
 	{
-		it->~CROAD();
 		delete it;
 	}
-	delete point;
 }

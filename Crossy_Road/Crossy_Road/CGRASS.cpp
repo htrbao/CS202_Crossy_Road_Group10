@@ -1,6 +1,6 @@
 #include "CGRASS.h"
 
-CGRASS::CGRASS(sf::Vector2f pos, bool above)
+CGRASS::CGRASS(sf::Vector2f pos, bool above):CROAD(true)
 {
     m_originX = pos.x + Constants::SIZE_ROAD_X;
     m_originY = pos.y - half_scale * Constants::SIZE_ROAD_Y;
