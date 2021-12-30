@@ -7,7 +7,7 @@ We write this game in C++ with support of **SFML**, which provides a simple inte
 ## Description
 - The objective of Crossy Dummy Cat is to move a character through an endless path of obstacles as far as possible without dying. By default, the main character is a cute cat that must cross a series of busy roads with other characters like cars,ambulance,trucks...And depending on the character the environment around also changes, with the obstacles varying.
 - Mission of the main character that cross the road and overcome obstacles as far as possible and collect as much coin to get the most points.
-- The more difficulty the game is, the more challenging it is to player.
+- The further the player moves, the more challenging it is to player.
 ## Feature
 - Single player game
 - Colorful and smooth UI
