@@ -6,7 +6,7 @@ int CRCHARACTER::WIDTH = 512, CRCHARACTER::HEIGHT = 512;
 float CRCHARACTER::SCALE = 0.45;
 
 void CRCHARACTER::initTexture() {
-	textureSheet = &CASSET::GetInstance().textureMap["CAT"];
+	textureSheet = &CASSET::GetInstance().textureMap["CAT2"];
 	sprite.setTexture(*textureSheet);
 	sprite.setOrigin(WIDTH / 2, HEIGHT / 2);
 	sprite.setPosition(mX, mY);
@@ -24,6 +24,8 @@ void CRCHARACTER::initSound() {
 CRCHARACTER::CRCHARACTER(sf::RenderWindow* window, int side, int x, int y) : window(window), side(side), mX(x), mY(y) {
 	initTexture();
 	initSound();
+	totalTime = 0;
+	animateSide = 0;
 	setSide(side);
 }
 
@@ -80,12 +82,14 @@ bool CRCHARACTER::canMoveLeft()
 
 void CRCHARACTER::moveDown() {
 	sound.play();
+	animation();
 }
 
 void CRCHARACTER::moveUp() {
 	sound.play();
 	//side = UP;
 	if (side != UP) setSide(UP);
+	animation();
 }
 
 void CRCHARACTER::moveRight() {
@@ -95,6 +99,7 @@ void CRCHARACTER::moveRight() {
 	if(sprite.getPosition().x > Constants::SCREEN_WIDTH || sprite.getPosition().y > Constants::SCREEN_HEIGHT)
 		sprite.move(-1 * 0.021875 * 250, -1 * tan(Constants::Alpha) * 0.021875 * 250);
 	if (side != RIGHT) setSide(RIGHT);
+	animation();
 }
 
 void CRCHARACTER::moveLeft() {
@@ -104,6 +109,26 @@ void CRCHARACTER::moveLeft() {
 		sprite.move(1 * 0.021875 * 250, 1 * tan(Constants::Alpha) * 0.021875 * 250);
 	//side = LEFT;
 	if(side != LEFT) setSide(LEFT);
+	animation();
+}
+
+void CRCHARACTER::animation()
+{
+	totalTime += Constants::deltime;
+	if (totalTime >= Constants::switchTime)
+	{
+		totalTime -= Constants::switchTime;
+		animateSide = (++animateSide) % 2;
+		sprite.setTextureRect(sf::IntRect(WIDTH * side, HEIGHT * animateSide , WIDTH, HEIGHT));
+	}
+}
+
+void CRCHARACTER::idle(sf::Event::EventType ev)
+{
+	if (ev != sf::Event::KeyPressed && animateSide)
+	{
+		sprite.setTextureRect(sf::IntRect(WIDTH * side, 0, WIDTH, HEIGHT));
+	}
 }
 
 void CRCHARACTER::update()

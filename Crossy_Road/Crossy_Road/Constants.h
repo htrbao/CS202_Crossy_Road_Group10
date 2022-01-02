@@ -47,6 +47,9 @@ namespace Constants {
 	const std::string TRAFFICNAME = "TRAFFICLIGHT";
 	//Font
 	const std::string pointFont = "Christmas";
+	//Animation
+	const float switchTime = 0.3f;
+	const float deltime = 0.05f;
 	//type
 	const int BLOCK = 0;
 	const int CAR = 1;

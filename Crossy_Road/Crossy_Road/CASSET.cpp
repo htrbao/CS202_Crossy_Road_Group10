@@ -30,7 +30,7 @@ void CASSET::initFont(string fontFileName, string extend)
 
 CASSET::CASSET() {
 	//load player
-	initTexture("CAT", 1);
+	initTexture("CAT2", 1);
 	//load obstacle
 	initTexture("ambulance_NW");
 	initTexture("ambulance_SE");

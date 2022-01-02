@@ -12,7 +12,9 @@ private:
 
     float mX, mY;
     int side;
+    int animateSide;
     float radius;
+    float totalTime;
 
     sf::SoundBuffer* buffer;
     sf::Sound sound;
@@ -44,6 +46,8 @@ public:
     void moveUp();
     void moveRight();
     void moveLeft();
+    void animation();
+    void idle(sf::Event::EventType ev);
 
     void update();
     void render();

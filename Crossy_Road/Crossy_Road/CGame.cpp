@@ -171,6 +171,8 @@ void CGAME::pollEvent()
 		game_state = PAUSE;
 		gui->drawPause();
 	}
+	else 
+		player->idle(this->ev.type);
 }
 
 void CGAME::run()
