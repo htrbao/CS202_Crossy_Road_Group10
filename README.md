@@ -5,8 +5,16 @@ This is project in Programming Systems Course (CS202), VNU-HCMUS.
 We write this game in C++ with support of **SFML**, which provides a simple interface to the various components of your PC, to ease the development of games and multimedia applications, **Kenney** and **Zapsplat** gives us free pictures and sounds.
 
 ## Description
-
+- The plot of the game is about a playful cat, now he is finding his way back home, after a fun outing. But with his naivety, this cat needs your help. By default, the main character is a cute cat that must cross a series of busy roads with other characters like cars, ambulance, trucks... And depending on the character the environment around also changes, with the obstacles varying.
+- Mission of the main character that cross the road and overcome obstacles as far as possible and collect as much coin to get the most points.
+- The further the player moves, the more challenging it is to player.
 ## Feature
+- Single player game
+- Colorful and smooth UI
+- Funny and authentic music game
+- Simple, pure, innovative gameplay
+- Can save and load game to replay
+- Traffic lights to reduce game difficulty
 
 ## Usage
 
