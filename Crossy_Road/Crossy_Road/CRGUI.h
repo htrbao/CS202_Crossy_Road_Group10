@@ -24,12 +24,13 @@ private:
 
 	sf::Texture* gameOverTexture;
 	sf::Texture* newHighTexture;
-	sf::Sprite gameOver;
+	sf::Sprite gameOver[3];
 
 	sf::Texture* titleTexture;
 	sf::Sprite title;
 
 	int cur;
+	int position;
 
 	sf::Font font;
 	sf::Font fontScore;

@@ -17,6 +17,16 @@ CRGUI::CRGUI(float width, float height)
 	newHighTexture = &CASSET::GetInstance().textureMap["HIGH"];
 	gameOverTexture = &CASSET::GetInstance().textureMap["GAMEOVER"];
 
+	gameOver[0].setTexture(*newHighTexture);
+	gameOver[0].setOrigin(newHighTexture->getSize().x / 2, newHighTexture->getSize().y / 2);
+	gameOver[0].scale(0.95, 0.95);
+	gameOver[0].setPosition(330, 250);
+
+	gameOver[1].setTexture(*gameOverTexture);
+	gameOver[1].setOrigin(gameOverTexture->getSize().x / 2, gameOverTexture->getSize().y / 2);
+	//gameOver.scale(1.5, 1.5);
+	gameOver[1].setPosition(Constants::SCREEN_WIDTH / 2, 200);
+
 	titleTexture = &CASSET::GetInstance().textureMap["TITLE"];
 	title.setTexture(*titleTexture);
 	title.setOrigin(titleTexture->getSize().x / 2, titleTexture->getSize().y / 2);
@@ -33,8 +43,8 @@ void CRGUI::draw(sf::RenderTarget& window) {
 		window.draw(title);
 	}
 	else if (cur == 3) {
+		window.draw(gameOver[position]);
 		window.draw(highScoreText);
-		window.draw(gameOver);
 		window.draw(scoreText);
 	}
 	for (long i = 0; i < options.size(); i++) {
@@ -102,32 +112,23 @@ void CRGUI::drawGameOver(int score, int highScore) {
 	options[2].first.setString("QUIT");
 
 	if (score == highScore) {
-		gameOver.setTexture(*newHighTexture);
-		gameOver.setOrigin(newHighTexture->getSize().x / 2, newHighTexture->getSize().y / 2);
-		//gameOver.scale(0.3, 0.3);
-		gameOver.setPosition(330, 250);
-
-		this->scoreText.setFont(font);
-		this->scoreText.setCharacterSize(85);
-		this->scoreText.setFillColor(sf::Color(255, 251, 255));
-		this->scoreText.setString(to_string(score));
-		sf::FloatRect textRect = this->scoreText.getLocalBounds();
-		this->scoreText.setOrigin(textRect.left + textRect.width / 2.0f, textRect.top + textRect.height / 2.0f);
-		this->scoreText.setPosition(330, 290);
+		position = 0;
 
 		this->highScoreText.setFont(fontScore);
 		this->highScoreText.setCharacterSize(100);
 		this->highScoreText.setFillColor(sf::Color(255, 251, 255));
 		this->highScoreText.setString("HIGH\nSCORE");
 		this->highScoreText.setPosition(500, 160);
+
+		this->scoreText.setFont(font);
+		this->scoreText.setCharacterSize(85);
+		this->scoreText.setFillColor(sf::Color(255, 251, 255));
+		this->scoreText.setString(to_string(score));
+		this->scoreText.setPosition(gameOver->getPosition().x - scoreText.getLocalBounds().width / 2.0, highScoreText.getLocalBounds().height / 2 + 140);
+
 		return;
 	}
-
-	gameOver.setTexture(*gameOverTexture);
-	gameOver.setOrigin(gameOverTexture->getSize().x / 2, gameOverTexture->getSize().y / 2);
-	//gameOver.scale(1.5, 1.5);
-	gameOver.setPosition(Constants::SCREEN_WIDTH / 2, 200);
-
+	position = 1;
 	this->scoreText.setFont(fontScore);
 	this->scoreText.setCharacterSize(50);
 	this->scoreText.setFillColor(sf::Color(255, 201, 222));
