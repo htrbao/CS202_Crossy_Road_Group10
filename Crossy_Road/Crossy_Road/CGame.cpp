@@ -238,7 +238,7 @@ void CGAME::render()
 void CGAME::save()
 {
 	ofstream file;
-	file.open("game.dat", ios::binary);
+	file.open(Constants::gameFile, ios::binary);
 	point->save(file);
 	player->save(file);
 	roadFac->save(file);
@@ -255,7 +255,7 @@ void CGAME::load()
 	point = new CPOINTHUD(Constants::pointFont, 100, Constants::SCREEN_WIDTH - 350, -30, -11);
 	roadFac = new CROADFACTORY(player, point);
 	ifstream file;
-	file.open("game.dat", ios::binary);
+	file.open(Constants::gameFile, ios::binary);
 	if (file.fail()) {
 		initGame();
 		file.close();
@@ -317,7 +317,7 @@ void CGAME::choiceGameOver(int c)
 void CGAME::loadHighPoint()
 {
 	ifstream file;
-	file.open("point.dat", ios::binary);
+	file.open(Constants::pointFile, ios::binary);
 	if (file.fail())
 		highestPoint = 0;
 	else
@@ -331,7 +331,7 @@ void CGAME::updateHighPoint()
 	{
 		highestPoint = point->getPoint();
 		ofstream file;
-		file.open("point.dat", ios::binary);
+		file.open(Constants::pointFile, ios::binary);
 		file.write((char*)&highestPoint, sizeof(highestPoint));
 		file.close();
 	}

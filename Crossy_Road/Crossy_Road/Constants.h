@@ -54,6 +54,10 @@ namespace Constants {
 	const int BLOCK = 0;
 	const int CAR = 1;
 	const int COIN = 2;
+	//save
+	const std::string gameFile = "data/game.dat";
+	const std::string pointFile = "data/point.dat";
+
 };
 
 #endif // !CONSTANTS_H_
