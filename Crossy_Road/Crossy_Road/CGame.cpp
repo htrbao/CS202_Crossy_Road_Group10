@@ -24,9 +24,9 @@ void CGAME::initGame()
 	delete point;
 	delete roadFac;
 	delete player;
-	player = new CRCHARACTER(this->window, 0, 520, 350);
+	player = new CRCHARACTER(this->window, 0, 520, 350, SFX);
 	point = new CPOINTHUD(Constants::pointFont, 100, Constants::SCREEN_WIDTH - 350, -30, -11);
-	roadFac = new CROADFACTORY(player, point);
+	roadFac = new CROADFACTORY(player, point, SFX);
 	roadFac->initRoadGame();
 	game_state = PLAYING;
 }
@@ -49,6 +49,8 @@ CGAME::CGAME()
 	allGame.setLoop(true);
 	allGame.setVolume(10);
 	allGame.play();
+
+	SFX = true;
 
 	gui = new CRGUI(0, 0);
 	gui->drawMenu();
@@ -264,9 +266,9 @@ void CGAME::load()
 	delete point;
 	delete roadFac;
 	delete player;
-	player = new CRCHARACTER(this->window, 0, 520, 350);
+	player = new CRCHARACTER(this->window, 0, 520, 350, SFX);
 	point = new CPOINTHUD(Constants::pointFont, 100, Constants::SCREEN_WIDTH - 350, -30, -11);
-	roadFac = new CROADFACTORY(player, point);
+	roadFac = new CROADFACTORY(player, point, SFX);
 	ifstream file;
 	file.open(Constants::gameFile, ios::binary);
 	if (file.fail()) {
@@ -295,7 +297,7 @@ void CGAME::choicePause(int c)
 	}
 	else if (c == 2) {
 		game_state = SETTING;
-		gui->drawSetting(&allGame);
+		gui->drawSetting(&allGame, SFX);
 		prevGame_state = PAUSE;
 	}
 	else {
@@ -312,7 +314,7 @@ void CGAME::choiceMenu(int c)
 		load();
 	else if (c == 2) {
 		game_state = SETTING;
-		gui->drawSetting(&allGame);
+		gui->drawSetting(&allGame, SFX);
 		prevGame_state = MENU;
 	}
 	else if (c == 3)
@@ -332,7 +334,7 @@ void CGAME::choiceGameOver(int c)
 	}
 	else if (c == 2) {
 		game_state = SETTING;
-		gui->drawSetting(&allGame);
+		gui->drawSetting(&allGame, SFX);
 		prevGame_state = GAMEOVER;
 	}
 	else if (c == 3)
@@ -344,7 +346,12 @@ void CGAME::choiceGameOver(int c)
 void CGAME::choiceSetting(int c) {
 	if (c == 0)
 	{
-		initGame();
+		if (roadFac)
+			roadFac->SFXManage();
+		if (player)
+			player->SFXManage();
+		SFX = !SFX;
+		gui->drawSetting(&allGame, SFX);
 	}
 	else if (c == 1)
 	{
@@ -353,14 +360,18 @@ void CGAME::choiceSetting(int c) {
 		}
 		else allGame.setVolume(0.0f);
 
-		gui->drawSetting(&allGame);
+		gui->drawSetting(&allGame, SFX);
 	}
 	else if (c == 2) {
 		if (allGame.getVolume() == 0.0f) {
 			allGame.setVolume(10);
 		}
-
-		gui->drawSetting(&allGame);
+		if (roadFac)
+			roadFac->SFXReset();
+		if (player)
+			player->SFXReset();
+		SFX = true;
+		gui->drawSetting(&allGame, SFX);
 	}
 	else if (c == 3)
 	{

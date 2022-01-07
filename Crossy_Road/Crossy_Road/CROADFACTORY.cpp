@@ -21,13 +21,14 @@ void CROADFACTORY::processSoundQ(CROAD& it, int val) {
 	soundQueue.back().play();
 }
 
-CROADFACTORY::CROADFACTORY(CRCHARACTER* player, CPOINTHUD* p)
+CROADFACTORY::CROADFACTORY(CRCHARACTER* player, CPOINTHUD* p, bool SFX)
 {
 	this->player = player;
 	mY = 0;
 	mX = 0;
 	mY_Origin = Constants::HIDDEN_ROAD_Y / 1.2;
 	point = p;
+	this->SFX = SFX;
 }
 
 void CROADFACTORY::initRoadGame()
@@ -105,7 +106,8 @@ void CROADFACTORY::update(sf::RenderWindow& window)
 		it->update(window);
 		if (player->isNearRoad(*it))
 		{
-			addSound(*it);
+			if (SFX)
+				addSound(*it);
 		}
 	}
 }
@@ -155,6 +157,16 @@ CROAD* CROADFACTORY::createRoad(float index, bool is_road)
 		diff = 0.5;
 		return new CGRASS(index - diff , is_road);
 	}
+}
+
+void CROADFACTORY::SFXManage()
+{
+	SFX = !SFX;
+}
+
+void CROADFACTORY::SFXReset()
+{
+	SFX = true;
 }
 
 void CROADFACTORY::addSound(CROAD& it)

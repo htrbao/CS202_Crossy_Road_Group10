@@ -15,6 +15,7 @@ private:
     int animateSide;
     float radius;
     float totalTime;
+    bool SFX;
 
     sf::SoundBuffer* buffer;
     sf::Sound sound;
@@ -31,7 +32,7 @@ public:
     static int UP, RIGHT, DOWN, LEFT;
     static int WIDTH, HEIGHT;
     static float SCALE;
-    CRCHARACTER(sf::RenderWindow* window, int side, int x, int y);
+    CRCHARACTER(sf::RenderWindow* window, int side, int x, int y, bool SFX);
 
     int checkCollision(CROBJECT*& obj);
 
@@ -48,6 +49,8 @@ public:
     void moveLeft();
     void animation();
     void idle(sf::Event::EventType ev);
+    void SFXManage();
+    void SFXReset();
 
     void update();
     void render();

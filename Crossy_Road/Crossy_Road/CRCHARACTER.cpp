@@ -21,12 +21,13 @@ void CRCHARACTER::initSound() {
 	sound.setLoop(false);
 }
 
-CRCHARACTER::CRCHARACTER(sf::RenderWindow* window, int side, int x, int y) : window(window), side(side), mX(x), mY(y) {
+CRCHARACTER::CRCHARACTER(sf::RenderWindow* window, int side, int x, int y, bool SFX) : window(window), side(side), mX(x), mY(y) {
 	initTexture();
 	initSound();
 	totalTime = 0;
 	animateSide = 0;
 	setSide(side);
+	this->SFX = SFX;
 }
 
 int CRCHARACTER::checkCollision(CROBJECT*& obj) {
@@ -81,12 +82,14 @@ bool CRCHARACTER::canMoveLeft()
 }
 
 void CRCHARACTER::moveDown() {
-	sound.play();
+	if (SFX)
+		sound.play();
 	animation();
 }
 
 void CRCHARACTER::moveUp() {
-	sound.play();
+	if (SFX)
+		sound.play();
 	//side = UP;
 	if (side != UP) setSide(UP);
 	animation();
@@ -94,7 +97,8 @@ void CRCHARACTER::moveUp() {
 
 void CRCHARACTER::moveRight() {
 	//side = RIGHT;
-	sound.play();
+	if (SFX)
+		sound.play();
 	sprite.move(1 * 0.021875 * 250, 1 * tan(Constants::Alpha) * 0.021875 * 250);
 	if(sprite.getPosition().x > Constants::SCREEN_WIDTH || sprite.getPosition().y > Constants::SCREEN_HEIGHT)
 		sprite.move(-1 * 0.021875 * 250, -1 * tan(Constants::Alpha) * 0.021875 * 250);
@@ -103,7 +107,8 @@ void CRCHARACTER::moveRight() {
 }
 
 void CRCHARACTER::moveLeft() {
-	sound.play();
+	if (SFX)
+		sound.play();
 	sprite.move(-1 * 0.021875 * 250, -1 * tan(Constants::Alpha) * 0.021875 * 250);
 	if (sprite.getPosition().x < 0 || sprite.getPosition().y < 0)
 		sprite.move(1 * 0.021875 * 250, 1 * tan(Constants::Alpha) * 0.021875 * 250);
@@ -129,6 +134,16 @@ void CRCHARACTER::idle(sf::Event::EventType ev)
 	{
 		sprite.setTextureRect(sf::IntRect(WIDTH * side, 0, WIDTH, HEIGHT));
 	}
+}
+
+void CRCHARACTER::SFXManage()
+{
+	SFX = !SFX;
+}
+
+void CRCHARACTER::SFXReset()
+{
+	SFX = true;
 }
 
 void CRCHARACTER::update()

@@ -42,8 +42,7 @@ private:
 	sf::SoundBuffer* gameBuffer;
 	sf::Sound gameSound;
 	sf::Sound allGame;
-
-	
+	bool SFX;
 
 	//Game obj
 	CRGUI* gui;

@@ -99,13 +99,13 @@ void CRGUI::drawPause()
 	options[3].first.setString("SAVE AND EXIT");
 }
 
-void CRGUI::drawSetting(sf::Sound* game) {
+void CRGUI::drawSetting(sf::Sound* game, bool SFX) {
 	cur = 4;
 
 	options.clear();
 	options.assign(4, { sf::Text(), Constants::SCREEN_WIDTH / 2 });
 
-	string typeSFX = "ON";
+	string typeSFX = (SFX) ? "ON" : "OFF";
 
 	options[0].first.setFont(font);
 	options[0].first.setFillColor(sf::Color(244, 188, 1));
