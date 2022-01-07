@@ -38,7 +38,7 @@ public:
 
 	void shiftObject(char UorD);
 	void draw(sf::RenderWindow& window);
-	void update(sf::RenderWindow& window);
+	void update(sf::RenderWindow& window, float frac);
 	CROAD* createRoad(sf::Vector2f pos, bool is_road = false);
 	CROAD* createRoad(float index = 1, bool is_road = false);
 	void SFXManage();

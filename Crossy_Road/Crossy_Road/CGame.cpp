@@ -211,7 +211,7 @@ void CGAME::update()
 	{
 		if (game_state == PLAYING) {
 			checkMove();
-			roadFac->update(*this->window);
+			roadFac->update(*this->window, 1 + (point->getPoint() % 15) / 10);
 		}
 	}
 }

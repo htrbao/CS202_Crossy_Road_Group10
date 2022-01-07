@@ -108,14 +108,14 @@ void CLANE::shiftSubObj(char UorD)
         traffic.shiftObject(UorD);
 }
 
-void CLANE::update(sf::RenderWindow& window)
+void CLANE::update(sf::RenderWindow& window, float frac)
 {
     if (traffic.hasTraffic())
         traffic.update(window);
-    carFac.update(m_originX, m_originY, window,traffic);
+    carFac.update(m_originX, m_originY, window,traffic,frac);
     if (!is_oneway)
     {
-        carFac1.update(m_originX, m_originY + (Constants::SIZE_ROAD_Y + Constants::bias) / 2, window, traffic);
+        carFac1.update(m_originX, m_originY + (Constants::SIZE_ROAD_Y + Constants::bias) / 2, window, traffic,frac);
     }
 }
 

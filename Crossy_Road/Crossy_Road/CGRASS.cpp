@@ -68,7 +68,7 @@ void CGRASS::shiftSubObj(char UorD)
     blcFac.shiftObject(UorD);
 }
 
-void CGRASS::update(sf::RenderWindow& window)
+void CGRASS::update(sf::RenderWindow& window, float frac)
 {
     blcFac.update(window);
 }

@@ -6,7 +6,7 @@ CRCARFACTORY::CRCARFACTORY()
 	dir = CarDir(rand() % LASTDIR);
 }
 
-void CRCARFACTORY::initCarGame(float mX, float mY, int frac) {
+void CRCARFACTORY::initCarGame(float mX, float mY, float frac) {
 	while (carQueue.size() < 25)
 	{
 		carQueue.push_front(createCar(mX, mY, frac));
@@ -30,7 +30,7 @@ void CRCARFACTORY::draw(sf::RenderWindow& window)
 	}
 }
 
-void CRCARFACTORY::update(float mX, float mY, sf::RenderWindow& window, CTRAFFIC& traffic, int frac)
+void CRCARFACTORY::update(float mX, float mY, sf::RenderWindow& window, CTRAFFIC& traffic, float frac)
 {
 	for (auto i : carQueue)
 	{
@@ -65,7 +65,7 @@ void CRCARFACTORY::update(float mX, float mY, sf::RenderWindow& window, CTRAFFIC
 	}
 }
 
-CRCAR* CRCARFACTORY::createCar(float mX, float mY, int frac)
+CRCAR* CRCARFACTORY::createCar(float mX, float mY, float frac)
 {
 	float sign = 1;
 	if (dir == LEFT)

@@ -42,7 +42,7 @@ public:
     virtual bool is_road() = 0;
     virtual void drawSubObj(sf::RenderWindow& window) = 0;
     virtual void shiftSubObj(char UorD) = 0;
-    virtual void update(sf::RenderWindow& window) = 0;
+    virtual void update(sf::RenderWindow& window, float frac) = 0;
     virtual int typeSound() = 0;
     virtual int typeSound2() = 0;
     virtual bool isHighway() = 0;

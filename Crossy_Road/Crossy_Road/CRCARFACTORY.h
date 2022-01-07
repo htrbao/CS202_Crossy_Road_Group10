@@ -24,11 +24,11 @@ private:
 	bool playing;
 public:
 	CRCARFACTORY();
-	void initCarGame(float mX, float mY, int frac = 1);
+	void initCarGame(float mX, float mY, float frac = 1);
 	void shiftObject(char UorD);
 	void draw(sf::RenderWindow& window);
-	void update(float mX, float mY, sf::RenderWindow& window, CTRAFFIC& traffic, int frac = 1);
-	CRCAR* createCar(float mX, float mY, int frac = 1);
+	void update(float mX, float mY, sf::RenderWindow& window, CTRAFFIC& traffic, float frac = 1);
+	CRCAR* createCar(float mX, float mY, float frac = 1);
 	deque<CROBJECT*>* getObjQueue();
 	int direction();
 	int typeSound();

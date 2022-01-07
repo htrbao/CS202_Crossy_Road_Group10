@@ -30,7 +30,7 @@ public:
     bool is_road();
     void drawSubObj(sf::RenderWindow& window);
     void shiftSubObj(char UorD);
-    void update(sf::RenderWindow& window);
+    void update(sf::RenderWindow& window, float frac);
     int typeSound();
     int typeSound2();
     bool isHighway();

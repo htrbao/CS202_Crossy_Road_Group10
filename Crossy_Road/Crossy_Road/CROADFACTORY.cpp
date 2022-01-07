@@ -81,7 +81,7 @@ void CROADFACTORY::draw(sf::RenderWindow& window)
 	point->draw(window);
 }
 
-void CROADFACTORY::update(sf::RenderWindow& window)
+void CROADFACTORY::update(sf::RenderWindow& window, float frac)
 {
 	playSound();
 	if (mX > 1750)
@@ -103,7 +103,7 @@ void CROADFACTORY::update(sf::RenderWindow& window)
 	}
 	for (auto it : roadQueue)
 	{
-		it->update(window);
+		it->update(window, frac);
 		if (player->isNearRoad(*it))
 		{
 			if (SFX)
