@@ -9,10 +9,8 @@ class CTRAFFIC
 {
 private:
 	int WIDTH = 48, HEIGHT = 213;
-
 	float mX;
 	float mY;
-
 	float diff;
 	int status;
 	bool hasTraff;
@@ -20,7 +18,6 @@ private:
 	sf::Texture* texture;
 	sf::Sprite sprite;
 	void setUpTexture();
-	//friend class CRCARFACTORY;
 public:
 	CTRAFFIC();
 	CTRAFFIC(float x, float y);
