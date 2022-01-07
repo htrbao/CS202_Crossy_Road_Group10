@@ -18,15 +18,17 @@
 #include "CPOINTHUD.h"
 #include <fstream>
 
-enum GAME_STATUS {MENU, PLAYING, GAMEOVER, PAUSE};
+enum GAME_STATUS {MENU, PLAYING, GAMEOVER, PAUSE, SETTING};
 
 class CGAME
 {
 private:
 	//Variables
 	
+
 	int highestPoint;
 	GAME_STATUS game_state;
+	GAME_STATUS prevGame_state;
 
 	sf::Texture* snowTexture;
 	sf::Sprite snow;
@@ -39,6 +41,9 @@ private:
 	//Game sound
 	sf::SoundBuffer* gameBuffer;
 	sf::Sound gameSound;
+	sf::Sound allGame;
+
+	
 
 	//Game obj
 	CRGUI* gui;
@@ -63,6 +68,7 @@ public:
 	bool checkMove();
 	void choiceMenu(int c);
 	void choicePause(int c);
+	void choiceSetting(int c);
 	void choiceGameOver(int c);
 	void pollEvent();
 	void update();

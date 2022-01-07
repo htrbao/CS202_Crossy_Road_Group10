@@ -48,6 +48,7 @@ public:
 	void drawMenu();
 	void drawGameOver(int score,int highScore);
 	void drawPause();
+	void drawSetting(sf::Sound* game);
 	void nextChoice();
 	void prevChoice();
 	int getChoice();

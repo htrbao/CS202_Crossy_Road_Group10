@@ -2,12 +2,13 @@
 
 CRGUI::CRGUI(float width, float height)
 {
-	yText.assign(3, 0);
+	yText.assign(4, 0);
 	yText[0] = 450;
 	yText[1] = 500;
 	yText[2] = 550;
+	yText[3] = 600;
 
-	cur = 0;
+	cur = 0; 
 
 	font = CASSET::GetInstance().fontMap["Flap"];
 	fontScore = CASSET::GetInstance().fontMap["DIMIS___"];
@@ -36,10 +37,7 @@ CRGUI::CRGUI(float width, float height)
 }
 
 void CRGUI::draw(sf::RenderTarget& window) {
-	if (cur == 1) {
-		window.draw(title);
-	}
-	else if (cur == 2) {
+	if (cur != 3) {
 		window.draw(title);
 	}
 	else if (cur == 3) {
@@ -59,7 +57,7 @@ void CRGUI::drawMenu(){
 	cur = 1;
 
 	options.clear();
-	options.assign(3, { sf::Text(), Constants::SCREEN_WIDTH / 2});
+	options.assign(4, { sf::Text(), Constants::SCREEN_WIDTH / 2});
 
 	options[0].first.setFont(font);
 	options[0].first.setFillColor(sf::Color(244, 188, 1));
@@ -71,14 +69,18 @@ void CRGUI::drawMenu(){
 
 	options[2].first.setFont(font);
 	options[2].first.setFillColor(sf::Color(255, 247, 182));
-	options[2].first.setString("QUIT");
+	options[2].first.setString("SETTING");
+
+	options[3].first.setFont(font);
+	options[3].first.setFillColor(sf::Color(255, 247, 182));
+	options[3].first.setString("QUIT");
 }
 
 void CRGUI::drawPause()
 {
 	cur = 2;
 	options.clear();
-	options.assign(3, { sf::Text(), Constants::SCREEN_WIDTH / 2 });
+	options.assign(4, { sf::Text(), Constants::SCREEN_WIDTH / 2 });
 
 	options[0].first.setFont(font);
 	options[0].first.setFillColor(sf::Color(244, 188, 1));
@@ -87,17 +89,47 @@ void CRGUI::drawPause()
 	options[1].first.setFont(font);
 	options[1].first.setFillColor(sf::Color(255, 247, 182));
 	options[1].first.setString("RESUME");
-
+	
 	options[2].first.setFont(font);
 	options[2].first.setFillColor(sf::Color(255, 247, 182));
-	options[2].first.setString("SAVE AND EXIT");
+	options[2].first.setString("SETTING");
+
+	options[3].first.setFont(font);
+	options[3].first.setFillColor(sf::Color(255, 247, 182));
+	options[3].first.setString("SAVE AND EXIT");
+}
+
+void CRGUI::drawSetting(sf::Sound* game) {
+	cur = 4;
+
+	options.clear();
+	options.assign(4, { sf::Text(), Constants::SCREEN_WIDTH / 2 });
+
+	string typeSFX = "ON";
+
+	options[0].first.setFont(font);
+	options[0].first.setFillColor(sf::Color(244, 188, 1));
+	options[0].first.setString("SFX: " + typeSFX);
+
+	string type = (game->getVolume() > 0.0) ? "ON" : "OFF";
+
+	options[1].first.setFont(font);
+	options[1].first.setFillColor(sf::Color(255, 247, 182));
+	options[1].first.setString("MUSIC: " + type);
 	
+	options[2].first.setFont(font);
+	options[2].first.setFillColor(sf::Color(255, 247, 182));
+	options[2].first.setString("RESET");
+
+	options[3].first.setFont(font);
+	options[3].first.setFillColor(sf::Color(255, 247, 182));
+	options[3].first.setString("BACK");
 }
 
 void CRGUI::drawGameOver(int score, int highScore) {
 	cur = 3;
 	options.clear();
-	options.assign(3, { sf::Text(), Constants::SCREEN_WIDTH / 2 });
+	options.assign(4, { sf::Text(), Constants::SCREEN_WIDTH / 2 });
 
 	options[0].first.setFont(font);
 	options[0].first.setFillColor(sf::Color(244, 188, 1));
@@ -109,7 +141,11 @@ void CRGUI::drawGameOver(int score, int highScore) {
 
 	options[2].first.setFont(font);
 	options[2].first.setFillColor(sf::Color(255, 247, 182));
-	options[2].first.setString("QUIT");
+	options[2].first.setString("SETTING");
+
+	options[3].first.setFont(font);
+	options[3].first.setFillColor(sf::Color(255, 247, 182));
+	options[3].first.setString("QUIT");
 
 	if (score == highScore) {
 		position = 0;
@@ -147,7 +183,7 @@ void CRGUI::nextChoice() {
 	options.push_back(options.front());
 	options.pop_front();
 	options[0].first.setFillColor(sf::Color(244, 188, 1));
-	choice = (++choice) % 3;
+	choice = (++choice) % 4;
 }
 
 void CRGUI::prevChoice() {
@@ -156,7 +192,7 @@ void CRGUI::prevChoice() {
 	options.pop_back();
 	options[0].first.setFillColor(sf::Color(244, 188, 1));
 	if (choice == 0)
-		choice = 2;
+		choice = 3;
 	else
 		choice--;
 }

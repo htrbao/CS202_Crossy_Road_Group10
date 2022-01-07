@@ -45,6 +45,11 @@ CGAME::CGAME()
 	snow.setPosition(0, -setUpY);
 	//end SNOW section
 
+	allGame = sf::Sound(CASSET::GetInstance().soundMap["CROSSY"]);
+	allGame.setLoop(true);
+	allGame.setVolume(10);
+	allGame.play();
+
 	gui = new CRGUI(0, 0);
 	gui->drawMenu();
 	game_state = MENU;
@@ -127,6 +132,9 @@ void CGAME::pollEvent()
 					choiceGameOver(gui->getChoice());
 				else if (game_state == PAUSE)
 					choicePause(gui->getChoice());
+				else if (game_state == SETTING)
+					choiceSetting(gui->getChoice());
+					
 				break; 
 			}
 			break;
@@ -231,6 +239,11 @@ void CGAME::render()
 		this->window->draw(snowNext);
 		gui->draw(*this->window);
 		break;
+	case SETTING:
+		this->window->draw(snow);
+		this->window->draw(snowNext);
+		gui->draw(*this->window);
+		break;
 	}
 	this->window->display();
 }
@@ -280,8 +293,12 @@ void CGAME::choicePause(int c)
 	{
 		game_state = PLAYING;
 	}
-	else
-	{
+	else if (c == 2) {
+		game_state = SETTING;
+		gui->drawSetting(&allGame);
+		prevGame_state = PAUSE;
+	}
+	else {
 		save();
 		this->window->close();
 	}
@@ -293,7 +310,12 @@ void CGAME::choiceMenu(int c)
 		initGame();
 	else if (c == 1)
 		load();
-	else
+	else if (c == 2) {
+		game_state = SETTING;
+		gui->drawSetting(&allGame);
+		prevGame_state = MENU;
+	}
+	else if (c == 3)
 		this->window->close();
 }
 
@@ -308,9 +330,50 @@ void CGAME::choiceGameOver(int c)
 		game_state = MENU;
 		gui->drawMenu();
 	}
-	else if (c == 2)
+	else if (c == 2) {
+		game_state = SETTING;
+		gui->drawSetting(&allGame);
+		prevGame_state = GAMEOVER;
+	}
+	else if (c == 3)
 	{
 		this->window->close();
+	}
+}
+
+void CGAME::choiceSetting(int c) {
+	if (c == 0)
+	{
+		initGame();
+	}
+	else if (c == 1)
+	{
+		if (allGame.getVolume() == 0.0f) {
+			allGame.setVolume(10);
+		}
+		else allGame.setVolume(0.0f);
+
+		gui->drawSetting(&allGame);
+	}
+	else if (c == 2) {
+		if (allGame.getVolume() == 0.0f) {
+			allGame.setVolume(10);
+		}
+
+		gui->drawSetting(&allGame);
+	}
+	else if (c == 3)
+	{
+		game_state = prevGame_state;
+		if (game_state == MENU) {
+			gui->drawMenu();
+		}
+		else if (game_state == PAUSE) {
+			gui->drawPause();
+		}
+		else if (game_state == GAMEOVER) {
+			gui->drawGameOver(point->getPoint(), highestPoint);
+		}
 	}
 }
 
