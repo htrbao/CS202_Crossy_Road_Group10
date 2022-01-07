@@ -17,6 +17,7 @@
 #include "CRGUI.h"
 #include "CPOINTHUD.h"
 #include <fstream>
+#include <Windows.h>
 
 enum GAME_STATUS {MENU, PLAYING, GAMEOVER, PAUSE, SETTING};
 
@@ -42,6 +43,8 @@ private:
 	sf::SoundBuffer* gameBuffer;
 	sf::Sound gameSound;
 	sf::Sound allGame;
+	sf::Sound Meow;
+	sf::Sound Coin;
 	bool SFX;
 
 	//Game obj

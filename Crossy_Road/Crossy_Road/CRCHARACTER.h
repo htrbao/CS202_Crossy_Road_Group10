@@ -10,6 +10,8 @@ private:
     friend class CGAME;
     friend class CLANE;
 
+    bool isDie;
+
     float mX, mY;
     int side;
     int animateSide;
@@ -53,6 +55,7 @@ public:
     void SFXReset();
 
     void update();
+    void die();
     void render();
     void save(ofstream& of);
     void load(ifstream& inf);

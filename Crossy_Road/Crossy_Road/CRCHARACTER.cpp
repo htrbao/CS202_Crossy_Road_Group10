@@ -12,6 +12,8 @@ void CRCHARACTER::initTexture() {
 	sprite.setPosition(mX, mY);
 	sprite.scale(SCALE, SCALE);
 	radius = WIDTH / 16;
+
+	dieTexture = &CASSET::GetInstance().textureMap["CAT_1_DIE"];
 }
 
 void CRCHARACTER::initSound() {
@@ -22,6 +24,7 @@ void CRCHARACTER::initSound() {
 }
 
 CRCHARACTER::CRCHARACTER(sf::RenderWindow* window, int side, int x, int y, bool SFX) : window(window), side(side), mX(x), mY(y) {
+	isDie = false;
 	initTexture();
 	initSound();
 	totalTime = 0;
@@ -150,6 +153,11 @@ void CRCHARACTER::update()
 {
 }
 
+void CRCHARACTER::die() {
+	isDie = true;
+	sprite.setTexture(*dieTexture);
+}
+
 void CRCHARACTER::render() {
 	//if (!isGameOver) {
 		//sprite.setPosition(mX, mY);
@@ -180,11 +188,13 @@ void CRCHARACTER::load(ifstream& inf)
 }
 
 bool CRCHARACTER::isBehindRoad(CROAD& road) {
+	if (isDie) return false;
 	return mY - mX*tan(Constants::Alpha) + (WIDTH*SCALE)/2 <= road.getDis();
 }
 
 bool CRCHARACTER::isNearRoad(CROAD& road)
 {
+	if (isDie) return false;
 	int dis = 40;
 	if (road.isHighway())
 		dis *= 2;

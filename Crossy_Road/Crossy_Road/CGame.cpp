@@ -50,6 +50,11 @@ CGAME::CGAME()
 	allGame.setVolume(10);
 	allGame.play();
 
+	Meow = sf::Sound(CASSET::GetInstance().soundMap["MEOW"]);
+
+	Coin = sf::Sound(CASSET::GetInstance().soundMap["COIN"]);
+	allGame.setVolume(40);
+
 	SFX = true;
 
 	gui = new CRGUI(0, 0);
@@ -86,6 +91,10 @@ bool CGAME::checkMove() {
 						int collisionType = player->checkCollision(curRoad[j]->at(i));
 						if (collisionType % 3) {
 							if (collisionType == 2) {
+								player->die();
+								render();
+								Meow.play();
+								Sleep(2000);
 								game_state = GAMEOVER;
 								updateHighPoint();
 								gui->drawGameOver(point->getPoint(), highestPoint);
@@ -95,6 +104,7 @@ bool CGAME::checkMove() {
 						if (collisionType == 3)
 						{
 							point->increaseP(5);
+							Coin.play();
 						}
 					}
 				}
@@ -211,7 +221,7 @@ void CGAME::update()
 	{
 		if (game_state == PLAYING) {
 			checkMove();
-			roadFac->update(*this->window, 1 + (point->getPoint() % 15) / 10);
+			roadFac->update(*this->window, 1 + (point->getPoint() / 150.0));
 		}
 	}
 }

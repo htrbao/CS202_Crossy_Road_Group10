@@ -31,6 +31,7 @@ void CASSET::initFont(string fontFileName, string extend)
 CASSET::CASSET() {
 	//load player
 	initTexture("CAT2", 1);
+	initTexture("CAT_1_DIE", 1);
 	//load obstacle
 	initTexture("ambulance_NW");
 	initTexture("ambulance_SE");
@@ -97,6 +98,7 @@ CASSET::CASSET() {
 	initSound("JUMP");
 	initSound("BIRDS");
 	initSound("COIN");
+	initSound("MEOW");
 
 	//font
 	initFont("Christmas",".otf");
